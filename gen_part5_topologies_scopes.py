@@ -520,6 +520,7 @@ def register_part5(save_symbol, pin, node):
 """, width=260, height=240, tags=["svpwm", "space vector", "hexagon", "sector", "modulation", "diagram"])
 
     # 4. Synchronous Machine / PMSM Phasor & Coordinate Frame Diagram (abc, αβ, dq)
+    # Cross-verified with jmag_bridge.estimate.torque_dq: for IPMSM with Ld < Lq, MTPA has id < 0 (2nd quadrant of d-q frame)
     save_symbol(cat_sc, "diagram_dq_phasor_frame", "Machine Reference Frames & Phasor Diagram (abc / αβ / dq)", f"""
   <rect class="ee-body" x="10" y="10" width="230" height="210" rx="4"/>
   <!-- Stationary alpha-beta axes -->
@@ -532,16 +533,17 @@ def register_part5(save_symbol, pin, node):
   <line class="ee-wire-c" x1="95" y1="145" x2="37" y2="45" marker-end="url(#arrow-blue)"/>
   <text class="ee-text" x="206" y="82">d</text>
   <text class="ee-text" x="28" y="42">q</text>
-  <!-- Stator Current Vector i_s -->
-  <line class="ee-wire-a" x1="95" y1="145" x2="135" y2="45" marker-end="url(#arrow-red)"/>
-  <text class="ee-text" x="150" y="42">i<tspan dy="2" font-size="8">s</tspan></text>
-  <!-- Rotor Flux Linkage psi_f along d-axis -->
+  <!-- Stator Current Vector i_s in 2nd quadrant of d-q (id < 0, iq > 0 for IPMSM MTPA) -->
+  <line class="ee-wire-a" x1="95" y1="145" x2="28" y2="75" marker-end="url(#arrow-red)"/>
+  <line class="ee-dashed" x1="55" y1="76" x2="28" y2="75"/>
+  <text class="ee-text" x="24" y="64">i<tspan dy="2" font-size="8">s</tspan> (i<tspan dy="2" font-size="7">d</tspan>&lt;0)</text>
+  <!-- Rotor Flux Linkage psi_m along +d-axis -->
   <line class="ee-thick" x1="95" y1="145" x2="155" y2="110" marker-end="url(#arrow)"/>
-  <text class="ee-text" x="165" y="120">ψ<tspan dy="2" font-size="8">f</tspan></text>
+  <text class="ee-text" x="165" y="120">ψ<tspan dy="2" font-size="8">m</tspan></text>
   <!-- Angle arc theta_e -->
   <path class="ee-thin" d="M 140 145 A 45 45 0 0 0 134 122"/>
   <text class="ee-text" x="152" y="134" font-size="11">θ<tspan dy="2" font-size="8">e</tspan></text>
-""", width=250, height=230, tags=["phasor diagram", "dq frame", "vector control", "foc", "pmsm", "flux linkage"])
+""", width=250, height=230, tags=["phasor diagram", "dq frame", "vector control", "foc", "pmsm", "flux linkage", "mtpa"])
 
     # 5. Soft-Switching ZVS / Dead-Time Commutation Waveform
     save_symbol(cat_sc, "waveform_zvs_commutation", "Zero-Voltage Switching (ZVS) Turn-On & Dead-Time Waveform", f"""

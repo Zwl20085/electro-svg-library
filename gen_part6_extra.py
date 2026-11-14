@@ -21,24 +21,25 @@ def register_part6(save_symbol, pin, node):
 {pin(94, 66)}
 """, tags=["planar transformer", "pcb winding", "spiral", "high frequency", "magnetic"])
 
-    # Distributed vs Concentrated Stator Winding Phasor Star of Slots
-    save_symbol(cat_tx, "winding_star_of_slots", "Star of Slots (Stator Winding EMF Phasor Star)", f"""
+    # Distributed vs Concentrated Stator Winding Phasor Star of Slots (12s/10p FSCW verified with jmag_bridge.winding: kw1 = 0.93301)
+    save_symbol(cat_tx, "winding_star_of_slots", "Star of Slots (12s/10p FSCW EMF Phasor Star, kw1=0.933)", f"""
   <circle class="ee-dashed" cx="50" cy="50" r="36"/>
-  <!-- 12 Slot Phasors -->
+  <!-- 12 Slot Phasors (30 deg spacing): U(Red), V(Green), W(Blue) -->
   <line class="ee-wire-a" x1="50" y1="50" x2="50" y2="14" marker-end="url(#arrow-red)"/>
   <line class="ee-wire-a" x1="50" y1="50" x2="68" y2="19" marker-end="url(#arrow-red)"/>
-  <line class="ee-wire-c" x1="50" y1="50" x2="81" y2="32" marker-end="url(#arrow-blue)"/>
-  <line class="ee-wire-c" x1="50" y1="50" x2="86" y2="50" marker-end="url(#arrow-blue)"/>
-  <line class="ee-wire-b" x1="50" y1="50" x2="81" y2="68" marker-end="url(#arrow)"/>
-  <line class="ee-wire-b" x1="50" y1="50" x2="68" y2="81" marker-end="url(#arrow)"/>
+  <line class="ee-wire-b" x1="50" y1="50" x2="81" y2="32" marker-end="url(#arrow)"/>
+  <line class="ee-wire-b" x1="50" y1="50" x2="86" y2="50" marker-end="url(#arrow)"/>
+  <line class="ee-wire-c" x1="50" y1="50" x2="81" y2="68" marker-end="url(#arrow-blue)"/>
+  <line class="ee-wire-c" x1="50" y1="50" x2="68" y2="81" marker-end="url(#arrow-blue)"/>
   <line class="ee-wire-a" x1="50" y1="50" x2="50" y2="86"/>
   <line class="ee-wire-a" x1="50" y1="50" x2="32" y2="81"/>
-  <line class="ee-wire-c" x1="50" y1="50" x2="19" y2="68"/>
-  <line class="ee-wire-c" x1="50" y1="50" x2="14" y2="50"/>
-  <line class="ee-wire-b" x1="50" y1="50" x2="19" y2="32"/>
-  <line class="ee-wire-b" x1="50" y1="50" x2="32" y2="19"/>
+  <line class="ee-wire-b" x1="50" y1="50" x2="19" y2="68"/>
+  <line class="ee-wire-b" x1="50" y1="50" x2="14" y2="50"/>
+  <line class="ee-wire-c" x1="50" y1="50" x2="19" y2="32"/>
+  <line class="ee-wire-c" x1="50" y1="50" x2="32" y2="19"/>
   <circle class="ee-node" cx="50" cy="50" r="3"/>
-""", tags=["star of slots", "winding factor", "fractional slot", "fscw", "emf phasor", "winding"])
+  <text class="ee-label" x="50" y="95">kw1 = 0.933</text>
+""", tags=["star of slots", "winding factor", "fractional slot", "fscw", "emf phasor", "winding", "12s10p"])
 
     # Five-Phase Star Winding (Pentaphase Motor Winding)
     save_symbol(cat_tx, "winding_5ph_star", "5-Phase Star Winding (Pentaphase 72° Shift)", f"""
@@ -62,24 +63,26 @@ def register_part6(save_symbol, pin, node):
 {pin(12, 40)}
 """, tags=["5-phase", "five phase", "pentaphase", "multiphase", "fault tolerant", "winding"])
 
-    # Concentrated Tooth-Coil Winding vs Distributed Winding Diagram
-    save_symbol(cat_tx, "winding_concentrated_tooth", "Concentrated Tooth-Coil Winding (FSCW)", f"""
+    # Concentrated Tooth-Coil Winding vs Distributed Winding Diagram (12s/10p FSCW double-layer slot polarity verified via jmag_bridge.winding)
+    save_symbol(cat_tx, "winding_concentrated_tooth", "Concentrated Tooth-Coil Winding (FSCW Double-Layer)", f"""
   <!-- 3 Stator Teeth -->
   <path class="ee-body" d="M 10 20 L 90 20 L 90 34 L 78 34 L 78 72 L 64 72 L 64 34 L 57 34 L 57 72 L 43 72 L 43 34 L 36 34 L 36 72 L 22 72 L 22 34 L 10 34 Z"/>
-  <!-- Tooth 1 Coil (Red) -->
-  <rect class="ee-tint-red" x="17" y="40" width="5" height="26"/>
-  <rect class="ee-tint-red" x="36" y="40" width="4" height="26"/>
-  <path class="ee-wire-a" d="M 19 40 Q 29 28 38 40"/>
-  <!-- Tooth 2 Coil (Green) -->
-  <rect class="ee-tint-green" x="40" y="40" width="3" height="26"/>
-  <rect class="ee-tint-green" x="57" y="40" width="3" height="26"/>
-  <path class="ee-wire-b" d="M 41 40 Q 50 28 59 40"/>
-  <!-- Tooth 3 Coil (Blue) -->
-  <rect class="ee-tint-blue" x="61" y="40" width="3" height="26"/>
-  <rect class="ee-tint-blue" x="78" y="40" width="5" height="26"/>
-  <path class="ee-wire-c" d="M 62 40 Q 71 28 80 40"/>
-  <text class="ee-label" x="50" y="86">FSCW Tooth Coils</text>
-""", tags=["fscw", "tooth coil", "concentrated winding", "stator", "winding"])
+  <!-- Tooth 1 Coil: Phase U (Red, +left / -right) -->
+  <rect class="ee-tint-red" x="15" y="40" width="7" height="28"/>
+  <rect class="ee-tint-red" x="36" y="40" width="4" height="28"/>
+  <path class="ee-wire-a" d="M 18 40 Q 29 27 38 40"/>
+  <text class="ee-label" x="18" y="54">U+</text>
+  <!-- Tooth 2 Coil: Phase V (Green, -left / +right) -->
+  <rect class="ee-tint-green" x="40" y="40" width="3" height="28"/>
+  <rect class="ee-tint-green" x="57" y="40" width="4" height="28"/>
+  <path class="ee-wire-b" d="M 41 40 Q 50 27 59 40"/>
+  <!-- Tooth 3 Coil: Phase W (Blue, +left / -right) -->
+  <rect class="ee-tint-blue" x="61" y="40" width="3" height="28"/>
+  <rect class="ee-tint-blue" x="78" y="40" width="7" height="28"/>
+  <path class="ee-wire-c" d="M 62 40 Q 71 27 81 40"/>
+  <text class="ee-label" x="81" y="54">W-</text>
+  <text class="ee-label" x="50" y="86">FSCW (q=0.4, y=1)</text>
+""", tags=["fscw", "tooth coil", "concentrated winding", "stator", "winding", "double layer"])
 
     # More Machines
     cat_m = "05_electrical_machines"
