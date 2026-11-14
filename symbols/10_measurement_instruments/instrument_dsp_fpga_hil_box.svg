@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 115" width="180" height="115">
+  <title>DSP / FPGA Real-Time Controller / HIL Simulator Box</title>
+  <desc>DSP / FPGA Real-Time Controller / HIL Simulator Box</desc>
+  <defs>
+    <style>
+      .ee-stroke { stroke: #111827; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ee-thin { stroke: #111827; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ee-thick { stroke: #111827; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ee-dashed { stroke: #4b5563; stroke-width: 1.5; stroke-dasharray: 4 3; stroke-linecap: round; fill: none; }
+      .ee-fill { fill: #111827; stroke: #111827; stroke-width: 1.5; stroke-linejoin: round; }
+      .ee-body { fill: #f8fafc; stroke: #111827; stroke-width: 2; stroke-linejoin: round; }
+      .ee-tint-blue { fill: #eff6ff; stroke: #1d4ed8; stroke-width: 1.8; stroke-linejoin: round; }
+      .ee-tint-red { fill: #fef2f2; stroke: #b91c1c; stroke-width: 1.8; stroke-linejoin: round; }
+      .ee-tint-green { fill: #f0fdf4; stroke: #15803d; stroke-width: 1.8; stroke-linejoin: round; }
+      .ee-tint-amber { fill: #fffbeb; stroke: #b45309; stroke-width: 1.8; stroke-linejoin: round; }
+      .ee-wire-a { stroke: #dc2626; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ee-wire-b { stroke: #16a34a; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ee-wire-c { stroke: #2563eb; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ee-text { font-family: 'Times New Roman', 'STIX Two Text', Georgia, serif; font-size: 13px; font-style: italic; fill: #111827; text-anchor: middle; dominant-baseline: central; }
+      .ee-label { font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 10px; font-weight: 600; fill: #374151; text-anchor: middle; dominant-baseline: central; }
+      .ee-pin { fill: #ffffff; stroke: #111827; stroke-width: 1.6; }
+      .ee-node { fill: #111827; stroke: none; }
+      .ee-grid { stroke: #e5e7eb; stroke-width: 0.8; stroke-dasharray: 2 2; fill: none; }
+    </style>
+    <marker id="arrow-instrument_dsp_fpga_hil_box" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1 L 7 4 L 0 7 z" fill="#111827"/>
+    </marker>
+    <marker id="arrow-red-instrument_dsp_fpga_hil_box" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1 L 7 4 L 0 7 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arrow-blue-instrument_dsp_fpga_hil_box" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1 L 7 4 L 0 7 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect class="ee-tint-blue" x="14" y="14" width="152" height="82" rx="5"/>
+  <text class="ee-label" x="90" y="32" font-size="11">DSP + FPGA Real-Time Target</text>
+  <text class="ee-label" x="90" y="48">(C2000 / dSPACE / OPAL-RT)</text>
+  <!-- Left Side: ADC Analog Inputs -->
+  <rect class="ee-body" x="22" y="62" width="54" height="22" rx="2"/>
+  <text class="ee-label" x="49" y="73">16-bit ADC</text>
+  <!-- Right Side: PWM Fiber/Digital Outputs -->
+  <rect class="ee-body" x="104" y="62" width="54" height="22" rx="2"/>
+  <text class="ee-label" x="131" y="73">PWM / Gate</text>
+  <line class="ee-stroke" x1="35" y1="84" x2="35" y2="104"/>
+  <line class="ee-stroke" x1="60" y1="84" x2="60" y2="104"/>
+  <line class="ee-stroke" x1="118" y1="84" x2="118" y2="104"/>
+  <line class="ee-stroke" x1="144" y1="84" x2="144" y2="104"/>
+  <circle class="ee-pin" cx="35" cy="104" r="2.2"/>
+  <circle class="ee-pin" cx="60" cy="104" r="2.2"/>
+  <circle class="ee-pin" cx="118" cy="104" r="2.2"/>
+  <circle class="ee-pin" cx="144" cy="104" r="2.2"/>
+</svg>

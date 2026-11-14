@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
+  <title>3-Level Neutral-Point-Clamped (3L-NPC) Phase Leg</title>
+  <desc>3-Level Neutral-Point-Clamped (3L-NPC) Phase Leg</desc>
+  <defs>
+    <style>
+      .ee-stroke { stroke: #111827; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ee-thin { stroke: #111827; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ee-thick { stroke: #111827; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ee-dashed { stroke: #4b5563; stroke-width: 1.5; stroke-dasharray: 4 3; stroke-linecap: round; fill: none; }
+      .ee-fill { fill: #111827; stroke: #111827; stroke-width: 1.5; stroke-linejoin: round; }
+      .ee-body { fill: #f8fafc; stroke: #111827; stroke-width: 2; stroke-linejoin: round; }
+      .ee-tint-blue { fill: #eff6ff; stroke: #1d4ed8; stroke-width: 1.8; stroke-linejoin: round; }
+      .ee-tint-red { fill: #fef2f2; stroke: #b91c1c; stroke-width: 1.8; stroke-linejoin: round; }
+      .ee-tint-green { fill: #f0fdf4; stroke: #15803d; stroke-width: 1.8; stroke-linejoin: round; }
+      .ee-tint-amber { fill: #fffbeb; stroke: #b45309; stroke-width: 1.8; stroke-linejoin: round; }
+      .ee-wire-a { stroke: #dc2626; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ee-wire-b { stroke: #16a34a; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ee-wire-c { stroke: #2563eb; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ee-text { font-family: 'Times New Roman', 'STIX Two Text', Georgia, serif; font-size: 13px; font-style: italic; fill: #111827; text-anchor: middle; dominant-baseline: central; }
+      .ee-label { font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 10px; font-weight: 600; fill: #374151; text-anchor: middle; dominant-baseline: central; }
+      .ee-pin { fill: #ffffff; stroke: #111827; stroke-width: 1.6; }
+      .ee-node { fill: #111827; stroke: none; }
+      .ee-grid { stroke: #e5e7eb; stroke-width: 0.8; stroke-dasharray: 2 2; fill: none; }
+    </style>
+    <marker id="arrow-topology_3level_npc_leg" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1 L 7 4 L 0 7 z" fill="#111827"/>
+    </marker>
+    <marker id="arrow-red-topology_3level_npc_leg" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1 L 7 4 L 0 7 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arrow-blue-topology_3level_npc_leg" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1 L 7 4 L 0 7 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <!-- Split DC Link Capacitors -->
+  <line class="ee-stroke" x1="35" y1="18" x2="155" y2="18"/>
+  <line class="ee-stroke" x1="35" y1="222" x2="155" y2="222"/>
+  <line class="ee-stroke" x1="35" y1="18" x2="35" y2="62"/>
+  <line class="ee-stroke" x1="23" y1="62" x2="47" y2="62"/>
+  <line class="ee-stroke" x1="23" y1="70" x2="47" y2="70"/>
+  <line class="ee-stroke" x1="35" y1="70" x2="35" y2="170"/>
+  <line class="ee-stroke" x1="23" y1="170" x2="47" y2="170"/>
+  <line class="ee-stroke" x1="23" y1="178" x2="47" y2="178"/>
+  <line class="ee-stroke" x1="35" y1="178" x2="35" y2="222"/>
+  <!-- Neutral Point O -->
+  <line class="ee-stroke" x1="35" y1="120" x2="100" y2="120"/>
+  <text class="ee-label" x="18" y="120">O</text>
+  <!-- Clamping Diodes D1, D2 -->
+  <line class="ee-stroke" x1="100" y1="70" x2="100" y2="170"/>
+  <polygon class="ee-body" points="92,98 108,98 100,82"/>
+  <line class="ee-stroke" x1="92" y1="82" x2="108" y2="82"/>
+  <polygon class="ee-body" points="92,142 108,142 100,158"/>
+  <line class="ee-stroke" x1="92" y1="158" x2="108" y2="158"/>
+  <line class="ee-stroke" x1="100" y1="70" x2="155" y2="70"/>
+  <line class="ee-stroke" x1="100" y1="170" x2="155" y2="170"/>
+  <!-- 4 Series Switches S1..S4 at x=155 -->
+  <line class="ee-stroke" x1="155" y1="18" x2="155" y2="30"/>
+  <text class="ee-text" x="137" y="44" font-size="11">S1</text>
+  <rect class="ee-tint-blue" x="145" y="30" width="20" height="28" rx="2"/>
+  <line class="ee-thin" x1="150" y1="36" x2="150" y2="52"/>
+  <path class="ee-thin" d="M 150 40 L 159 34 L 159 30"/>
+  <path class="ee-thin" d="M 150 48 L 159 54 L 159 58"/>
+  <polygon class="ee-fill" points="160,47 164,47 162,41"/>
+  <line class="ee-stroke" x1="155" y1="58" x2="155" y2="80"/>
+  <text class="ee-text" x="137" y="94" font-size="11">S2</text>
+  <rect class="ee-tint-blue" x="145" y="80" width="20" height="28" rx="2"/>
+  <line class="ee-thin" x1="150" y1="86" x2="150" y2="102"/>
+  <path class="ee-thin" d="M 150 90 L 159 84 L 159 80"/>
+  <path class="ee-thin" d="M 150 98 L 159 104 L 159 108"/>
+  <polygon class="ee-fill" points="160,97 164,97 162,91"/>
+  <line class="ee-stroke" x1="155" y1="108" x2="155" y2="132"/>
+  <text class="ee-text" x="137" y="146" font-size="11">S3</text>
+  <rect class="ee-tint-blue" x="145" y="132" width="20" height="28" rx="2"/>
+  <line class="ee-thin" x1="150" y1="138" x2="150" y2="154"/>
+  <path class="ee-thin" d="M 150 142 L 159 136 L 159 132"/>
+  <path class="ee-thin" d="M 150 150 L 159 156 L 159 160"/>
+  <polygon class="ee-fill" points="160,149 164,149 162,143"/>
+  <line class="ee-stroke" x1="155" y1="160" x2="155" y2="182"/>
+  <text class="ee-text" x="137" y="196" font-size="11">S4</text>
+  <rect class="ee-tint-blue" x="145" y="182" width="20" height="28" rx="2"/>
+  <line class="ee-thin" x1="150" y1="188" x2="150" y2="204"/>
+  <path class="ee-thin" d="M 150 192 L 159 186 L 159 182"/>
+  <path class="ee-thin" d="M 150 200 L 159 206 L 159 210"/>
+  <polygon class="ee-fill" points="160,199 164,199 162,193"/>
+  <line class="ee-stroke" x1="155" y1="210" x2="155" y2="222"/>
+  <!-- AC Output -->
+  <line class="ee-wire-a" x1="155" y1="120" x2="215" y2="120"/>
+  <text class="ee-text" x="200" y="106">v<tspan dy="3" font-size="8">an</tspan></text>
+  <circle class="ee-node" cx="35" cy="120" r="2.5"/>
+  <circle class="ee-node" cx="100" cy="120" r="2.5"/>
+  <circle class="ee-node" cx="155" cy="70" r="2.5"/>
+  <circle class="ee-node" cx="155" cy="120" r="2.5"/>
+  <circle class="ee-node" cx="155" cy="170" r="2.5"/>
+  <circle class="ee-pin" cx="215" cy="120" r="2.2"/>
+</svg>

@@ -1,0 +1,2347 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <defs>
+    <style>
+      .ee-stroke { stroke: #111827; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ee-thin { stroke: #111827; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ee-thick { stroke: #111827; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ee-dashed { stroke: #4b5563; stroke-width: 1.5; stroke-dasharray: 4 3; stroke-linecap: round; fill: none; }
+      .ee-fill { fill: #111827; stroke: #111827; stroke-width: 1.5; stroke-linejoin: round; }
+      .ee-body { fill: #f8fafc; stroke: #111827; stroke-width: 2; stroke-linejoin: round; }
+      .ee-tint-blue { fill: #eff6ff; stroke: #1d4ed8; stroke-width: 1.8; stroke-linejoin: round; }
+      .ee-tint-red { fill: #fef2f2; stroke: #b91c1c; stroke-width: 1.8; stroke-linejoin: round; }
+      .ee-tint-green { fill: #f0fdf4; stroke: #15803d; stroke-width: 1.8; stroke-linejoin: round; }
+      .ee-tint-amber { fill: #fffbeb; stroke: #b45309; stroke-width: 1.8; stroke-linejoin: round; }
+      .ee-wire-a { stroke: #dc2626; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ee-wire-b { stroke: #16a34a; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ee-wire-c { stroke: #2563eb; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ee-text { font-family: 'Times New Roman', 'STIX Two Text', Georgia, serif; font-size: 13px; font-style: italic; fill: #111827; text-anchor: middle; dominant-baseline: central; }
+      .ee-label { font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 10px; font-weight: 600; fill: #374151; text-anchor: middle; dominant-baseline: central; }
+      .ee-pin { fill: #ffffff; stroke: #111827; stroke-width: 1.6; }
+      .ee-node { fill: #111827; stroke: none; }
+      .ee-grid { stroke: #e5e7eb; stroke-width: 0.8; stroke-dasharray: 2 2; fill: none; }
+    </style>
+    <marker id="arrow" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1 L 7 4 L 0 7 z" fill="#111827"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1 L 7 4 L 0 7 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1 L 7 4 L 0 7 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <symbol id="resistor_ieee" viewBox="0 0 100 100">
+    <path class="ee-stroke" d="M 10 50 L 26 50 L 30 40 L 38 60 L 46 40 L 54 60 L 62 40 L 70 60 L 74 50 L 90 50"/>
+  <text class="ee-text" x="50" y="28">R</text>
+  <circle class="ee-pin" cx="10" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="50" r="2.2"/>
+  </symbol>
+  <symbol id="resistor_iec" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="10" y1="50" x2="28" y2="50"/>
+  <rect class="ee-body" x="28" y="40" width="44" height="20"/>
+  <line class="ee-stroke" x1="72" y1="50" x2="90" y2="50"/>
+  <text class="ee-text" x="50" y="28">R</text>
+  <circle class="ee-pin" cx="10" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="50" r="2.2"/>
+  </symbol>
+  <symbol id="resistor_variable" viewBox="0 0 100 100">
+    <path class="ee-stroke" d="M 10 50 L 26 50 L 30 40 L 38 60 L 46 40 L 54 60 L 62 40 L 70 60 L 74 50 L 90 50"/>
+  <line class="ee-thin" x1="30" y1="68" x2="70" y2="30" marker-end="url(#arrow)"/>
+  <text class="ee-text" x="45" y="22">R</text>
+  <circle class="ee-pin" cx="10" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="50" r="2.2"/>
+  </symbol>
+  <symbol id="potentiometer" viewBox="0 0 100 100">
+    <path class="ee-stroke" d="M 10 55 L 26 55 L 30 45 L 38 65 L 46 45 L 54 65 L 62 45 L 70 65 L 74 55 L 90 55"/>
+  <path class="ee-stroke" d="M 50 15 L 50 40" marker-end="url(#arrow)"/>
+  <circle class="ee-pin" cx="10" cy="55" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="55" r="2.2"/>
+  <circle class="ee-pin" cx="50" cy="15" r="2.2"/>
+  </symbol>
+  <symbol id="resistor_shunt_kelvin" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="10" y1="45" x2="28" y2="45"/>
+  <rect class="ee-body" x="28" y="36" width="44" height="18"/>
+  <line class="ee-stroke" x1="72" y1="45" x2="90" y2="45"/>
+  <path class="ee-thin" d="M 32 54 L 38 68 L 38 82"/>
+  <path class="ee-thin" d="M 68 54 L 62 68 L 62 82"/>
+  <text class="ee-text" x="50" y="24">R<tspan dy="3" font-size="9">sh</tspan></text>
+  <circle class="ee-pin" cx="10" cy="45" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="45" r="2.2"/>
+  <circle class="ee-pin" cx="38" cy="82" r="2.2"/>
+  <circle class="ee-pin" cx="62" cy="82" r="2.2"/>
+  </symbol>
+  <symbol id="capacitor_unpolarized" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="10" y1="50" x2="45" y2="50"/>
+  <line class="ee-stroke" x1="45" y1="30" x2="45" y2="70"/>
+  <line class="ee-stroke" x1="55" y1="30" x2="55" y2="70"/>
+  <line class="ee-stroke" x1="55" y1="50" x2="90" y2="50"/>
+  <text class="ee-text" x="50" y="18">C</text>
+  <circle class="ee-pin" cx="10" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="50" r="2.2"/>
+  </symbol>
+  <symbol id="capacitor_polarized_ieee" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="10" y1="50" x2="45" y2="50"/>
+  <line class="ee-stroke" x1="45" y1="30" x2="45" y2="70"/>
+  <path class="ee-stroke" d="M 58 30 Q 49 50 58 70"/>
+  <line class="ee-stroke" x1="54" y1="50" x2="90" y2="50"/>
+  <text class="ee-label" x="35" y="34">+</text>
+  <text class="ee-text" x="50" y="18">C<tspan dy="3" font-size="9">dc</tspan></text>
+  <circle class="ee-pin" cx="10" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="50" r="2.2"/>
+  </symbol>
+  <symbol id="capacitor_polarized_iec" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="10" y1="50" x2="43" y2="50"/>
+  <rect class="ee-body" x="43" y="30" width="6" height="40"/>
+  <rect class="ee-fill" x="54" y="30" width="5" height="40"/>
+  <line class="ee-stroke" x1="59" y1="50" x2="90" y2="50"/>
+  <text class="ee-label" x="35" y="34">+</text>
+  <text class="ee-text" x="50" y="18">C</text>
+  <circle class="ee-pin" cx="10" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="50" r="2.2"/>
+  </symbol>
+  <symbol id="capacitor_variable" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="10" y1="50" x2="45" y2="50"/>
+  <line class="ee-stroke" x1="45" y1="30" x2="45" y2="70"/>
+  <line class="ee-stroke" x1="55" y1="30" x2="55" y2="70"/>
+  <line class="ee-stroke" x1="55" y1="50" x2="90" y2="50"/>
+  <line class="ee-thin" x1="32" y1="68" x2="68" y2="32" marker-end="url(#arrow)"/>
+  <text class="ee-text" x="42" y="18">C</text>
+  <circle class="ee-pin" cx="10" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="50" r="2.2"/>
+  </symbol>
+  <symbol id="inductor_air" viewBox="0 0 100 100">
+    <path class="ee-stroke" d="M 10 55 L 22 55 A 7 9 0 0 1 36 55 A 7 9 0 0 1 50 55 A 7 9 0 0 1 64 55 A 7 9 0 0 1 78 55 L 90 55"/>
+  <text class="ee-text" x="50" y="30">L</text>
+  <circle class="ee-pin" cx="10" cy="55" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="55" r="2.2"/>
+  </symbol>
+  <symbol id="inductor_iron_core" viewBox="0 0 100 100">
+    <path class="ee-stroke" d="M 10 58 L 22 58 A 7 9 0 0 1 36 58 A 7 9 0 0 1 50 58 A 7 9 0 0 1 64 58 A 7 9 0 0 1 78 58 L 90 58"/>
+  <line class="ee-stroke" x1="22" y1="42" x2="78" y2="42"/>
+  <line class="ee-stroke" x1="22" y1="37" x2="78" y2="37"/>
+  <text class="ee-text" x="50" y="23">L</text>
+  <circle class="ee-pin" cx="10" cy="58" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="58" r="2.2"/>
+  </symbol>
+  <symbol id="inductor_ferrite_core" viewBox="0 0 100 100">
+    <path class="ee-stroke" d="M 10 58 L 22 58 A 7 9 0 0 1 36 58 A 7 9 0 0 1 50 58 A 7 9 0 0 1 64 58 A 7 9 0 0 1 78 58 L 90 58"/>
+  <line class="ee-dashed" x1="22" y1="41" x2="78" y2="41"/>
+  <line class="ee-dashed" x1="22" y1="36" x2="78" y2="36"/>
+  <text class="ee-text" x="50" y="23">L<tspan dy="3" font-size="9">f</tspan></text>
+  <circle class="ee-pin" cx="10" cy="58" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="58" r="2.2"/>
+  </symbol>
+  <symbol id="inductor_variable" viewBox="0 0 100 100">
+    <path class="ee-stroke" d="M 10 55 L 22 55 A 7 9 0 0 1 36 55 A 7 9 0 0 1 50 55 A 7 9 0 0 1 64 55 A 7 9 0 0 1 78 55 L 90 55"/>
+  <line class="ee-thin" x1="28" y1="70" x2="72" y2="32" marker-end="url(#arrow)"/>
+  <text class="ee-text" x="44" y="24">L</text>
+  <circle class="ee-pin" cx="10" cy="55" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="55" r="2.2"/>
+  </symbol>
+  <symbol id="coupled_inductor_cmc" viewBox="0 0 100 100">
+    <path class="ee-stroke" d="M 10 30 L 22 30 A 7 8 0 0 0 36 30 A 7 8 0 0 0 50 30 A 7 8 0 0 0 64 30 A 7 8 0 0 0 78 30 L 90 30"/>
+  <line class="ee-stroke" x1="22" y1="47" x2="78" y2="47"/>
+  <line class="ee-stroke" x1="22" y1="53" x2="78" y2="53"/>
+  <path class="ee-stroke" d="M 10 70 L 22 70 A 7 8 0 0 1 36 70 A 7 8 0 0 1 50 70 A 7 8 0 0 1 64 70 A 7 8 0 0 1 78 70 L 90 70"/>
+  <circle class="ee-node" cx="20" cy="22" r="2.2"/>
+  <circle class="ee-node" cx="20" cy="78" r="2.2"/>
+  <circle class="ee-pin" cx="10" cy="30" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="30" r="2.2"/>
+  <circle class="ee-pin" cx="10" cy="70" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="70" r="2.2"/>
+  </symbol>
+  <symbol id="ferrite_bead" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="10" y1="50" x2="90" y2="50"/>
+  <polygon class="ee-body" points="40,34 64,34 58,66 34,66"/>
+  <text class="ee-text" x="50" y="22">FB</text>
+  <circle class="ee-pin" cx="10" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="50" r="2.2"/>
+  </symbol>
+  <symbol id="thermistor_ntc" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="10" y1="50" x2="28" y2="50"/>
+  <rect class="ee-body" x="28" y="40" width="44" height="20"/>
+  <line class="ee-stroke" x1="72" y1="50" x2="90" y2="50"/>
+  <path class="ee-thin" d="M 26 68 L 36 68 L 66 30"/>
+  <text class="ee-label" x="50" y="24">t°</text>
+  <circle class="ee-pin" cx="10" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="50" r="2.2"/>
+  </symbol>
+  <symbol id="varistor_mov" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="10" y1="50" x2="28" y2="50"/>
+  <rect class="ee-body" x="28" y="40" width="44" height="20"/>
+  <line class="ee-stroke" x1="72" y1="50" x2="90" y2="50"/>
+  <path class="ee-thin" d="M 28 68 L 38 68 L 64 30"/>
+  <text class="ee-label" x="50" y="24">U</text>
+  <circle class="ee-pin" cx="10" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="50" r="2.2"/>
+  </symbol>
+  <symbol id="crystal_resonator" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="10" y1="50" x2="36" y2="50"/>
+  <line class="ee-stroke" x1="36" y1="32" x2="36" y2="68"/>
+  <rect class="ee-body" x="43" y="28" width="14" height="44"/>
+  <line class="ee-stroke" x1="64" y1="32" x2="64" y2="68"/>
+  <line class="ee-stroke" x1="64" y1="50" x2="90" y2="50"/>
+  <text class="ee-text" x="50" y="16">XTAL</text>
+  <circle class="ee-pin" cx="10" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="50" r="2.2"/>
+  </symbol>
+  <symbol id="memristor" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="10" y1="50" x2="26" y2="50"/>
+  <rect class="ee-body" x="26" y="36" width="48" height="28"/>
+  <path class="ee-stroke" d="M 26 50 L 36 50 L 36 42 L 46 42 L 46 58 L 56 58 L 56 42 L 66 42 L 66 50"/>
+  <rect class="ee-fill" x="68" y="36" width="6" height="28"/>
+  <line class="ee-stroke" x1="74" y1="50" x2="90" y2="50"/>
+  <text class="ee-text" x="50" y="22">M</text>
+  <circle class="ee-pin" cx="10" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="50" r="2.2"/>
+  </symbol>
+  <symbol id="source_dc_voltage" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="50" y1="10" x2="50" y2="28"/>
+  <circle class="ee-body" cx="50" cy="50" r="22"/>
+  <line class="ee-stroke" x1="50" y1="72" x2="50" y2="90"/>
+  <path class="ee-thin" d="M 46 39 L 54 39 M 50 35 L 50 43"/>
+  <line class="ee-thin" x1="46" y1="61" x2="54" y2="61"/>
+  <text class="ee-text" x="82" y="50">V<tspan dy="3" font-size="9">dc</tspan></text>
+  <circle class="ee-pin" cx="50" cy="10" r="2.2"/>
+  <circle class="ee-pin" cx="50" cy="90" r="2.2"/>
+  </symbol>
+  <symbol id="source_battery" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="50" y1="10" x2="50" y2="38"/>
+  <line class="ee-stroke" x1="30" y1="38" x2="70" y2="38"/>
+  <line class="ee-thick" x1="40" y1="46" x2="60" y2="46"/>
+  <line class="ee-stroke" x1="30" y1="54" x2="70" y2="54"/>
+  <line class="ee-thick" x1="40" y1="62" x2="60" y2="62"/>
+  <line class="ee-stroke" x1="50" y1="62" x2="50" y2="90"/>
+  <text class="ee-label" x="24" y="32">+</text>
+  <text class="ee-text" x="82" y="50">V<tspan dy="3" font-size="9">bat</tspan></text>
+  <circle class="ee-pin" cx="50" cy="10" r="2.2"/>
+  <circle class="ee-pin" cx="50" cy="90" r="2.2"/>
+  </symbol>
+  <symbol id="source_ac_voltage" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="50" y1="10" x2="50" y2="28"/>
+  <circle class="ee-body" cx="50" cy="50" r="22"/>
+  <path class="ee-stroke" d="M 38 50 C 42 38, 46 38, 50 50 C 54 62, 58 62, 62 50"/>
+  <line class="ee-stroke" x1="50" y1="72" x2="50" y2="90"/>
+  <text class="ee-text" x="82" y="50">v<tspan dy="3" font-size="9">s</tspan></text>
+  <circle class="ee-pin" cx="50" cy="10" r="2.2"/>
+  <circle class="ee-pin" cx="50" cy="90" r="2.2"/>
+  </symbol>
+  <symbol id="source_current" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="50" y1="10" x2="50" y2="28"/>
+  <circle class="ee-body" cx="50" cy="50" r="22"/>
+  <line class="ee-stroke" x1="50" y1="64" x2="50" y2="38" marker-end="url(#arrow)"/>
+  <line class="ee-stroke" x1="50" y1="72" x2="50" y2="90"/>
+  <text class="ee-text" x="82" y="50">I<tspan dy="3" font-size="9">s</tspan></text>
+  <circle class="ee-pin" cx="50" cy="10" r="2.2"/>
+  <circle class="ee-pin" cx="50" cy="90" r="2.2"/>
+  </symbol>
+  <symbol id="source_controlled_voltage" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="50" y1="10" x2="50" y2="26"/>
+  <polygon class="ee-body" points="50,26 74,50 50,74 26,50"/>
+  <path class="ee-thin" d="M 46 40 L 54 40 M 50 36 L 50 44"/>
+  <line class="ee-thin" x1="46" y1="60" x2="54" y2="60"/>
+  <line class="ee-stroke" x1="50" y1="74" x2="50" y2="90"/>
+  <circle class="ee-pin" cx="50" cy="10" r="2.2"/>
+  <circle class="ee-pin" cx="50" cy="90" r="2.2"/>
+  </symbol>
+  <symbol id="source_controlled_current" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="50" y1="10" x2="50" y2="26"/>
+  <polygon class="ee-body" points="50,26 74,50 50,74 26,50"/>
+  <line class="ee-stroke" x1="50" y1="63" x2="50" y2="39" marker-end="url(#arrow)"/>
+  <line class="ee-stroke" x1="50" y1="74" x2="50" y2="90"/>
+  <circle class="ee-pin" cx="50" cy="10" r="2.2"/>
+  <circle class="ee-pin" cx="50" cy="90" r="2.2"/>
+  </symbol>
+  <symbol id="source_pv_array" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="55" y1="10" x2="55" y2="28"/>
+  <circle class="ee-body" cx="55" cy="50" r="22"/>
+  <line class="ee-stroke" x1="43" y1="45" x2="67" y2="45"/>
+  <line class="ee-thick" x1="48" y1="53" x2="62" y2="53"/>
+  <line class="ee-stroke" x1="55" y1="28" x2="55" y2="45"/>
+  <line class="ee-stroke" x1="55" y1="53" x2="55" y2="72"/>
+  <line class="ee-stroke" x1="55" y1="72" x2="55" y2="90"/>
+  <line class="ee-thin" x1="18" y1="30" x2="32" y2="40" marker-end="url(#arrow)"/>
+  <line class="ee-thin" x1="14" y1="40" x2="28" y2="50" marker-end="url(#arrow)"/>
+  <text class="ee-text" x="85" y="50">PV</text>
+  <circle class="ee-pin" cx="55" cy="10" r="2.2"/>
+  <circle class="ee-pin" cx="55" cy="90" r="2.2"/>
+  </symbol>
+  <symbol id="source_3ph_grid" viewBox="0 0 100 100">
+    <circle class="ee-body" cx="42" cy="50" r="24"/>
+  <path class="ee-stroke" d="M 30 50 C 34 38, 38 38, 42 50 C 46 62, 50 62, 54 50"/>
+  <text class="ee-label" x="42" y="34">3~</text>
+  <line class="ee-wire-a" x1="63" y1="36" x2="90" y2="36"/>
+  <line class="ee-wire-b" x1="66" y1="50" x2="90" y2="50"/>
+  <line class="ee-wire-c" x1="63" y1="64" x2="90" y2="64"/>
+  <line class="ee-stroke" x1="42" y1="74" x2="42" y2="86"/>
+  <line class="ee-stroke" x1="32" y1="86" x2="52" y2="86"/>
+  <line class="ee-stroke" x1="36" y1="90" x2="48" y2="90"/>
+  <circle class="ee-pin" cx="90" cy="36" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="64" r="2.2"/>
+  </symbol>
+  <symbol id="ground_earth" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="50" y1="15" x2="50" y2="50"/>
+  <line class="ee-stroke" x1="30" y1="50" x2="70" y2="50"/>
+  <line class="ee-stroke" x1="37" y1="58" x2="63" y2="58"/>
+  <line class="ee-stroke" x1="44" y1="66" x2="56" y2="66"/>
+  <circle class="ee-pin" cx="50" cy="15" r="2.2"/>
+  </symbol>
+  <symbol id="ground_chassis" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="50" y1="15" x2="50" y2="50"/>
+  <path class="ee-stroke" d="M 30 50 L 70 50 M 30 50 L 22 64 M 50 50 L 42 64 M 70 50 L 62 64"/>
+  <circle class="ee-pin" cx="50" cy="15" r="2.2"/>
+  </symbol>
+  <symbol id="ground_signal" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="50" y1="15" x2="50" y2="50"/>
+  <polygon class="ee-body" points="32,50 68,50 50,70"/>
+  <circle class="ee-pin" cx="50" cy="15" r="2.2"/>
+  </symbol>
+  <symbol id="diode_power" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="10" y1="50" x2="38" y2="50"/>
+  <polygon class="ee-body" points="38,34 38,66 64,50"/>
+  <line class="ee-stroke" x1="64" y1="34" x2="64" y2="66"/>
+  <line class="ee-stroke" x1="64" y1="50" x2="90" y2="50"/>
+  <text class="ee-text" x="50" y="22">D</text>
+  <circle class="ee-pin" cx="10" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="50" r="2.2"/>
+  </symbol>
+  <symbol id="diode_filled" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="10" y1="50" x2="38" y2="50"/>
+  <polygon class="ee-fill" points="38,35 38,65 64,50"/>
+  <line class="ee-stroke" x1="64" y1="34" x2="64" y2="66"/>
+  <line class="ee-stroke" x1="64" y1="50" x2="90" y2="50"/>
+  <text class="ee-text" x="50" y="22">D</text>
+  <circle class="ee-pin" cx="10" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="50" r="2.2"/>
+  </symbol>
+  <symbol id="diode_schottky" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="10" y1="50" x2="38" y2="50"/>
+  <polygon class="ee-body" points="38,34 38,66 64,50"/>
+  <path class="ee-stroke" d="M 58 34 L 64 34 L 64 66 L 70 66"/>
+  <line class="ee-stroke" x1="64" y1="50" x2="90" y2="50"/>
+  <text class="ee-text" x="50" y="22">D<tspan dy="3" font-size="9">SBD</tspan></text>
+  <circle class="ee-pin" cx="10" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="50" r="2.2"/>
+  </symbol>
+  <symbol id="diode_zener" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="10" y1="50" x2="38" y2="50"/>
+  <polygon class="ee-body" points="38,34 38,66 64,50"/>
+  <path class="ee-stroke" d="M 57 32 L 64 36 L 64 64 L 71 68"/>
+  <line class="ee-stroke" x1="64" y1="50" x2="90" y2="50"/>
+  <text class="ee-text" x="50" y="22">D<tspan dy="3" font-size="9">Z</tspan></text>
+  <circle class="ee-pin" cx="10" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="50" r="2.2"/>
+  </symbol>
+  <symbol id="diode_tvs_bidir" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="10" y1="50" x2="28" y2="50"/>
+  <polygon class="ee-body" points="28,36 28,64 50,50"/>
+  <path class="ee-stroke" d="M 45 34 L 50 37 L 50 63 L 55 66"/>
+  <polygon class="ee-body" points="72,36 72,64 50,50"/>
+  <line class="ee-stroke" x1="72" y1="50" x2="90" y2="50"/>
+  <text class="ee-text" x="50" y="22">TVS</text>
+  <circle class="ee-pin" cx="10" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="50" r="2.2"/>
+  </symbol>
+  <symbol id="diode_led" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="10" y1="55" x2="38" y2="55"/>
+  <polygon class="ee-body" points="38,40 38,70 64,55"/>
+  <line class="ee-stroke" x1="64" y1="40" x2="64" y2="70"/>
+  <line class="ee-stroke" x1="64" y1="55" x2="90" y2="55"/>
+  <line class="ee-thin" x1="48" y1="34" x2="60" y2="20" marker-end="url(#arrow)"/>
+  <line class="ee-thin" x1="56" y1="38" x2="68" y2="24" marker-end="url(#arrow)"/>
+  <circle class="ee-pin" cx="10" cy="55" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="55" r="2.2"/>
+  </symbol>
+  <symbol id="diode_photo" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="10" y1="55" x2="38" y2="55"/>
+  <polygon class="ee-body" points="38,40 38,70 64,55"/>
+  <line class="ee-stroke" x1="64" y1="40" x2="64" y2="70"/>
+  <line class="ee-stroke" x1="64" y1="55" x2="90" y2="55"/>
+  <line class="ee-thin" x1="36" y1="20" x2="48" y2="34" marker-end="url(#arrow)"/>
+  <line class="ee-thin" x1="46" y1="16" x2="58" y2="30" marker-end="url(#arrow)"/>
+  <circle class="ee-pin" cx="10" cy="55" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="55" r="2.2"/>
+  </symbol>
+  <symbol id="thyristor_scr" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="50" y1="10" x2="50" y2="36"/>
+  <polygon class="ee-body" points="34,36 66,36 50,62"/>
+  <line class="ee-stroke" x1="34" y1="62" x2="66" y2="62"/>
+  <line class="ee-stroke" x1="50" y1="62" x2="50" y2="90"/>
+  <path class="ee-stroke" d="M 38 62 L 26 74 L 14 74"/>
+  <text class="ee-text" x="78" y="48">SCR</text>
+  <circle class="ee-pin" cx="50" cy="10" r="2.2"/>
+  <circle class="ee-pin" cx="50" cy="90" r="2.2"/>
+  <circle class="ee-pin" cx="14" cy="74" r="2.2"/>
+  </symbol>
+  <symbol id="thyristor_gto_igct" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="50" y1="10" x2="50" y2="36"/>
+  <polygon class="ee-body" points="34,36 66,36 50,62"/>
+  <line class="ee-stroke" x1="34" y1="62" x2="66" y2="62"/>
+  <line class="ee-stroke" x1="50" y1="62" x2="50" y2="90"/>
+  <path class="ee-stroke" d="M 38 62 L 26 74 L 14 74"/>
+  <line class="ee-thin" x1="25" y1="67" x2="33" y2="75"/>
+  <text class="ee-text" x="78" y="48">GTO</text>
+  <circle class="ee-pin" cx="50" cy="10" r="2.2"/>
+  <circle class="ee-pin" cx="50" cy="90" r="2.2"/>
+  <circle class="ee-pin" cx="14" cy="74" r="2.2"/>
+  </symbol>
+  <symbol id="triac" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="50" y1="10" x2="50" y2="34"/>
+  <line class="ee-stroke" x1="28" y1="34" x2="72" y2="34"/>
+  <polygon class="ee-body" points="28,34 48,34 38,56"/>
+  <polygon class="ee-body" points="52,56 72,56 62,34"/>
+  <line class="ee-stroke" x1="28" y1="56" x2="72" y2="56"/>
+  <line class="ee-stroke" x1="50" y1="56" x2="50" y2="90"/>
+  <path class="ee-stroke" d="M 62 56 L 74 70 L 86 70"/>
+  <circle class="ee-pin" cx="50" cy="10" r="2.2"/>
+  <circle class="ee-pin" cx="50" cy="90" r="2.2"/>
+  <circle class="ee-pin" cx="86" cy="70" r="2.2"/>
+  </symbol>
+  <symbol id="igbt_bare" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="12" y1="58" x2="32" y2="58"/>
+  <line class="ee-stroke" x1="32" y1="32" x2="32" y2="68"/>
+  <line class="ee-stroke" x1="39" y1="28" x2="39" y2="72"/>
+  <path class="ee-stroke" d="M 39 40 L 60 26 L 60 10"/>
+  <path class="ee-stroke" d="M 39 60 L 58 72" marker-end="url(#arrow)"/>
+  <line class="ee-stroke" x1="60" y1="73" x2="60" y2="90"/>
+  <text class="ee-text" x="78" y="50">S</text>
+  <circle class="ee-pin" cx="12" cy="58" r="2.2"/>
+  <circle class="ee-pin" cx="60" cy="10" r="2.2"/>
+  <circle class="ee-pin" cx="60" cy="90" r="2.2"/>
+  </symbol>
+  <symbol id="igbt_with_diode" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="10" y1="58" x2="26" y2="58"/>
+  <line class="ee-stroke" x1="26" y1="32" x2="26" y2="68"/>
+  <line class="ee-stroke" x1="33" y1="28" x2="33" y2="72"/>
+  <path class="ee-stroke" d="M 33 40 L 50 28 L 50 10"/>
+  <path class="ee-stroke" d="M 33 60 L 48 70" marker-end="url(#arrow)"/>
+  <line class="ee-stroke" x1="50" y1="71" x2="50" y2="90"/>
+  <!-- Anti-parallel diode -->
+  <path class="ee-stroke" d="M 50 22 L 74 22 L 74 78 L 50 78"/>
+  <polygon class="ee-body" points="64,58 84,58 74,40"/>
+  <line class="ee-stroke" x1="64" y1="40" x2="84" y2="40"/>
+  <circle class="ee-node" cx="50" cy="22" r="2.5"/>
+  <circle class="ee-node" cx="50" cy="78" r="2.5"/>
+  <circle class="ee-pin" cx="10" cy="58" r="2.2"/>
+  <circle class="ee-pin" cx="50" cy="10" r="2.2"/>
+  <circle class="ee-pin" cx="50" cy="90" r="2.2"/>
+  </symbol>
+  <symbol id="mosfet_nch_power" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="10" y1="60" x2="26" y2="60"/>
+  <line class="ee-stroke" x1="26" y1="32" x2="26" y2="68"/>
+  <!-- Broken channel -->
+  <line class="ee-stroke" x1="33" y1="30" x2="33" y2="40"/>
+  <line class="ee-stroke" x1="33" y1="45" x2="33" y2="55"/>
+  <line class="ee-stroke" x1="33" y1="60" x2="33" y2="70"/>
+  <!-- Drain, Source, Substrate -->
+  <path class="ee-stroke" d="M 33 35 L 52 35 L 52 10"/>
+  <path class="ee-stroke" d="M 52 50 L 36 50" marker-end="url(#arrow)"/>
+  <path class="ee-stroke" d="M 33 65 L 52 65 L 52 90"/>
+  <line class="ee-stroke" x1="52" y1="50" x2="52" y2="65"/>
+  <!-- Body Diode -->
+  <path class="ee-stroke" d="M 52 24 L 74 24 L 74 76 L 52 76"/>
+  <polygon class="ee-body" points="65,58 83,58 74,42"/>
+  <line class="ee-stroke" x1="65" y1="42" x2="83" y2="42"/>
+  <circle class="ee-node" cx="52" cy="24" r="2.5"/>
+  <circle class="ee-node" cx="52" cy="65" r="2.5"/>
+  <circle class="ee-node" cx="52" cy="76" r="2.5"/>
+  <circle class="ee-pin" cx="10" cy="60" r="2.2"/>
+  <circle class="ee-pin" cx="52" cy="10" r="2.2"/>
+  <circle class="ee-pin" cx="52" cy="90" r="2.2"/>
+  </symbol>
+  <symbol id="mosfet_pch_power" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="12" y1="60" x2="28" y2="60"/>
+  <line class="ee-stroke" x1="28" y1="32" x2="28" y2="68"/>
+  <line class="ee-stroke" x1="35" y1="30" x2="35" y2="40"/>
+  <line class="ee-stroke" x1="35" y1="45" x2="35" y2="55"/>
+  <line class="ee-stroke" x1="35" y1="60" x2="35" y2="70"/>
+  <path class="ee-stroke" d="M 35 35 L 56 35 L 56 10"/>
+  <path class="ee-stroke" d="M 35 50 L 53 50" marker-end="url(#arrow)"/>
+  <path class="ee-stroke" d="M 35 65 L 56 65 L 56 90"/>
+  <line class="ee-stroke" x1="56" y1="35" x2="56" y2="50"/>
+  <circle class="ee-node" cx="56" cy="35" r="2.5"/>
+  <circle class="ee-pin" cx="12" cy="60" r="2.2"/>
+  <circle class="ee-pin" cx="56" cy="10" r="2.2"/>
+  <circle class="ee-pin" cx="56" cy="90" r="2.2"/>
+  </symbol>
+  <symbol id="sic_mosfet_kelvin" viewBox="0 0 100 100">
+    <circle class="ee-dashed" cx="50" cy="50" r="34"/>
+  <line class="ee-stroke" x1="10" y1="56" x2="28" y2="56"/>
+  <line class="ee-stroke" x1="28" y1="34" x2="28" y2="66"/>
+  <line class="ee-stroke" x1="34" y1="32" x2="34" y2="41"/>
+  <line class="ee-stroke" x1="34" y1="46" x2="34" y2="54"/>
+  <line class="ee-stroke" x1="34" y1="59" x2="34" y2="68"/>
+  <path class="ee-stroke" d="M 34 36 L 54 36 L 54 10"/>
+  <path class="ee-stroke" d="M 54 50 L 37 50" marker-end="url(#arrow)"/>
+  <path class="ee-stroke" d="M 34 64 L 54 64 L 54 90"/>
+  <line class="ee-stroke" x1="54" y1="50" x2="54" y2="64"/>
+  <!-- Kelvin source pin -->
+  <path class="ee-thin" d="M 54 68 L 28 68 L 10 74"/>
+  <text class="ee-label" x="18" y="48">G</text>
+  <text class="ee-label" x="18" y="82">S<tspan dy="2" font-size="7">K</tspan></text>
+  <circle class="ee-node" cx="54" cy="64" r="2.5"/>
+  <circle class="ee-node" cx="54" cy="68" r="2.5"/>
+  <circle class="ee-pin" cx="10" cy="56" r="2.2"/>
+  <circle class="ee-pin" cx="10" cy="74" r="2.2"/>
+  <circle class="ee-pin" cx="54" cy="10" r="2.2"/>
+  <circle class="ee-pin" cx="54" cy="90" r="2.2"/>
+  </symbol>
+  <symbol id="gan_hemt" viewBox="0 0 100 100">
+    <rect class="ee-tint-blue" x="20" y="24" width="56" height="52" rx="4"/>
+  <line class="ee-stroke" x1="8" y1="50" x2="28" y2="50"/>
+  <line class="ee-stroke" x1="28" y1="34" x2="28" y2="66"/>
+  <line class="ee-thick" x1="35" y1="32" x2="35" y2="68"/>
+  <path class="ee-stroke" d="M 35 38 L 54 38 L 54 10"/>
+  <path class="ee-stroke" d="M 35 62 L 54 62 L 54 90"/>
+  <text class="ee-label" x="56" y="50">GaN</text>
+  <circle class="ee-pin" cx="8" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="54" cy="10" r="2.2"/>
+  <circle class="ee-pin" cx="54" cy="90" r="2.2"/>
+  </symbol>
+  <symbol id="bjt_npn" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="12" y1="50" x2="36" y2="50"/>
+  <line class="ee-thick" x1="36" y1="30" x2="36" y2="70"/>
+  <path class="ee-stroke" d="M 36 40 L 60 24 L 60 10"/>
+  <path class="ee-stroke" d="M 36 60 L 58 74" marker-end="url(#arrow)"/>
+  <line class="ee-stroke" x1="60" y1="75" x2="60" y2="90"/>
+  <circle class="ee-pin" cx="12" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="60" cy="10" r="2.2"/>
+  <circle class="ee-pin" cx="60" cy="90" r="2.2"/>
+  </symbol>
+  <symbol id="bjt_pnp" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="12" y1="50" x2="36" y2="50"/>
+  <line class="ee-thick" x1="36" y1="30" x2="36" y2="70"/>
+  <path class="ee-stroke" d="M 36 40 L 60 24 L 60 10"/>
+  <path class="ee-stroke" d="M 60 76 L 39 62" marker-end="url(#arrow)"/>
+  <line class="ee-stroke" x1="60" y1="76" x2="60" y2="90"/>
+  <circle class="ee-pin" cx="12" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="60" cy="10" r="2.2"/>
+  <circle class="ee-pin" cx="60" cy="90" r="2.2"/>
+  </symbol>
+  <symbol id="ideal_power_switch" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="50" y1="10" x2="50" y2="34"/>
+  <line class="ee-stroke" x1="50" y1="66" x2="50" y2="90"/>
+  <line class="ee-stroke" x1="50" y1="66" x2="32" y2="36"/>
+  <line class="ee-dashed" x1="14" y1="50" x2="38" y2="50" marker-end="url(#arrow)"/>
+  <circle class="ee-pin" cx="50" cy="34" r="2.5"/>
+  <circle class="ee-pin" cx="50" cy="66" r="2.5"/>
+  <text class="ee-text" x="72" y="50">S</text>
+  <circle class="ee-pin" cx="50" cy="10" r="2.2"/>
+  <circle class="ee-pin" cx="50" cy="90" r="2.2"/>
+  <circle class="ee-pin" cx="14" cy="50" r="2.2"/>
+  </symbol>
+  <symbol id="bidirectional_switch_4q" viewBox="0 0 100 100">
+    <rect class="ee-body" x="18" y="24" width="64" height="52" rx="4"/>
+  <line class="ee-stroke" x1="4" y1="50" x2="18" y2="50"/>
+  <line class="ee-stroke" x1="82" y1="50" x2="96" y2="50"/>
+  <polygon class="ee-body" points="28,34 28,50 44,42"/>
+  <line class="ee-stroke" x1="44" y1="34" x2="44" y2="50"/>
+  <polygon class="ee-body" points="72,34 72,50 56,42"/>
+  <line class="ee-stroke" x1="56" y1="34" x2="56" y2="50"/>
+  <line class="ee-stroke" x1="22" y1="42" x2="78" y2="42"/>
+  <path class="ee-stroke" d="M 28 62 L 42 54 L 58 54 L 72 62"/>
+  <line class="ee-stroke" x1="38" y1="66" x2="62" y2="66"/>
+  <line class="ee-stroke" x1="50" y1="66" x2="50" y2="88"/>
+  <circle class="ee-pin" cx="4" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="96" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="50" cy="88" r="2.2"/>
+  </symbol>
+  <symbol id="half_bridge_leg_module" viewBox="0 0 100 140">
+    <rect class="ee-body" x="18" y="10" width="64" height="120" rx="5"/>
+  <!-- Upper switch -->
+  <line class="ee-stroke" x1="46" y1="10" x2="46" y2="28"/>
+  <line class="ee-stroke" x1="34" y1="28" x2="34" y2="48"/>
+  <path class="ee-stroke" d="M 34 33 L 46 25"/>
+  <path class="ee-stroke" d="M 34 43 L 46 51" marker-end="url(#arrow)"/>
+  <polygon class="ee-body" points="58,44 68,44 63,32"/>
+  <line class="ee-stroke" x1="58" y1="32" x2="68" y2="32"/>
+  <path class="ee-thin" d="M 46 22 L 63 22 L 63 54 L 46 54"/>
+  <!-- Midpoint -->
+  <line class="ee-stroke" x1="46" y1="51" x2="46" y2="88"/>
+  <line class="ee-stroke" x1="46" y1="70" x2="92" y2="70"/>
+  <!-- Lower switch -->
+  <line class="ee-stroke" x1="34" y1="84" x2="34" y2="104"/>
+  <path class="ee-stroke" d="M 34 89 L 46 81"/>
+  <path class="ee-stroke" d="M 34 99 L 46 107" marker-end="url(#arrow)"/>
+  <polygon class="ee-body" points="58,100 68,100 63,88"/>
+  <line class="ee-stroke" x1="58" y1="88" x2="68" y2="88"/>
+  <path class="ee-thin" d="M 46 78 L 63 78 L 63 110 L 46 110"/>
+  <line class="ee-stroke" x1="46" y1="107" x2="46" y2="130"/>
+  <text class="ee-label" x="32" y="18">+DC</text>
+  <text class="ee-label" x="32" y="122">-DC</text>
+  <text class="ee-label" x="74" y="62">AC</text>
+  <circle class="ee-node" cx="46" cy="70" r="2.5"/>
+  <circle class="ee-pin" cx="46" cy="10" r="2.2"/>
+  <circle class="ee-pin" cx="46" cy="130" r="2.2"/>
+  <circle class="ee-pin" cx="92" cy="70" r="2.2"/>
+  </symbol>
+  <symbol id="optocoupler_isolated_driver" viewBox="0 0 100 100">
+    <rect class="ee-body" x="16" y="20" width="68" height="60" rx="4"/>
+  <line class="ee-dashed" x1="50" y1="20" x2="50" y2="80"/>
+  <!-- LED side -->
+  <path class="ee-stroke" d="M 6 35 L 30 35 L 30 42"/>
+  <polygon class="ee-body" points="23,42 37,42 30,54"/>
+  <line class="ee-stroke" x1="23" y1="54" x2="37" y2="54"/>
+  <path class="ee-stroke" d="M 30 54 L 30 65 L 6 65"/>
+  <!-- Arrows -->
+  <line class="ee-thin" x1="39" y1="44" x2="48" y2="44" marker-end="url(#arrow)"/>
+  <line class="ee-thin" x1="39" y1="52" x2="48" y2="52" marker-end="url(#arrow)"/>
+  <!-- Output BJT/Buffer side -->
+  <line class="ee-stroke" x1="60" y1="36" x2="60" y2="64"/>
+  <path class="ee-stroke" d="M 60 42 L 72 34 L 94 34"/>
+  <path class="ee-stroke" d="M 60 58 L 72 66" marker-end="url(#arrow)"/>
+  <line class="ee-stroke" x1="72" y1="66" x2="94" y2="66"/>
+  <circle class="ee-pin" cx="6" cy="35" r="2.2"/>
+  <circle class="ee-pin" cx="6" cy="65" r="2.2"/>
+  <circle class="ee-pin" cx="94" cy="34" r="2.2"/>
+  <circle class="ee-pin" cx="94" cy="66" r="2.2"/>
+  </symbol>
+  <symbol id="transformer_1ph_2w" viewBox="0 0 100 100">
+    <path class="ee-stroke" d="M 12 22 L 34 22 A 7 7 0 0 1 34 36 A 7 7 0 0 1 34 50 A 7 7 0 0 1 34 64 A 7 7 0 0 1 34 78 L 12 78"/>
+  <line class="ee-stroke" x1="47" y1="20" x2="47" y2="80"/>
+  <line class="ee-stroke" x1="53" y1="20" x2="53" y2="80"/>
+  <path class="ee-stroke" d="M 88 22 L 66 22 A 7 7 0 0 0 66 36 A 7 7 0 0 0 66 50 A 7 7 0 0 0 66 64 A 7 7 0 0 0 66 78 L 88 78"/>
+  <circle class="ee-node" cx="26" cy="28" r="2.2"/>
+  <circle class="ee-node" cx="74" cy="28" r="2.2"/>
+  <text class="ee-label" x="50" y="10">N<tspan dy="2" font-size="7">1</tspan> : N<tspan dy="2" font-size="7">2</tspan></text>
+  <circle class="ee-pin" cx="12" cy="22" r="2.2"/>
+  <circle class="ee-pin" cx="12" cy="78" r="2.2"/>
+  <circle class="ee-pin" cx="88" cy="22" r="2.2"/>
+  <circle class="ee-pin" cx="88" cy="78" r="2.2"/>
+  </symbol>
+  <symbol id="transformer_hf_center_tapped" viewBox="0 0 100 100">
+    <path class="ee-stroke" d="M 12 22 L 34 22 A 7 7 0 0 1 34 36 A 7 7 0 0 1 34 50 A 7 7 0 0 1 34 64 A 7 7 0 0 1 34 78 L 12 78"/>
+  <line class="ee-dashed" x1="47" y1="18" x2="47" y2="82"/>
+  <line class="ee-dashed" x1="53" y1="18" x2="53" y2="82"/>
+  <path class="ee-stroke" d="M 88 18 L 66 18 A 7 7.5 0 0 0 66 34 A 7 7.5 0 0 0 66 50 A 7 7.5 0 0 0 66 66 A 7 7.5 0 0 0 66 82 L 88 82"/>
+  <line class="ee-stroke" x1="66" y1="50" x2="88" y2="50"/>
+  <circle class="ee-node" cx="26" cy="28" r="2.2"/>
+  <circle class="ee-node" cx="74" cy="24" r="2.2"/>
+  <circle class="ee-node" cx="74" cy="56" r="2.2"/>
+  <circle class="ee-node" cx="66" cy="50" r="2.5"/>
+  <circle class="ee-pin" cx="12" cy="22" r="2.2"/>
+  <circle class="ee-pin" cx="12" cy="78" r="2.2"/>
+  <circle class="ee-pin" cx="88" cy="18" r="2.2"/>
+  <circle class="ee-pin" cx="88" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="88" cy="82" r="2.2"/>
+  </symbol>
+  <symbol id="transformer_3winding_iec" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="10" y1="50" x2="26" y2="50"/>
+  <circle class="ee-stroke" cx="42" cy="50" r="16"/>
+  <circle class="ee-stroke" cx="62" cy="36" r="16"/>
+  <circle class="ee-stroke" cx="62" cy="64" r="16"/>
+  <line class="ee-stroke" x1="78" y1="36" x2="92" y2="36"/>
+  <line class="ee-stroke" x1="78" y1="64" x2="92" y2="64"/>
+  <text class="ee-label" x="34" y="50">Y</text>
+  <text class="ee-label" x="66" y="34">Y</text>
+  <text class="ee-label" x="66" y="66">Δ</text>
+  <circle class="ee-pin" cx="10" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="92" cy="36" r="2.2"/>
+  <circle class="ee-pin" cx="92" cy="64" r="2.2"/>
+  </symbol>
+  <symbol id="transformer_2winding_iec" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="10" y1="50" x2="26" y2="50"/>
+  <circle class="ee-stroke" cx="42" cy="50" r="16"/>
+  <circle class="ee-stroke" cx="60" cy="50" r="16"/>
+  <line class="ee-stroke" x1="76" y1="50" x2="90" y2="50"/>
+  <text class="ee-label" x="35" y="50">Δ</text>
+  <text class="ee-label" x="67" y="50">Y</text>
+  <circle class="ee-pin" cx="10" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="50" r="2.2"/>
+  </symbol>
+  <symbol id="autotransformer" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="20" y1="16" x2="50" y2="16"/>
+  <path class="ee-stroke" d="M 50 16 L 50 24 A 7 7 0 0 1 50 38 A 7 7 0 0 1 50 52 A 7 7 0 0 1 50 66 A 7 7 0 0 1 50 80 L 50 86"/>
+  <line class="ee-stroke" x1="20" y1="86" x2="84" y2="86"/>
+  <path class="ee-stroke" d="M 84 44 L 62 44" marker-end="url(#arrow)"/>
+  <circle class="ee-node" cx="50" cy="86" r="2.5"/>
+  <circle class="ee-pin" cx="20" cy="16" r="2.2"/>
+  <circle class="ee-pin" cx="20" cy="86" r="2.2"/>
+  <circle class="ee-pin" cx="84" cy="44" r="2.2"/>
+  <circle class="ee-pin" cx="84" cy="86" r="2.2"/>
+  </symbol>
+  <symbol id="current_transformer_ct" viewBox="0 0 100 100">
+    <line class="ee-thick" x1="10" y1="50" x2="90" y2="50"/>
+  <circle class="ee-stroke" cx="50" cy="50" r="18"/>
+  <line class="ee-thin" x1="50" y1="68" x2="50" y2="88"/>
+  <line class="ee-thin" x1="58" y1="66" x2="58" y2="88"/>
+  <text class="ee-text" x="50" y="20">CT</text>
+  <circle class="ee-pin" cx="10" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="50" cy="88" r="2.2"/>
+  <circle class="ee-pin" cx="58" cy="88" r="2.2"/>
+  </symbol>
+  <symbol id="winding_3ph_wye" viewBox="0 0 100 100">
+    <!-- Neutral center at (50,54) -->
+  <!-- Phase A (Up) -->
+  <path class="ee-wire-a" d="M 50 54 L 50 44 A 5 4 0 0 1 50 36 A 5 4 0 0 1 50 28 A 5 4 0 0 1 50 20 L 50 12"/>
+  <!-- Phase B (Bottom Right, 120 deg) -->
+  <path class="ee-wire-b" d="M 50 54 L 58 59 A 5 4 30 0 1 65 63 A 5 4 30 0 1 72 67 A 5 4 30 0 1 79 71 L 86 75"/>
+  <!-- Phase C (Bottom Left, 240 deg) -->
+  <path class="ee-wire-c" d="M 50 54 L 42 59 A 5 4 -30 0 0 35 63 A 5 4 -30 0 0 28 67 A 5 4 -30 0 0 21 71 L 14 75"/>
+  <text class="ee-label" x="62" y="14">A</text>
+  <text class="ee-label" x="88" y="64">B</text>
+  <text class="ee-label" x="12" y="64">C</text>
+  <circle class="ee-node" cx="50" cy="54" r="2.5"/>
+  <circle class="ee-pin" cx="50" cy="12" r="2.2"/>
+  <circle class="ee-pin" cx="86" cy="75" r="2.2"/>
+  <circle class="ee-pin" cx="14" cy="75" r="2.2"/>
+  </symbol>
+  <symbol id="winding_3ph_wye_grounded" viewBox="0 0 100 100">
+    <path class="ee-wire-a" d="M 50 50 L 50 40 A 5 4 0 0 1 50 32 A 5 4 0 0 1 50 24 A 5 4 0 0 1 50 16 L 50 10"/>
+  <path class="ee-wire-b" d="M 50 50 L 58 55 A 5 4 30 0 1 65 59 A 5 4 30 0 1 72 63 A 5 4 30 0 1 79 67 L 86 71"/>
+  <path class="ee-wire-c" d="M 50 50 L 42 55 A 5 4 -30 0 0 35 59 A 5 4 -30 0 0 28 63 A 5 4 -30 0 0 21 67 L 14 71"/>
+  <!-- Neutral Ground -->
+  <line class="ee-stroke" x1="50" y1="50" x2="50" y2="78"/>
+  <line class="ee-stroke" x1="40" y1="78" x2="60" y2="78"/>
+  <line class="ee-stroke" x1="44" y1="83" x2="56" y2="83"/>
+  <line class="ee-stroke" x1="47" y1="88" x2="53" y2="88"/>
+  <circle class="ee-node" cx="50" cy="50" r="2.5"/>
+  <circle class="ee-pin" cx="50" cy="10" r="2.2"/>
+  <circle class="ee-pin" cx="86" cy="71" r="2.2"/>
+  <circle class="ee-pin" cx="14" cy="71" r="2.2"/>
+  </symbol>
+  <symbol id="winding_3ph_delta" viewBox="0 0 100 100">
+    <!-- Triangle vertices: (50,16), (82,72), (18,72) -->
+  <path class="ee-wire-a" d="M 50 16 L 60 34 A 5 4 60 0 1 66 44 A 5 4 60 0 1 72 54 L 82 72"/>
+  <path class="ee-wire-b" d="M 82 72 L 64 72 A 5 5 0 0 1 50 72 A 5 5 0 0 1 36 72 L 18 72"/>
+  <path class="ee-wire-c" d="M 18 72 L 28 54 A 5 4 -60 0 1 34 44 A 5 4 -60 0 1 40 34 L 50 16"/>
+  <line class="ee-stroke" x1="50" y1="16" x2="50" y2="8"/>
+  <line class="ee-stroke" x1="82" y1="72" x2="90" y2="78"/>
+  <line class="ee-stroke" x1="18" y1="72" x2="10" y2="78"/>
+  <text class="ee-label" x="50" y="54">Δ</text>
+  <circle class="ee-node" cx="50" cy="16" r="2.5"/>
+  <circle class="ee-node" cx="82" cy="72" r="2.5"/>
+  <circle class="ee-node" cx="18" cy="72" r="2.5"/>
+  <circle class="ee-pin" cx="50" cy="8" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="78" r="2.2"/>
+  <circle class="ee-pin" cx="10" cy="78" r="2.2"/>
+  </symbol>
+  <symbol id="winding_3ph_open_end" viewBox="0 0 100 100">
+    <!-- Phase A -->
+  <path class="ee-wire-a" d="M 12 25 L 26 25 A 6 7 0 0 1 38 25 A 6 7 0 0 1 50 25 A 6 7 0 0 1 62 25 A 6 7 0 0 1 74 25 L 88 25"/>
+  <!-- Phase B -->
+  <path class="ee-wire-b" d="M 12 50 L 26 50 A 6 7 0 0 1 38 50 A 6 7 0 0 1 50 50 A 6 7 0 0 1 62 50 A 6 7 0 0 1 74 50 L 88 50"/>
+  <!-- Phase C -->
+  <path class="ee-wire-c" d="M 12 75 L 26 75 A 6 7 0 0 1 38 75 A 6 7 0 0 1 50 75 A 6 7 0 0 1 62 75 A 6 7 0 0 1 74 75 L 88 75"/>
+  <text class="ee-label" x="20" y="15">A1</text>
+  <text class="ee-label" x="80" y="15">A2</text>
+  <text class="ee-label" x="20" y="40">B1</text>
+  <text class="ee-label" x="80" y="40">B2</text>
+  <text class="ee-label" x="20" y="65">C1</text>
+  <text class="ee-label" x="80" y="65">C2</text>
+  <circle class="ee-pin" cx="12" cy="25" r="2.2"/>
+  <circle class="ee-pin" cx="88" cy="25" r="2.2"/>
+  <circle class="ee-pin" cx="12" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="88" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="12" cy="75" r="2.2"/>
+  <circle class="ee-pin" cx="88" cy="75" r="2.2"/>
+  </symbol>
+  <symbol id="winding_dual_3ph_6ph" viewBox="0 0 100 100">
+    <!-- Set 1: ABC (0 deg) -->
+  <line class="ee-wire-a" x1="50" y1="50" x2="50" y2="12"/>
+  <line class="ee-wire-b" x1="50" y1="50" x2="83" y2="69"/>
+  <line class="ee-wire-c" x1="50" y1="50" x2="17" y2="69"/>
+  <!-- Set 2: XYZ (30 deg shifted) -->
+  <line class="ee-stroke" x1="50" y1="50" x2="69" y2="17"/>
+  <line class="ee-stroke" x1="50" y1="50" x2="69" y2="83"/>
+  <line class="ee-stroke" x1="50" y1="50" x2="12" y2="50"/>
+  <!-- Coil indicators on axes -->
+  <circle class="ee-body" cx="50" cy="50" r="10"/>
+  <text class="ee-label" x="50" y="50">6φ</text>
+  <text class="ee-label" x="42" y="12">A</text>
+  <text class="ee-label" x="78" y="17">X</text>
+  <text class="ee-label" x="90" y="68">B</text>
+  <text class="ee-label" x="78" y="86">Y</text>
+  <text class="ee-label" x="12" y="78">C</text>
+  <text class="ee-label" x="12" y="40">Z</text>
+  <circle class="ee-pin" cx="50" cy="12" r="2.2"/>
+  <circle class="ee-pin" cx="69" cy="17" r="2.2"/>
+  <circle class="ee-pin" cx="83" cy="69" r="2.2"/>
+  <circle class="ee-pin" cx="69" cy="83" r="2.2"/>
+  <circle class="ee-pin" cx="17" cy="69" r="2.2"/>
+  <circle class="ee-pin" cx="12" cy="50" r="2.2"/>
+  </symbol>
+  <symbol id="winding_zigzag" viewBox="0 0 100 100">
+    <line class="ee-wire-a" x1="50" y1="50" x2="50" y2="28"/>
+  <line class="ee-wire-a" x1="50" y1="28" x2="66" y2="16"/>
+  <line class="ee-wire-b" x1="50" y1="50" x2="69" y2="61"/>
+  <line class="ee-wire-b" x1="69" y1="61" x2="69" y2="82"/>
+  <line class="ee-wire-c" x1="50" y1="50" x2="31" y2="61"/>
+  <line class="ee-wire-c" x1="31" y1="61" x2="14" y2="50"/>
+  <circle class="ee-node" cx="50" cy="50" r="2.5"/>
+  <circle class="ee-pin" cx="66" cy="16" r="2.2"/>
+  <circle class="ee-pin" cx="69" cy="82" r="2.2"/>
+  <circle class="ee-pin" cx="14" cy="50" r="2.2"/>
+  </symbol>
+  <symbol id="stator_slot_hairpin" viewBox="0 0 100 100">
+    <!-- Stator tooth iron -->
+  <path class="ee-body" d="M 20 12 L 80 12 L 80 88 L 66 88 L 66 78 L 62 74 L 62 22 L 38 22 L 38 74 L 34 78 L 34 88 L 20 88 Z"/>
+  <!-- 4 Rectangular Hairpin Conductors -->
+  <rect class="ee-tint-red" x="41" y="25" width="18" height="10" rx="1"/>
+  <rect class="ee-tint-red" x="41" y="38" width="18" height="10" rx="1"/>
+  <rect class="ee-tint-blue" x="41" y="51" width="18" height="10" rx="1"/>
+  <rect class="ee-tint-blue" x="41" y="64" width="18" height="10" rx="1"/>
+  <text class="ee-label" x="50" y="94">Airgap</text>
+  </symbol>
+  <symbol id="machine_dc_brushed" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="50" y1="6" x2="50" y2="18"/>
+  <rect class="ee-fill" x="44" y="18" width="12" height="6"/>
+  <circle class="ee-body" cx="50" cy="50" r="26"/>
+  <rect class="ee-fill" x="44" y="76" width="12" height="6"/>
+  <line class="ee-stroke" x1="50" y1="82" x2="50" y2="94"/>
+  <text class="ee-text" x="50" y="45" font-size="16">M</text>
+  <line class="ee-stroke" x1="40" y1="58" x2="60" y2="58"/>
+  <line class="ee-dashed" x1="40" y1="62" x2="60" y2="62"/>
+  <circle class="ee-pin" cx="50" cy="6" r="2.2"/>
+  <circle class="ee-pin" cx="50" cy="94" r="2.2"/>
+  </symbol>
+  <symbol id="machine_dc_sep_excited" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="38" y1="8" x2="38" y2="20"/>
+  <rect class="ee-fill" x="33" y="20" width="10" height="5"/>
+  <circle class="ee-body" cx="38" cy="48" r="23"/>
+  <rect class="ee-fill" x="33" y="71" width="10" height="5"/>
+  <line class="ee-stroke" x1="38" y1="76" x2="38" y2="90"/>
+  <text class="ee-text" x="38" y="46">M</text>
+  <!-- Field Winding -->
+  <path class="ee-stroke" d="M 90 22 L 76 22 A 6 6 0 0 0 76 34 A 6 6 0 0 0 76 46 A 6 6 0 0 0 76 58 A 6 6 0 0 0 76 70 L 90 70"/>
+  <text class="ee-text" x="82" y="12">L<tspan dy="3" font-size="8">f</tspan></text>
+  <circle class="ee-pin" cx="38" cy="8" r="2.2"/>
+  <circle class="ee-pin" cx="38" cy="90" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="22" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="70" r="2.2"/>
+  </symbol>
+  <symbol id="machine_3ph_induction_scim" viewBox="0 0 100 100">
+    <line class="ee-wire-a" x1="8" y1="30" x2="29" y2="30"/>
+  <line class="ee-wire-b" x1="8" y1="50" x2="24" y2="50"/>
+  <line class="ee-wire-c" x1="8" y1="70" x2="29" y2="70"/>
+  <circle class="ee-body" cx="54" cy="50" r="30"/>
+  <circle class="ee-thin" cx="54" cy="50" r="22"/>
+  <text class="ee-text" x="54" y="42" font-size="15">M</text>
+  <text class="ee-label" x="54" y="60">3~</text>
+  <!-- Mechanical shaft -->
+  <line class="ee-thick" x1="84" y1="50" x2="96" y2="50"/>
+  <circle class="ee-pin" cx="8" cy="30" r="2.2"/>
+  <circle class="ee-pin" cx="8" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="8" cy="70" r="2.2"/>
+  </symbol>
+  <symbol id="machine_3ph_dfig" viewBox="0 0 100 100">
+    <!-- Stator terminals (left) -->
+  <line class="ee-wire-a" x1="6" y1="30" x2="25" y2="30"/>
+  <line class="ee-wire-b" x1="6" y1="50" x2="22" y2="50"/>
+  <line class="ee-wire-c" x1="6" y1="70" x2="25" y2="70"/>
+  <!-- Outer stator & inner slip-ring rotor -->
+  <circle class="ee-body" cx="50" cy="50" r="28"/>
+  <circle class="ee-stroke" cx="50" cy="50" r="18"/>
+  <text class="ee-text" x="50" y="44" font-size="13">G</text>
+  <text class="ee-label" x="50" y="57">3~</text>
+  <!-- Rotor slip-ring terminals (right) -->
+  <line class="ee-stroke" x1="66" y1="40" x2="94" y2="32"/>
+  <line class="ee-stroke" x1="68" y1="50" x2="94" y2="50"/>
+  <line class="ee-stroke" x1="66" y1="60" x2="94" y2="68"/>
+  <circle class="ee-pin" cx="6" cy="30" r="2.2"/>
+  <circle class="ee-pin" cx="6" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="6" cy="70" r="2.2"/>
+  <circle class="ee-pin" cx="94" cy="32" r="2.2"/>
+  <circle class="ee-pin" cx="94" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="94" cy="68" r="2.2"/>
+  </symbol>
+  <symbol id="machine_3ph_pmsm" viewBox="0 0 100 100">
+    <line class="ee-wire-a" x1="8" y1="30" x2="29" y2="30"/>
+  <line class="ee-wire-b" x1="8" y1="50" x2="24" y2="50"/>
+  <line class="ee-wire-c" x1="8" y1="70" x2="29" y2="70"/>
+  <circle class="ee-body" cx="54" cy="50" r="30"/>
+  <text class="ee-text" x="54" y="36" font-size="14">PMSM</text>
+  <!-- PM Rotor dipole icon inside -->
+  <rect class="ee-tint-red" x="38" y="50" width="16" height="12"/>
+  <rect class="ee-tint-blue" x="54" y="50" width="16" height="12"/>
+  <text class="ee-label" x="46" y="56">N</text>
+  <text class="ee-label" x="62" y="56">S</text>
+  <line class="ee-thick" x1="84" y1="50" x2="96" y2="50"/>
+  <circle class="ee-pin" cx="8" cy="30" r="2.2"/>
+  <circle class="ee-pin" cx="8" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="8" cy="70" r="2.2"/>
+  </symbol>
+  <symbol id="rotor_cross_section_spmsm" viewBox="0 0 100 100">
+    <!-- Stator bore -->
+  <circle class="ee-dashed" cx="50" cy="50" r="42"/>
+  <!-- Rotor iron core -->
+  <circle class="ee-body" cx="50" cy="50" r="28"/>
+  <!-- 4 Surface PM arcs (N, S, N, S) -->
+  <path class="ee-tint-red" d="M 32 32 A 26 26 0 0 1 68 32 L 64 36 A 20 20 0 0 0 36 36 Z"/>
+  <path class="ee-tint-blue" d="M 68 32 A 26 26 0 0 1 68 68 L 64 64 A 20 20 0 0 0 64 36 Z"/>
+  <path class="ee-tint-red" d="M 68 68 A 26 26 0 0 1 32 68 L 36 64 A 20 20 0 0 0 64 64 Z"/>
+  <path class="ee-tint-blue" d="M 32 68 A 26 26 0 0 1 32 32 L 36 36 A 20 20 0 0 0 36 64 Z"/>
+  <!-- Shaft -->
+  <circle class="ee-body" cx="50" cy="50" r="9"/>
+  <!-- d-q axes -->
+  <line class="ee-thin" x1="50" y1="50" x2="50" y2="6" marker-end="url(#arrow-red)"/>
+  <line class="ee-thin" x1="50" y1="50" x2="6" y2="50" marker-end="url(#arrow-blue)"/>
+  <text class="ee-text" x="58" y="10">d</text>
+  <text class="ee-text" x="12" y="42">q</text>
+  </symbol>
+  <symbol id="rotor_cross_section_ipmsm" viewBox="0 0 100 100">
+    <!-- Stator bore -->
+  <circle class="ee-dashed" cx="50" cy="50" r="42"/>
+  <!-- Rotor core -->
+  <circle class="ee-body" cx="50" cy="50" r="34"/>
+  <!-- V-shape buried magnets (Top pole N) -->
+  <polygon class="ee-tint-red" points="32,24 37,21 48,36 43,39"/>
+  <polygon class="ee-tint-red" points="68,24 63,21 52,36 57,39"/>
+  <!-- V-shape buried magnets (Bottom pole N) -->
+  <polygon class="ee-tint-red" points="32,76 37,79 48,64 43,61"/>
+  <polygon class="ee-tint-red" points="68,76 63,79 52,64 57,61"/>
+  <!-- V-shape buried magnets (Left pole S) -->
+  <polygon class="ee-tint-blue" points="24,32 21,37 36,48 39,43"/>
+  <polygon class="ee-tint-blue" points="24,68 21,63 36,52 39,57"/>
+  <!-- V-shape buried magnets (Right pole S) -->
+  <polygon class="ee-tint-blue" points="76,32 79,37 64,48 61,43"/>
+  <polygon class="ee-tint-blue" points="76,68 79,63 64,52 61,57"/>
+  <!-- Shaft -->
+  <circle class="ee-body" cx="50" cy="50" r="9"/>
+  <!-- d-q axes -->
+  <line class="ee-thin" x1="50" y1="50" x2="50" y2="6" marker-end="url(#arrow-red)"/>
+  <line class="ee-thin" x1="50" y1="50" x2="18" y2="18" marker-end="url(#arrow-blue)"/>
+  <text class="ee-text" x="58" y="10">d</text>
+  <text class="ee-text" x="24" y="14">q</text>
+  </symbol>
+  <symbol id="rotor_cross_section_synrm" viewBox="0 0 100 100">
+    <circle class="ee-dashed" cx="50" cy="50" r="42"/>
+  <circle class="ee-body" cx="50" cy="50" r="34"/>
+  <!-- Flux barrier arcs in 4 quadrants -->
+  <path class="ee-stroke" d="M 32 19 Q 50 38 68 19"/>
+  <path class="ee-stroke" d="M 38 17 Q 50 30 62 17"/>
+  <path class="ee-stroke" d="M 32 81 Q 50 62 68 81"/>
+  <path class="ee-stroke" d="M 38 83 Q 50 70 62 83"/>
+  <path class="ee-stroke" d="M 19 32 Q 38 50 19 68"/>
+  <path class="ee-stroke" d="M 81 32 Q 62 50 81 68"/>
+  <circle class="ee-body" cx="50" cy="50" r="8"/>
+  <text class="ee-label" x="50" y="94">SynRM</text>
+  </symbol>
+  <symbol id="machine_srm_salient" viewBox="0 0 100 100">
+    <!-- Outer Stator Ring -->
+  <circle class="ee-body" cx="50" cy="50" r="38"/>
+  <circle class="ee-body" cx="50" cy="50" r="28"/>
+  <!-- 4 Salient Rotor Poles (Cross) -->
+  <path class="ee-fill" d="M 45 26 L 55 26 L 55 42 L 74 45 L 74 55 L 55 58 L 55 74 L 45 74 L 45 58 L 26 55 L 26 45 L 45 42 Z"/>
+  <circle class="ee-body" cx="50" cy="50" r="6"/>
+  <text class="ee-label" x="50" y="95">SRM</text>
+  </symbol>
+  <symbol id="machine_3ph_sync_generator" viewBox="0 0 100 100">
+    <circle class="ee-body" cx="50" cy="50" r="28"/>
+  <path class="ee-stroke" d="M 38 56 C 42 44, 46 44, 50 56 C 54 68, 58 68, 62 56"/>
+  <text class="ee-text" x="50" y="38" font-size="15">G</text>
+  <line class="ee-wire-a" x1="75" y1="36" x2="94" y2="36"/>
+  <line class="ee-wire-b" x1="78" y1="50" x2="94" y2="50"/>
+  <line class="ee-wire-c" x1="75" y1="64" x2="94" y2="64"/>
+  <!-- Exciter field terminals -->
+  <line class="ee-stroke" x1="42" y1="23" x2="42" y2="8"/>
+  <line class="ee-stroke" x1="58" y1="23" x2="58" y2="8"/>
+  <text class="ee-label" x="34" y="12">+f</text>
+  <text class="ee-label" x="66" y="12">-f</text>
+  <circle class="ee-pin" cx="94" cy="36" r="2.2"/>
+  <circle class="ee-pin" cx="94" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="94" cy="64" r="2.2"/>
+  <circle class="ee-pin" cx="42" cy="8" r="2.2"/>
+  <circle class="ee-pin" cx="58" cy="8" r="2.2"/>
+  </symbol>
+  <symbol id="sensor_encoder_resolver" viewBox="0 0 100 100">
+    <!-- Mechanical shaft input (dashed) -->
+  <line class="ee-dashed" x1="8" y1="50" x2="28" y2="50"/>
+  <circle class="ee-tint-amber" cx="50" cy="50" r="22"/>
+  <text class="ee-text" x="50" y="44">θ<tspan dy="3" font-size="9">r</tspan></text>
+  <path class="ee-thin" d="M 38 58 L 44 58 L 44 52 L 50 52 L 50 58 L 56 58 L 56 52 L 62 52"/>
+  <line class="ee-stroke" x1="72" y1="42" x2="92" y2="42"/>
+  <line class="ee-stroke" x1="72" y1="58" x2="92" y2="58"/>
+  <circle class="ee-pin" cx="92" cy="42" r="2.2"/>
+  <circle class="ee-pin" cx="92" cy="58" r="2.2"/>
+  </symbol>
+  <symbol id="control_summing_junction" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="10" y1="50" x2="32" y2="50" marker-end="url(#arrow)"/>
+  <line class="ee-stroke" x1="50" y1="90" x2="50" y2="68" marker-end="url(#arrow)"/>
+  <circle class="ee-body" cx="50" cy="50" r="16"/>
+  <line class="ee-thin" x1="39" y1="39" x2="61" y2="61"/>
+  <line class="ee-thin" x1="39" y1="61" x2="61" y2="39"/>
+  <line class="ee-stroke" x1="66" y1="50" x2="90" y2="50" marker-end="url(#arrow)"/>
+  <text class="ee-label" x="28" y="38">+</text>
+  <text class="ee-label" x="62" y="74">−</text>
+  <circle class="ee-pin" cx="10" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="50" cy="90" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="50" r="2.2"/>
+  </symbol>
+  <symbol id="control_pi_regulator" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="6" y1="50" x2="20" y2="50" marker-end="url(#arrow)"/>
+  <rect class="ee-tint-blue" x="22" y="26" width="56" height="48" rx="4"/>
+  <text class="ee-label" x="50" y="38">PI</text>
+  <path class="ee-thin" d="M 32 62 L 38 62 L 38 52 L 66 40"/>
+  <line class="ee-stroke" x1="78" y1="50" x2="94" y2="50" marker-end="url(#arrow)"/>
+  <circle class="ee-pin" cx="6" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="94" cy="50" r="2.2"/>
+  </symbol>
+  <symbol id="control_pr_regulator" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="6" y1="50" x2="20" y2="50" marker-end="url(#arrow)"/>
+  <rect class="ee-tint-blue" x="22" y="24" width="56" height="52" rx="4"/>
+  <text class="ee-label" x="50" y="38">PR</text>
+  <text class="ee-text" x="50" y="58" font-size="10">K<tspan dy="2" font-size="7">p</tspan>+K<tspan dy="2" font-size="7">r</tspan>s/(s²+ω₀²)</text>
+  <line class="ee-stroke" x1="78" y1="50" x2="94" y2="50" marker-end="url(#arrow)"/>
+  <circle class="ee-pin" cx="6" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="94" cy="50" r="2.2"/>
+  </symbol>
+  <symbol id="control_integrator" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="8" y1="50" x2="24" y2="50" marker-end="url(#arrow)"/>
+  <rect class="ee-body" x="26" y="26" width="48" height="48" rx="4"/>
+  <text class="ee-text" x="50" y="50" font-size="16">∫ dt</text>
+  <line class="ee-stroke" x1="74" y1="50" x2="92" y2="50" marker-end="url(#arrow)"/>
+  <circle class="ee-pin" cx="8" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="92" cy="50" r="2.2"/>
+  </symbol>
+  <symbol id="transform_clarke_abc_ab" viewBox="0 0 100 100">
+    <line class="ee-wire-a" x1="6" y1="34" x2="22" y2="34"/>
+  <line class="ee-wire-b" x1="6" y1="50" x2="22" y2="50"/>
+  <line class="ee-wire-c" x1="6" y1="66" x2="22" y2="66"/>
+  <rect class="ee-body" x="22" y="22" width="56" height="56" rx="4"/>
+  <line class="ee-thin" x1="22" y1="78" x2="78" y2="22"/>
+  <text class="ee-text" x="38" y="38" font-size="12">abc</text>
+  <text class="ee-text" x="62" y="64" font-size="12">αβ</text>
+  <line class="ee-stroke" x1="78" y1="40" x2="94" y2="40"/>
+  <line class="ee-stroke" x1="78" y1="60" x2="94" y2="60"/>
+  <circle class="ee-pin" cx="6" cy="34" r="2.2"/>
+  <circle class="ee-pin" cx="6" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="6" cy="66" r="2.2"/>
+  <circle class="ee-pin" cx="94" cy="40" r="2.2"/>
+  <circle class="ee-pin" cx="94" cy="60" r="2.2"/>
+  </symbol>
+  <symbol id="transform_park_ab_dq" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="6" y1="40" x2="22" y2="40"/>
+  <line class="ee-stroke" x1="6" y1="60" x2="22" y2="60"/>
+  <rect class="ee-tint-blue" x="22" y="22" width="56" height="56" rx="4"/>
+  <line class="ee-thin" x1="22" y1="78" x2="78" y2="22"/>
+  <text class="ee-text" x="38" y="38" font-size="12">αβ</text>
+  <text class="ee-text" x="62" y="64" font-size="12">dq</text>
+  <line class="ee-stroke" x1="78" y1="40" x2="94" y2="40"/>
+  <line class="ee-stroke" x1="78" y1="60" x2="94" y2="60"/>
+  <!-- Angle theta input -->
+  <line class="ee-stroke" x1="50" y1="94" x2="50" y2="80" marker-end="url(#arrow)"/>
+  <text class="ee-text" x="60" y="90" font-size="11">θ</text>
+  <circle class="ee-pin" cx="6" cy="40" r="2.2"/>
+  <circle class="ee-pin" cx="6" cy="60" r="2.2"/>
+  <circle class="ee-pin" cx="94" cy="40" r="2.2"/>
+  <circle class="ee-pin" cx="94" cy="60" r="2.2"/>
+  <circle class="ee-pin" cx="50" cy="94" r="2.2"/>
+  </symbol>
+  <symbol id="transform_inv_park_dq_ab" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="6" y1="40" x2="22" y2="40"/>
+  <line class="ee-stroke" x1="6" y1="60" x2="22" y2="60"/>
+  <rect class="ee-tint-blue" x="22" y="22" width="56" height="56" rx="4"/>
+  <line class="ee-thin" x1="22" y1="78" x2="78" y2="22"/>
+  <text class="ee-text" x="38" y="38" font-size="12">dq</text>
+  <text class="ee-text" x="62" y="64" font-size="12">αβ</text>
+  <line class="ee-stroke" x1="78" y1="40" x2="94" y2="40"/>
+  <line class="ee-stroke" x1="78" y1="60" x2="94" y2="60"/>
+  <line class="ee-stroke" x1="50" y1="94" x2="50" y2="80" marker-end="url(#arrow)"/>
+  <text class="ee-text" x="60" y="90" font-size="11">θ</text>
+  <circle class="ee-pin" cx="6" cy="40" r="2.2"/>
+  <circle class="ee-pin" cx="6" cy="60" r="2.2"/>
+  <circle class="ee-pin" cx="94" cy="40" r="2.2"/>
+  <circle class="ee-pin" cx="94" cy="60" r="2.2"/>
+  <circle class="ee-pin" cx="50" cy="94" r="2.2"/>
+  </symbol>
+  <symbol id="transform_abc_to_dq" viewBox="0 0 100 100">
+    <line class="ee-wire-a" x1="6" y1="34" x2="22" y2="34"/>
+  <line class="ee-wire-b" x1="6" y1="50" x2="22" y2="50"/>
+  <line class="ee-wire-c" x1="6" y1="66" x2="22" y2="66"/>
+  <rect class="ee-tint-blue" x="22" y="22" width="56" height="56" rx="4"/>
+  <line class="ee-thin" x1="22" y1="78" x2="78" y2="22"/>
+  <text class="ee-text" x="38" y="38" font-size="12">abc</text>
+  <text class="ee-text" x="62" y="64" font-size="12">dq</text>
+  <line class="ee-stroke" x1="78" y1="40" x2="94" y2="40"/>
+  <line class="ee-stroke" x1="78" y1="60" x2="94" y2="60"/>
+  <line class="ee-stroke" x1="50" y1="94" x2="50" y2="80" marker-end="url(#arrow)"/>
+  <text class="ee-text" x="60" y="90" font-size="11">θ</text>
+  <circle class="ee-pin" cx="6" cy="34" r="2.2"/>
+  <circle class="ee-pin" cx="6" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="6" cy="66" r="2.2"/>
+  <circle class="ee-pin" cx="94" cy="40" r="2.2"/>
+  <circle class="ee-pin" cx="94" cy="60" r="2.2"/>
+  <circle class="ee-pin" cx="50" cy="94" r="2.2"/>
+  </symbol>
+  <symbol id="control_svpwm_block" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="6" y1="40" x2="20" y2="40"/>
+  <line class="ee-stroke" x1="6" y1="60" x2="20" y2="60"/>
+  <rect class="ee-tint-amber" x="20" y="20" width="60" height="60" rx="4"/>
+  <text class="ee-label" x="50" y="34">SVPWM</text>
+  <!-- Hexagon icon -->
+  <polygon class="ee-thin" points="50,42 62,48 62,62 50,68 38,62 38,48"/>
+  <line class="ee-thin" x1="50" y1="55" x2="59" y2="49" marker-end="url(#arrow-red)"/>
+  <line class="ee-stroke" x1="80" y1="34" x2="94" y2="34"/>
+  <line class="ee-stroke" x1="80" y1="50" x2="94" y2="50"/>
+  <line class="ee-stroke" x1="80" y1="66" x2="94" y2="66"/>
+  <circle class="ee-pin" cx="6" cy="40" r="2.2"/>
+  <circle class="ee-pin" cx="6" cy="60" r="2.2"/>
+  <circle class="ee-pin" cx="94" cy="34" r="2.2"/>
+  <circle class="ee-pin" cx="94" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="94" cy="66" r="2.2"/>
+  </symbol>
+  <symbol id="control_pll_block" viewBox="0 0 100 100">
+    <line class="ee-wire-a" x1="6" y1="34" x2="22" y2="34"/>
+  <line class="ee-wire-b" x1="6" y1="50" x2="22" y2="50"/>
+  <line class="ee-wire-c" x1="6" y1="66" x2="22" y2="66"/>
+  <rect class="ee-tint-green" x="22" y="24" width="56" height="52" rx="4"/>
+  <text class="ee-label" x="50" y="42">SRF-PLL</text>
+  <path class="ee-thin" d="M 34 62 L 66 50 L 66 62 Z"/>
+  <line class="ee-stroke" x1="78" y1="42" x2="94" y2="42" marker-end="url(#arrow)"/>
+  <line class="ee-stroke" x1="78" y1="58" x2="94" y2="58" marker-end="url(#arrow)"/>
+  <text class="ee-text" x="86" y="32" font-size="10">θ<tspan dy="2" font-size="7">g</tspan></text>
+  <text class="ee-text" x="86" y="70" font-size="10">ω<tspan dy="2" font-size="7">g</tspan></text>
+  <circle class="ee-pin" cx="6" cy="34" r="2.2"/>
+  <circle class="ee-pin" cx="6" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="6" cy="66" r="2.2"/>
+  <circle class="ee-pin" cx="94" cy="42" r="2.2"/>
+  <circle class="ee-pin" cx="94" cy="58" r="2.2"/>
+  </symbol>
+  <symbol id="control_limiter_saturation" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="8" y1="50" x2="24" y2="50" marker-end="url(#arrow)"/>
+  <rect class="ee-body" x="26" y="26" width="48" height="48" rx="4"/>
+  <line class="ee-grid" x1="32" y1="50" x2="68" y2="50"/>
+  <line class="ee-grid" x1="50" y1="32" x2="50" y2="68"/>
+  <path class="ee-stroke" d="M 32 64 L 42 64 L 58 36 L 68 36"/>
+  <line class="ee-stroke" x1="74" y1="50" x2="92" y2="50" marker-end="url(#arrow)"/>
+  <circle class="ee-pin" cx="8" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="92" cy="50" r="2.2"/>
+  </symbol>
+  <symbol id="control_hysteresis" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="8" y1="50" x2="24" y2="50" marker-end="url(#arrow)"/>
+  <rect class="ee-body" x="26" y="26" width="48" height="48" rx="4"/>
+  <path class="ee-stroke" d="M 32 62 L 56 62 L 56 38 L 68 38 M 44 62 L 44 38 L 56 38"/>
+  <line class="ee-stroke" x1="74" y1="50" x2="92" y2="50" marker-end="url(#arrow)"/>
+  <circle class="ee-pin" cx="8" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="92" cy="50" r="2.2"/>
+  </symbol>
+  <symbol id="opamp" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="10" y1="36" x2="28" y2="36"/>
+  <line class="ee-stroke" x1="10" y1="64" x2="28" y2="64"/>
+  <polygon class="ee-body" points="28,20 28,80 76,50"/>
+  <line class="ee-stroke" x1="76" y1="50" x2="92" y2="50"/>
+  <text class="ee-label" x="36" y="36">−</text>
+  <text class="ee-label" x="36" y="64">+</text>
+  <circle class="ee-pin" cx="10" cy="36" r="2.2"/>
+  <circle class="ee-pin" cx="10" cy="64" r="2.2"/>
+  <circle class="ee-pin" cx="92" cy="50" r="2.2"/>
+  </symbol>
+  <symbol id="sensor_hall_current" viewBox="0 0 100 100">
+    <!-- Primary power conductor -->
+  <line class="ee-thick" x1="10" y1="50" x2="90" y2="50"/>
+  <!-- Toroidal core around conductor -->
+  <ellipse class="ee-tint-blue" cx="50" cy="50" rx="12" ry="22"/>
+  <line class="ee-thick" x1="46" y1="50" x2="90" y2="50"/>
+  <!-- Secondary measurement output -->
+  <line class="ee-thin" x1="50" y1="72" x2="50" y2="90" marker-end="url(#arrow)"/>
+  <text class="ee-text" x="66" y="84">i<tspan dy="3" font-size="8">m</tspan></text>
+  <circle class="ee-pin" cx="10" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="50" cy="90" r="2.2"/>
+  </symbol>
+  <symbol id="meter_voltmeter" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="50" y1="10" x2="50" y2="28"/>
+  <circle class="ee-body" cx="50" cy="50" r="22"/>
+  <text class="ee-text" x="50" y="50" font-size="16">V</text>
+  <line class="ee-stroke" x1="50" y1="72" x2="50" y2="90"/>
+  <circle class="ee-pin" cx="50" cy="10" r="2.2"/>
+  <circle class="ee-pin" cx="50" cy="90" r="2.2"/>
+  </symbol>
+  <symbol id="meter_ammeter" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="10" y1="50" x2="28" y2="50"/>
+  <circle class="ee-body" cx="50" cy="50" r="22"/>
+  <text class="ee-text" x="50" y="50" font-size="16">A</text>
+  <line class="ee-stroke" x1="72" y1="50" x2="90" y2="50"/>
+  <circle class="ee-pin" cx="10" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="50" r="2.2"/>
+  </symbol>
+  <symbol id="breaker_cb" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="10" y1="55" x2="34" y2="55"/>
+  <line class="ee-stroke" x1="66" y1="55" x2="90" y2="55"/>
+  <line class="ee-stroke" x1="34" y1="55" x2="64" y2="33"/>
+  <!-- Cross at contact point (66,55) -->
+  <line class="ee-stroke" x1="62" y1="51" x2="70" y2="59"/>
+  <line class="ee-stroke" x1="62" y1="59" x2="70" y2="51"/>
+  <text class="ee-text" x="50" y="22">CB</text>
+  <circle class="ee-pin" cx="10" cy="55" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="55" r="2.2"/>
+  </symbol>
+  <symbol id="fuse_iec" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="10" y1="50" x2="90" y2="50"/>
+  <rect class="ee-stroke" x="30" y="40" width="40" height="20"/>
+  <text class="ee-text" x="50" y="26">F</text>
+  <circle class="ee-pin" cx="10" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="50" r="2.2"/>
+  </symbol>
+  <symbol id="contactor_relay" viewBox="0 0 100 100">
+    <!-- NO Contact -->
+  <line class="ee-stroke" x1="12" y1="30" x2="36" y2="30"/>
+  <line class="ee-stroke" x1="64" y1="30" x2="88" y2="30"/>
+  <line class="ee-stroke" x1="36" y1="30" x2="62" y2="16"/>
+  <circle class="ee-pin" cx="36" cy="30" r="2"/>
+  <circle class="ee-pin" cx="64" cy="30" r="2"/>
+  <!-- Mechanical link -->
+  <line class="ee-dashed" x1="50" y1="24" x2="50" y2="58"/>
+  <!-- Relay Coil -->
+  <rect class="ee-body" x="34" y="58" width="32" height="20"/>
+  <line class="ee-thin" x1="34" y1="78" x2="66" y2="58"/>
+  <line class="ee-stroke" x1="12" y1="68" x2="34" y2="68"/>
+  <line class="ee-stroke" x1="66" y1="68" x2="88" y2="68"/>
+  <text class="ee-text" x="50" y="90">K</text>
+  <circle class="ee-pin" cx="12" cy="30" r="2.2"/>
+  <circle class="ee-pin" cx="88" cy="30" r="2.2"/>
+  <circle class="ee-pin" cx="12" cy="68" r="2.2"/>
+  <circle class="ee-pin" cx="88" cy="68" r="2.2"/>
+  </symbol>
+  <symbol id="sld_3wire_bus" viewBox="0 0 100 100">
+    <line class="ee-thick" x1="20" y1="15" x2="20" y2="85"/>
+  <line class="ee-stroke" x1="20" y1="50" x2="88" y2="50"/>
+  <line class="ee-thin" x1="48" y1="58" x2="58" y2="42"/>
+  <text class="ee-label" x="53" y="34">3</text>
+  <text class="ee-text" x="20" y="94" font-size="11">Bus</text>
+  <circle class="ee-node" cx="20" cy="50" r="2.5"/>
+  <circle class="ee-pin" cx="88" cy="50" r="2.2"/>
+  </symbol>
+  <symbol id="topology_sync_buck" viewBox="0 0 340 180">
+    <!-- Input DC source -->
+  <line class="ee-stroke" x1="35" y1="30" x2="35" y2="150"/>
+  <circle class="ee-body" cx="35" cy="90" r="18"/>
+  <text class="ee-label" x="35" y="82">+</text>
+  <text class="ee-label" x="35" y="98">−</text>
+  <text class="ee-text" x="14" y="90">V<tspan dy="3" font-size="9">in</tspan></text>
+  <!-- Top rail to High-Side Switch Q1 -->
+  <line class="ee-stroke" x1="35" y1="30" x2="110" y2="30"/>
+  <line class="ee-stroke" x1="110" y1="30" x2="110" y2="46"/>
+  <text class="ee-text" x="92" y="60" font-size="11">Q1</text>
+  <rect class="ee-tint-blue" x="100" y="46" width="20" height="28" rx="2"/>
+  <line class="ee-thin" x1="105" y1="52" x2="105" y2="68"/>
+  <path class="ee-thin" d="M 105 56 L 114 50 L 114 46"/>
+  <path class="ee-thin" d="M 105 64 L 114 70 L 114 74"/>
+  <polygon class="ee-fill" points="115,63 119,63 117,57"/>
+  <line class="ee-stroke" x1="110" y1="74" x2="110" y2="106"/>
+  <text class="ee-text" x="92" y="120" font-size="11">Q2</text>
+  <rect class="ee-tint-blue" x="100" y="106" width="20" height="28" rx="2"/>
+  <line class="ee-thin" x1="105" y1="112" x2="105" y2="128"/>
+  <path class="ee-thin" d="M 105 116 L 114 110 L 114 106"/>
+  <path class="ee-thin" d="M 105 124 L 114 130 L 114 134"/>
+  <polygon class="ee-fill" points="115,123 119,123 117,117"/>
+  <line class="ee-stroke" x1="110" y1="134" x2="110" y2="150"/>
+  <!-- Switch node & Inductor L -->
+  <path class="ee-stroke" d="M 110 90 L 145 90 A 8 9 0 0 1 161 90 A 8 9 0 0 1 177 90 A 8 9 0 0 1 193 90 A 8 9 0 0 1 209 90 L 295 90"/>
+  <text class="ee-text" x="177" y="70">L</text>
+  <!-- Output Capacitor C -->
+  <line class="ee-stroke" x1="240" y1="90" x2="240" y2="114"/>
+  <line class="ee-stroke" x1="228" y1="114" x2="252" y2="114"/>
+  <line class="ee-stroke" x1="228" y1="122" x2="252" y2="122"/>
+  <line class="ee-stroke" x1="240" y1="122" x2="240" y2="150"/>
+  <text class="ee-text" x="216" y="120">C<tspan dy="3" font-size="8">o</tspan></text>
+  <!-- Load Resistor R -->
+  <line class="ee-stroke" x1="295" y1="90" x2="295" y2="104"/>
+  <rect class="ee-body" x="287" y="104" width="16" height="32"/>
+  <line class="ee-stroke" x1="295" y1="136" x2="295" y2="150"/>
+  <text class="ee-text" x="320" y="120">R<tspan dy="3" font-size="8">L</tspan></text>
+  <!-- Bottom ground rail -->
+  <line class="ee-stroke" x1="35" y1="150" x2="295" y2="150"/>
+  <circle class="ee-node" cx="110" cy="90" r="2.5"/>
+  <circle class="ee-node" cx="240" cy="90" r="2.5"/>
+  <circle class="ee-node" cx="240" cy="150" r="2.5"/>
+  <circle class="ee-node" cx="110" cy="150" r="2.5"/>
+  </symbol>
+  <symbol id="topology_boost" viewBox="0 0 340 180">
+    <!-- Input DC source -->
+  <line class="ee-stroke" x1="35" y1="40" x2="35" y2="150"/>
+  <circle class="ee-body" cx="35" cy="95" r="18"/>
+  <text class="ee-label" x="35" y="87">+</text>
+  <text class="ee-label" x="35" y="103">−</text>
+  <text class="ee-text" x="14" y="95">V<tspan dy="3" font-size="9">in</tspan></text>
+  <!-- Input Inductor L -->
+  <path class="ee-stroke" d="M 35 40 L 65 40 A 8 9 0 0 1 81 40 A 8 9 0 0 1 97 40 A 8 9 0 0 1 113 40 A 8 9 0 0 1 129 40 L 175 40"/>
+  <text class="ee-text" x="97" y="20">L</text>
+  <!-- Shunt Switch S -->
+  <line class="ee-stroke" x1="155" y1="40" x2="155" y2="81"/>
+  <text class="ee-text" x="137" y="95" font-size="11">S</text>
+  <rect class="ee-tint-blue" x="145" y="81" width="20" height="28" rx="2"/>
+  <line class="ee-thin" x1="150" y1="87" x2="150" y2="103"/>
+  <path class="ee-thin" d="M 150 91 L 159 85 L 159 81"/>
+  <path class="ee-thin" d="M 150 99 L 159 105 L 159 109"/>
+  <polygon class="ee-fill" points="160,98 164,98 162,92"/>
+  <line class="ee-stroke" x1="155" y1="109" x2="155" y2="150"/>
+  <!-- Boost Diode D -->
+  <polygon class="ee-body" points="175,30 175,50 197,40"/>
+  <line class="ee-stroke" x1="197" y1="30" x2="197" y2="50"/>
+  <line class="ee-stroke" x1="197" y1="40" x2="295" y2="40"/>
+  <text class="ee-text" x="186" y="20">D</text>
+  <!-- Output Capacitor C -->
+  <line class="ee-stroke" x1="240" y1="40" x2="240" y2="90"/>
+  <line class="ee-stroke" x1="228" y1="90" x2="252" y2="90"/>
+  <line class="ee-stroke" x1="228" y1="98" x2="252" y2="98"/>
+  <line class="ee-stroke" x1="240" y1="98" x2="240" y2="150"/>
+  <text class="ee-text" x="216" y="95">C<tspan dy="3" font-size="8">o</tspan></text>
+  <!-- Load R -->
+  <line class="ee-stroke" x1="295" y1="40" x2="295" y2="75"/>
+  <rect class="ee-body" x="287" y="75" width="16" height="40"/>
+  <line class="ee-stroke" x1="295" y1="115" x2="295" y2="150"/>
+  <text class="ee-text" x="320" y="95">R<tspan dy="3" font-size="8">L</tspan></text>
+  <line class="ee-stroke" x1="35" y1="150" x2="295" y2="150"/>
+  <circle class="ee-node" cx="155" cy="40" r="2.5"/>
+  <circle class="ee-node" cx="155" cy="150" r="2.5"/>
+  <circle class="ee-node" cx="240" cy="40" r="2.5"/>
+  <circle class="ee-node" cx="240" cy="150" r="2.5"/>
+  </symbol>
+  <symbol id="topology_h_bridge_1ph" viewBox="0 0 280 190">
+    <!-- DC bus rails -->
+  <line class="ee-stroke" x1="25" y1="25" x2="250" y2="25"/>
+  <line class="ee-stroke" x1="25" y1="165" x2="250" y2="165"/>
+  <!-- DC Link Capacitor -->
+  <line class="ee-stroke" x1="55" y1="25" x2="55" y2="88"/>
+  <line class="ee-stroke" x1="42" y1="88" x2="68" y2="88"/>
+  <line class="ee-stroke" x1="42" y1="98" x2="68" y2="98"/>
+  <line class="ee-stroke" x1="55" y1="98" x2="55" y2="165"/>
+  <text class="ee-text" x="28" y="95">V<tspan dy="3" font-size="9">dc</tspan></text>
+  <!-- Leg A (x=125) -->
+  <line class="ee-stroke" x1="125" y1="25" x2="125" y2="44"/>
+  <text class="ee-text" x="107" y="58" font-size="11">S1</text>
+  <rect class="ee-tint-blue" x="115" y="44" width="20" height="28" rx="2"/>
+  <line class="ee-thin" x1="120" y1="50" x2="120" y2="66"/>
+  <path class="ee-thin" d="M 120 54 L 129 48 L 129 44"/>
+  <path class="ee-thin" d="M 120 62 L 129 68 L 129 72"/>
+  <polygon class="ee-fill" points="130,61 134,61 132,55"/>
+  <line class="ee-stroke" x1="125" y1="72" x2="125" y2="118"/>
+  <text class="ee-text" x="107" y="132" font-size="11">S2</text>
+  <rect class="ee-tint-blue" x="115" y="118" width="20" height="28" rx="2"/>
+  <line class="ee-thin" x1="120" y1="124" x2="120" y2="140"/>
+  <path class="ee-thin" d="M 120 128 L 129 122 L 129 118"/>
+  <path class="ee-thin" d="M 120 136 L 129 142 L 129 146"/>
+  <polygon class="ee-fill" points="130,135 134,135 132,129"/>
+  <line class="ee-stroke" x1="125" y1="146" x2="125" y2="165"/>
+  <!-- Leg B (x=235) -->
+  <line class="ee-stroke" x1="235" y1="25" x2="235" y2="44"/>
+  <text class="ee-text" x="217" y="58" font-size="11">S3</text>
+  <rect class="ee-tint-blue" x="225" y="44" width="20" height="28" rx="2"/>
+  <line class="ee-thin" x1="230" y1="50" x2="230" y2="66"/>
+  <path class="ee-thin" d="M 230 54 L 239 48 L 239 44"/>
+  <path class="ee-thin" d="M 230 62 L 239 68 L 239 72"/>
+  <polygon class="ee-fill" points="240,61 244,61 242,55"/>
+  <line class="ee-stroke" x1="235" y1="72" x2="235" y2="118"/>
+  <text class="ee-text" x="217" y="132" font-size="11">S4</text>
+  <rect class="ee-tint-blue" x="225" y="118" width="20" height="28" rx="2"/>
+  <line class="ee-thin" x1="230" y1="124" x2="230" y2="140"/>
+  <path class="ee-thin" d="M 230 128 L 239 122 L 239 118"/>
+  <path class="ee-thin" d="M 230 136 L 239 142 L 239 146"/>
+  <polygon class="ee-fill" points="240,135 244,135 242,129"/>
+  <line class="ee-stroke" x1="235" y1="146" x2="235" y2="165"/>
+  <!-- AC Output Load between midpoints -->
+  <path class="ee-wire-a" d="M 125 95 L 154 95 A 6 7 0 0 1 166 95 A 6 7 0 0 1 178 95 A 6 7 0 0 1 190 95 L 235 95"/>
+  <text class="ee-text" x="180" y="78">L<tspan dy="3" font-size="8">f</tspan></text>
+  <circle class="ee-node" cx="55" cy="25" r="2.5"/>
+  <circle class="ee-node" cx="55" cy="165" r="2.5"/>
+  <circle class="ee-node" cx="125" cy="25" r="2.5"/>
+  <circle class="ee-node" cx="125" cy="165" r="2.5"/>
+  <circle class="ee-node" cx="125" cy="95" r="2.5"/>
+  <circle class="ee-node" cx="235" cy="95" r="2.5"/>
+  </symbol>
+  <symbol id="topology_3ph_2level_vsi" viewBox="0 0 390 210">
+    <!-- DC Link Rails -->
+  <line class="ee-stroke" x1="20" y1="25" x2="255" y2="25"/>
+  <line class="ee-stroke" x1="20" y1="185" x2="255" y2="185"/>
+  <!-- DC Link Capacitor -->
+  <line class="ee-stroke" x1="45" y1="25" x2="45" y2="98"/>
+  <line class="ee-stroke" x1="33" y1="98" x2="57" y2="98"/>
+  <line class="ee-stroke" x1="33" y1="108" x2="57" y2="108"/>
+  <line class="ee-stroke" x1="45" y1="108" x2="45" y2="185"/>
+  <text class="ee-text" x="22" y="105">C<tspan dy="3" font-size="8">dc</tspan></text>
+  <!-- Phase Leg A (x=105) -->
+  <line class="ee-stroke" x1="105" y1="25" x2="105" y2="44"/>
+  <text class="ee-text" x="87" y="58" font-size="11">Sa+</text>
+  <rect class="ee-tint-blue" x="95" y="44" width="20" height="28" rx="2"/>
+  <line class="ee-thin" x1="100" y1="50" x2="100" y2="66"/>
+  <path class="ee-thin" d="M 100 54 L 109 48 L 109 44"/>
+  <path class="ee-thin" d="M 100 62 L 109 68 L 109 72"/>
+  <polygon class="ee-fill" points="110,61 114,61 112,55"/>
+  <line class="ee-stroke" x1="105" y1="72" x2="105" y2="138"/>
+  <text class="ee-text" x="87" y="152" font-size="11">Sa-</text>
+  <rect class="ee-tint-blue" x="95" y="138" width="20" height="28" rx="2"/>
+  <line class="ee-thin" x1="100" y1="144" x2="100" y2="160"/>
+  <path class="ee-thin" d="M 100 148 L 109 142 L 109 138"/>
+  <path class="ee-thin" d="M 100 156 L 109 162 L 109 166"/>
+  <polygon class="ee-fill" points="110,155 114,155 112,149"/>
+  <line class="ee-stroke" x1="105" y1="166" x2="105" y2="185"/>
+  <!-- Phase Leg B (x=175) -->
+  <line class="ee-stroke" x1="175" y1="25" x2="175" y2="44"/>
+  <text class="ee-text" x="157" y="58" font-size="11">Sb+</text>
+  <rect class="ee-tint-blue" x="165" y="44" width="20" height="28" rx="2"/>
+  <line class="ee-thin" x1="170" y1="50" x2="170" y2="66"/>
+  <path class="ee-thin" d="M 170 54 L 179 48 L 179 44"/>
+  <path class="ee-thin" d="M 170 62 L 179 68 L 179 72"/>
+  <polygon class="ee-fill" points="180,61 184,61 182,55"/>
+  <line class="ee-stroke" x1="175" y1="72" x2="175" y2="138"/>
+  <text class="ee-text" x="157" y="152" font-size="11">Sb-</text>
+  <rect class="ee-tint-blue" x="165" y="138" width="20" height="28" rx="2"/>
+  <line class="ee-thin" x1="170" y1="144" x2="170" y2="160"/>
+  <path class="ee-thin" d="M 170 148 L 179 142 L 179 138"/>
+  <path class="ee-thin" d="M 170 156 L 179 162 L 179 166"/>
+  <polygon class="ee-fill" points="180,155 184,155 182,149"/>
+  <line class="ee-stroke" x1="175" y1="166" x2="175" y2="185"/>
+  <!-- Phase Leg C (x=245) -->
+  <line class="ee-stroke" x1="245" y1="25" x2="245" y2="44"/>
+  <text class="ee-text" x="227" y="58" font-size="11">Sc+</text>
+  <rect class="ee-tint-blue" x="235" y="44" width="20" height="28" rx="2"/>
+  <line class="ee-thin" x1="240" y1="50" x2="240" y2="66"/>
+  <path class="ee-thin" d="M 240 54 L 249 48 L 249 44"/>
+  <path class="ee-thin" d="M 240 62 L 249 68 L 249 72"/>
+  <polygon class="ee-fill" points="250,61 254,61 252,55"/>
+  <line class="ee-stroke" x1="245" y1="72" x2="245" y2="138"/>
+  <text class="ee-text" x="227" y="152" font-size="11">Sc-</text>
+  <rect class="ee-tint-blue" x="235" y="138" width="20" height="28" rx="2"/>
+  <line class="ee-thin" x1="240" y1="144" x2="240" y2="160"/>
+  <path class="ee-thin" d="M 240 148 L 249 142 L 249 138"/>
+  <path class="ee-thin" d="M 240 156 L 249 162 L 249 166"/>
+  <polygon class="ee-fill" points="250,155 254,155 252,149"/>
+  <line class="ee-stroke" x1="245" y1="166" x2="245" y2="185"/>
+  <!-- 3-Phase AC Outputs to PMSM -->
+  <line class="ee-wire-a" x1="105" y1="90" x2="320" y2="90"/>
+  <line class="ee-wire-b" x1="175" y1="105" x2="316" y2="105"/>
+  <line class="ee-wire-c" x1="245" y1="120" x2="320" y2="120"/>
+  <!-- PMSM Load -->
+  <circle class="ee-body" cx="345" cy="105" r="28"/>
+  <text class="ee-text" x="345" y="98" font-size="13">PMSM</text>
+  <text class="ee-label" x="345" y="114">3~</text>
+  <circle class="ee-node" cx="45" cy="25" r="2.5"/>
+  <circle class="ee-node" cx="45" cy="185" r="2.5"/>
+  <circle class="ee-node" cx="105" cy="25" r="2.5"/>
+  <circle class="ee-node" cx="175" cy="25" r="2.5"/>
+  <circle class="ee-node" cx="105" cy="185" r="2.5"/>
+  <circle class="ee-node" cx="175" cy="185" r="2.5"/>
+  <circle class="ee-node" cx="105" cy="90" r="2.5"/>
+  <circle class="ee-node" cx="175" cy="105" r="2.5"/>
+  <circle class="ee-node" cx="245" cy="120" r="2.5"/>
+  </symbol>
+  <symbol id="topology_3level_npc_leg" viewBox="0 0 240 240">
+    <!-- Split DC Link Capacitors -->
+  <line class="ee-stroke" x1="35" y1="18" x2="155" y2="18"/>
+  <line class="ee-stroke" x1="35" y1="222" x2="155" y2="222"/>
+  <line class="ee-stroke" x1="35" y1="18" x2="35" y2="62"/>
+  <line class="ee-stroke" x1="23" y1="62" x2="47" y2="62"/>
+  <line class="ee-stroke" x1="23" y1="70" x2="47" y2="70"/>
+  <line class="ee-stroke" x1="35" y1="70" x2="35" y2="170"/>
+  <line class="ee-stroke" x1="23" y1="170" x2="47" y2="170"/>
+  <line class="ee-stroke" x1="23" y1="178" x2="47" y2="178"/>
+  <line class="ee-stroke" x1="35" y1="178" x2="35" y2="222"/>
+  <!-- Neutral Point O -->
+  <line class="ee-stroke" x1="35" y1="120" x2="100" y2="120"/>
+  <text class="ee-label" x="18" y="120">O</text>
+  <!-- Clamping Diodes D1, D2 -->
+  <line class="ee-stroke" x1="100" y1="70" x2="100" y2="170"/>
+  <polygon class="ee-body" points="92,98 108,98 100,82"/>
+  <line class="ee-stroke" x1="92" y1="82" x2="108" y2="82"/>
+  <polygon class="ee-body" points="92,142 108,142 100,158"/>
+  <line class="ee-stroke" x1="92" y1="158" x2="108" y2="158"/>
+  <line class="ee-stroke" x1="100" y1="70" x2="155" y2="70"/>
+  <line class="ee-stroke" x1="100" y1="170" x2="155" y2="170"/>
+  <!-- 4 Series Switches S1..S4 at x=155 -->
+  <line class="ee-stroke" x1="155" y1="18" x2="155" y2="30"/>
+  <text class="ee-text" x="137" y="44" font-size="11">S1</text>
+  <rect class="ee-tint-blue" x="145" y="30" width="20" height="28" rx="2"/>
+  <line class="ee-thin" x1="150" y1="36" x2="150" y2="52"/>
+  <path class="ee-thin" d="M 150 40 L 159 34 L 159 30"/>
+  <path class="ee-thin" d="M 150 48 L 159 54 L 159 58"/>
+  <polygon class="ee-fill" points="160,47 164,47 162,41"/>
+  <line class="ee-stroke" x1="155" y1="58" x2="155" y2="80"/>
+  <text class="ee-text" x="137" y="94" font-size="11">S2</text>
+  <rect class="ee-tint-blue" x="145" y="80" width="20" height="28" rx="2"/>
+  <line class="ee-thin" x1="150" y1="86" x2="150" y2="102"/>
+  <path class="ee-thin" d="M 150 90 L 159 84 L 159 80"/>
+  <path class="ee-thin" d="M 150 98 L 159 104 L 159 108"/>
+  <polygon class="ee-fill" points="160,97 164,97 162,91"/>
+  <line class="ee-stroke" x1="155" y1="108" x2="155" y2="132"/>
+  <text class="ee-text" x="137" y="146" font-size="11">S3</text>
+  <rect class="ee-tint-blue" x="145" y="132" width="20" height="28" rx="2"/>
+  <line class="ee-thin" x1="150" y1="138" x2="150" y2="154"/>
+  <path class="ee-thin" d="M 150 142 L 159 136 L 159 132"/>
+  <path class="ee-thin" d="M 150 150 L 159 156 L 159 160"/>
+  <polygon class="ee-fill" points="160,149 164,149 162,143"/>
+  <line class="ee-stroke" x1="155" y1="160" x2="155" y2="182"/>
+  <text class="ee-text" x="137" y="196" font-size="11">S4</text>
+  <rect class="ee-tint-blue" x="145" y="182" width="20" height="28" rx="2"/>
+  <line class="ee-thin" x1="150" y1="188" x2="150" y2="204"/>
+  <path class="ee-thin" d="M 150 192 L 159 186 L 159 182"/>
+  <path class="ee-thin" d="M 150 200 L 159 206 L 159 210"/>
+  <polygon class="ee-fill" points="160,199 164,199 162,193"/>
+  <line class="ee-stroke" x1="155" y1="210" x2="155" y2="222"/>
+  <!-- AC Output -->
+  <line class="ee-wire-a" x1="155" y1="120" x2="215" y2="120"/>
+  <text class="ee-text" x="200" y="106">v<tspan dy="3" font-size="8">an</tspan></text>
+  <circle class="ee-node" cx="35" cy="120" r="2.5"/>
+  <circle class="ee-node" cx="100" cy="120" r="2.5"/>
+  <circle class="ee-node" cx="155" cy="70" r="2.5"/>
+  <circle class="ee-node" cx="155" cy="120" r="2.5"/>
+  <circle class="ee-node" cx="155" cy="170" r="2.5"/>
+  <circle class="ee-pin" cx="215" cy="120" r="2.2"/>
+  </symbol>
+  <symbol id="topology_3level_ttype_leg" viewBox="0 0 240 200">
+    <!-- Split DC Link -->
+  <line class="ee-stroke" x1="30" y1="20" x2="170" y2="20"/>
+  <line class="ee-stroke" x1="30" y1="180" x2="170" y2="180"/>
+  <line class="ee-stroke" x1="30" y1="20" x2="30" y2="55"/>
+  <line class="ee-stroke" x1="18" y1="55" x2="42" y2="55"/>
+  <line class="ee-stroke" x1="18" y1="63" x2="42" y2="63"/>
+  <line class="ee-stroke" x1="30" y1="63" x2="30" y2="137"/>
+  <line class="ee-stroke" x1="18" y1="137" x2="42" y2="137"/>
+  <line class="ee-stroke" x1="18" y1="145" x2="42" y2="145"/>
+  <line class="ee-stroke" x1="30" y1="145" x2="30" y2="180"/>
+  <!-- Half bridge main switches S1, S4 at x=170 -->
+  <line class="ee-stroke" x1="170" y1="20" x2="170" y2="42"/>
+  <text class="ee-text" x="152" y="56" font-size="11">S1</text>
+  <rect class="ee-tint-blue" x="160" y="42" width="20" height="28" rx="2"/>
+  <line class="ee-thin" x1="165" y1="48" x2="165" y2="64"/>
+  <path class="ee-thin" d="M 165 52 L 174 46 L 174 42"/>
+  <path class="ee-thin" d="M 165 60 L 174 66 L 174 70"/>
+  <polygon class="ee-fill" points="175,59 179,59 177,53"/>
+  <line class="ee-stroke" x1="170" y1="70" x2="170" y2="130"/>
+  <text class="ee-text" x="152" y="144" font-size="11">S4</text>
+  <rect class="ee-tint-blue" x="160" y="130" width="20" height="28" rx="2"/>
+  <line class="ee-thin" x1="165" y1="136" x2="165" y2="152"/>
+  <path class="ee-thin" d="M 165 140 L 174 134 L 174 130"/>
+  <path class="ee-thin" d="M 165 148 L 174 154 L 174 158"/>
+  <polygon class="ee-fill" points="175,147 179,147 177,141"/>
+  <line class="ee-stroke" x1="170" y1="158" x2="170" y2="180"/>
+  <!-- Bidirectional Neutral Clamp Switch (S2/S3) between (30,100) and (170,100) -->
+  <line class="ee-stroke" x1="30" y1="100" x2="76" y2="100"/>
+  <rect class="ee-tint-amber" x="76" y="86" width="48" height="28" rx="3"/>
+  <text class="ee-label" x="100" y="100">S2 / S3</text>
+  <line class="ee-stroke" x1="124" y1="100" x2="220" y2="100"/>
+  <text class="ee-text" x="208" y="86">AC</text>
+  <circle class="ee-node" cx="30" cy="100" r="2.5"/>
+  <circle class="ee-node" cx="170" cy="100" r="2.5"/>
+  <circle class="ee-pin" cx="220" cy="100" r="2.2"/>
+  </symbol>
+  <symbol id="topology_dab_converter" viewBox="0 0 430 190">
+    <!-- Primary H-Bridge (Left) -->
+  <line class="ee-stroke" x1="20" y1="25" x2="135" y2="25"/>
+  <line class="ee-stroke" x1="20" y1="165" x2="135" y2="165"/>
+  <line class="ee-stroke" x1="70" y1="25" x2="70" y2="42"/>
+  <text class="ee-text" x="52" y="56" font-size="11">S1</text>
+  <rect class="ee-tint-blue" x="60" y="42" width="20" height="28" rx="2"/>
+  <line class="ee-thin" x1="65" y1="48" x2="65" y2="64"/>
+  <path class="ee-thin" d="M 65 52 L 74 46 L 74 42"/>
+  <path class="ee-thin" d="M 65 60 L 74 66 L 74 70"/>
+  <polygon class="ee-fill" points="75,59 79,59 77,53"/>
+  <line class="ee-stroke" x1="70" y1="70" x2="70" y2="120"/>
+  <text class="ee-text" x="52" y="134" font-size="11">S2</text>
+  <rect class="ee-tint-blue" x="60" y="120" width="20" height="28" rx="2"/>
+  <line class="ee-thin" x1="65" y1="126" x2="65" y2="142"/>
+  <path class="ee-thin" d="M 65 130 L 74 124 L 74 120"/>
+  <path class="ee-thin" d="M 65 138 L 74 144 L 74 148"/>
+  <polygon class="ee-fill" points="75,137 79,137 77,131"/>
+  <line class="ee-stroke" x1="70" y1="148" x2="70" y2="165"/>
+  <line class="ee-stroke" x1="135" y1="25" x2="135" y2="42"/>
+  <text class="ee-text" x="117" y="56" font-size="11">S3</text>
+  <rect class="ee-tint-blue" x="125" y="42" width="20" height="28" rx="2"/>
+  <line class="ee-thin" x1="130" y1="48" x2="130" y2="64"/>
+  <path class="ee-thin" d="M 130 52 L 139 46 L 139 42"/>
+  <path class="ee-thin" d="M 130 60 L 139 66 L 139 70"/>
+  <polygon class="ee-fill" points="140,59 144,59 142,53"/>
+  <line class="ee-stroke" x1="135" y1="70" x2="135" y2="120"/>
+  <text class="ee-text" x="117" y="134" font-size="11">S4</text>
+  <rect class="ee-tint-blue" x="125" y="120" width="20" height="28" rx="2"/>
+  <line class="ee-thin" x1="130" y1="126" x2="130" y2="142"/>
+  <path class="ee-thin" d="M 130 130 L 139 124 L 139 120"/>
+  <path class="ee-thin" d="M 130 138 L 139 144 L 139 148"/>
+  <polygon class="ee-fill" points="140,137 144,137 142,131"/>
+  <line class="ee-stroke" x1="135" y1="148" x2="135" y2="165"/>
+  <!-- Leakage Inductor Lk + HF Transformer -->
+  <path class="ee-stroke" d="M 70 82 L 155 82 A 5 6 0 0 1 165 82 A 5 6 0 0 1 175 82 A 5 6 0 0 1 185 82 L 205 82"/>
+  <text class="ee-text" x="170" y="66">L<tspan dy="3" font-size="8">k</tspan></text>
+  <path class="ee-stroke" d="M 205 82 A 6 5.5 0 0 1 205 93 A 6 5.5 0 0 1 205 104 A 6 5.5 0 0 1 205 115 L 135 115"/>
+  <line class="ee-dashed" x1="216" y1="76" x2="216" y2="120"/>
+  <line class="ee-dashed" x1="221" y1="76" x2="221" y2="120"/>
+  <path class="ee-stroke" d="M 295 82 L 232 82 A 6 5.5 0 0 0 232 93 A 6 5.5 0 0 0 232 104 A 6 5.5 0 0 0 232 115 L 360 115"/>
+  <!-- Secondary H-Bridge (Right) -->
+  <line class="ee-stroke" x1="295" y1="25" x2="410" y2="25"/>
+  <line class="ee-stroke" x1="295" y1="165" x2="410" y2="165"/>
+  <line class="ee-stroke" x1="295" y1="25" x2="295" y2="42"/>
+  <text class="ee-text" x="277" y="56" font-size="11">Q1</text>
+  <rect class="ee-tint-blue" x="285" y="42" width="20" height="28" rx="2"/>
+  <line class="ee-thin" x1="290" y1="48" x2="290" y2="64"/>
+  <path class="ee-thin" d="M 290 52 L 299 46 L 299 42"/>
+  <path class="ee-thin" d="M 290 60 L 299 66 L 299 70"/>
+  <polygon class="ee-fill" points="300,59 304,59 302,53"/>
+  <line class="ee-stroke" x1="295" y1="70" x2="295" y2="120"/>
+  <text class="ee-text" x="277" y="134" font-size="11">Q2</text>
+  <rect class="ee-tint-blue" x="285" y="120" width="20" height="28" rx="2"/>
+  <line class="ee-thin" x1="290" y1="126" x2="290" y2="142"/>
+  <path class="ee-thin" d="M 290 130 L 299 124 L 299 120"/>
+  <path class="ee-thin" d="M 290 138 L 299 144 L 299 148"/>
+  <polygon class="ee-fill" points="300,137 304,137 302,131"/>
+  <line class="ee-stroke" x1="295" y1="148" x2="295" y2="165"/>
+  <line class="ee-stroke" x1="360" y1="25" x2="360" y2="42"/>
+  <text class="ee-text" x="342" y="56" font-size="11">Q3</text>
+  <rect class="ee-tint-blue" x="350" y="42" width="20" height="28" rx="2"/>
+  <line class="ee-thin" x1="355" y1="48" x2="355" y2="64"/>
+  <path class="ee-thin" d="M 355 52 L 364 46 L 364 42"/>
+  <path class="ee-thin" d="M 355 60 L 364 66 L 364 70"/>
+  <polygon class="ee-fill" points="365,59 369,59 367,53"/>
+  <line class="ee-stroke" x1="360" y1="70" x2="360" y2="120"/>
+  <text class="ee-text" x="342" y="134" font-size="11">Q4</text>
+  <rect class="ee-tint-blue" x="350" y="120" width="20" height="28" rx="2"/>
+  <line class="ee-thin" x1="355" y1="126" x2="355" y2="142"/>
+  <path class="ee-thin" d="M 355 130 L 364 124 L 364 120"/>
+  <path class="ee-thin" d="M 355 138 L 364 144 L 364 148"/>
+  <polygon class="ee-fill" points="365,137 369,137 367,131"/>
+  <line class="ee-stroke" x1="360" y1="148" x2="360" y2="165"/>
+  <text class="ee-text" x="30" y="95">V<tspan dy="3" font-size="8">1</tspan></text>
+  <text class="ee-text" x="400" y="95">V<tspan dy="3" font-size="8">2</tspan></text>
+  <circle class="ee-node" cx="70" cy="82" r="2.5"/>
+  <circle class="ee-node" cx="135" cy="115" r="2.5"/>
+  <circle class="ee-node" cx="295" cy="82" r="2.5"/>
+  <circle class="ee-node" cx="360" cy="115" r="2.5"/>
+  </symbol>
+  <symbol id="topology_llc_resonant_tank" viewBox="0 0 260 140">
+    <line class="ee-stroke" x1="15" y1="45" x2="42" y2="45"/>
+  <!-- Resonant Capacitor Cr -->
+  <line class="ee-stroke" x1="42" y1="30" x2="42" y2="60"/>
+  <line class="ee-stroke" x1="50" y1="30" x2="50" y2="60"/>
+  <text class="ee-text" x="46" y="18">C<tspan dy="3" font-size="8">r</tspan></text>
+  <!-- Resonant Inductor Lr -->
+  <path class="ee-stroke" d="M 50 45 L 72 45 A 7 8 0 0 1 86 45 A 7 8 0 0 1 100 45 A 7 8 0 0 1 114 45 L 185 45"/>
+  <text class="ee-text" x="93" y="22">L<tspan dy="3" font-size="8">r</tspan></text>
+  <!-- Magnetizing Inductance Lm -->
+  <path class="ee-stroke" d="M 145 45 L 145 62 A 6 6 0 0 1 145 74 A 6 6 0 0 1 145 86 A 6 6 0 0 1 145 98 L 145 115"/>
+  <text class="ee-text" x="125" y="80">L<tspan dy="3" font-size="8">m</tspan></text>
+  <!-- Transformer Primary & Secondary -->
+  <path class="ee-stroke" d="M 185 45 L 185 58 A 6 6 0 0 1 185 70 A 6 6 0 0 1 185 82 A 6 6 0 0 1 185 94 L 185 115"/>
+  <line class="ee-dashed" x1="198" y1="42" x2="198" y2="118"/>
+  <line class="ee-dashed" x1="204" y1="42" x2="204" y2="118"/>
+  <path class="ee-stroke" d="M 245 45 L 216 45 A 6 6 0 0 0 216 62 A 6 6 0 0 0 216 80 A 6 6 0 0 0 216 98 A 6 6 0 0 0 216 115 L 245 115"/>
+  <line class="ee-stroke" x1="15" y1="115" x2="185" y2="115"/>
+  <circle class="ee-node" cx="145" cy="45" r="2.5"/>
+  <circle class="ee-node" cx="145" cy="115" r="2.5"/>
+  <circle class="ee-pin" cx="15" cy="45" r="2.2"/>
+  <circle class="ee-pin" cx="15" cy="115" r="2.2"/>
+  <circle class="ee-pin" cx="245" cy="45" r="2.2"/>
+  <circle class="ee-pin" cx="245" cy="115" r="2.2"/>
+  </symbol>
+  <symbol id="topology_mmc_submodule" viewBox="0 0 170 160">
+    <rect class="ee-body" x="28" y="15" width="124" height="130" rx="6"/>
+  <!-- Upper IGBT T1 -->
+  <line class="ee-stroke" x1="70" y1="25" x2="70" y2="38"/>
+  <text class="ee-text" x="52" y="52" font-size="11">T1</text>
+  <rect class="ee-tint-blue" x="60" y="38" width="20" height="28" rx="2"/>
+  <line class="ee-thin" x1="65" y1="44" x2="65" y2="60"/>
+  <path class="ee-thin" d="M 65 48 L 74 42 L 74 38"/>
+  <path class="ee-thin" d="M 65 56 L 74 62 L 74 66"/>
+  <polygon class="ee-fill" points="75,55 79,55 77,49"/>
+  <line class="ee-stroke" x1="70" y1="66" x2="70" y2="94"/>
+  <text class="ee-text" x="52" y="108" font-size="11">T2</text>
+  <rect class="ee-tint-blue" x="60" y="94" width="20" height="28" rx="2"/>
+  <line class="ee-thin" x1="65" y1="100" x2="65" y2="116"/>
+  <path class="ee-thin" d="M 65 104 L 74 98 L 74 94"/>
+  <path class="ee-thin" d="M 65 112 L 74 118 L 74 122"/>
+  <polygon class="ee-fill" points="75,111 79,111 77,105"/>
+  <line class="ee-stroke" x1="70" y1="122" x2="70" y2="135"/>
+  <!-- Submodule Capacitor Csm -->
+  <line class="ee-stroke" x1="70" y1="25" x2="122" y2="25"/>
+  <line class="ee-stroke" x1="122" y1="25" x2="122" y2="74"/>
+  <line class="ee-stroke" x1="110" y1="74" x2="134" y2="74"/>
+  <line class="ee-stroke" x1="110" y1="84" x2="134" y2="84"/>
+  <line class="ee-stroke" x1="122" y1="84" x2="122" y2="135"/>
+  <line class="ee-stroke" x1="70" y1="135" x2="122" y2="135"/>
+  <text class="ee-text" x="138" y="55" font-size="11">C<tspan dy="2" font-size="8">sm</tspan></text>
+  <!-- External SM Terminals -->
+  <line class="ee-stroke" x1="8" y1="80" x2="70" y2="80"/>
+  <line class="ee-stroke" x1="8" y1="135" x2="70" y2="135"/>
+  <text class="ee-text" x="18" y="68" font-size="11">+v<tspan dy="2" font-size="8">sm</tspan></text>
+  <circle class="ee-node" cx="70" cy="80" r="2.5"/>
+  <circle class="ee-node" cx="70" cy="135" r="2.5"/>
+  <circle class="ee-pin" cx="8" cy="80" r="2.2"/>
+  <circle class="ee-pin" cx="8" cy="135" r="2.2"/>
+  </symbol>
+  <symbol id="topology_lcl_filter" viewBox="0 0 220 145">
+    <!-- Inverter side L1 -->
+  <path class="ee-stroke" d="M 12 40 L 32 40 A 7 8 0 0 1 46 40 A 7 8 0 0 1 60 40 A 7 8 0 0 1 74 40 L 110 40"/>
+  <text class="ee-text" x="53" y="20">L<tspan dy="3" font-size="8">1</tspan></text>
+  <!-- Grid side L2 -->
+  <path class="ee-stroke" d="M 110 40 L 146 40 A 7 8 0 0 1 160 40 A 7 8 0 0 1 174 40 A 7 8 0 0 1 188 40 L 208 40"/>
+  <text class="ee-text" x="167" y="20">L<tspan dy="3" font-size="8">2</tspan></text>
+  <!-- Shunt branch: Cf + Rd -->
+  <line class="ee-stroke" x1="110" y1="40" x2="110" y2="66"/>
+  <line class="ee-stroke" x1="98" y1="66" x2="122" y2="66"/>
+  <line class="ee-stroke" x1="98" y1="74" x2="122" y2="74"/>
+  <line class="ee-stroke" x1="110" y1="74" x2="110" y2="90"/>
+  <rect class="ee-body" x="103" y="90" width="14" height="24"/>
+  <line class="ee-stroke" x1="110" y1="114" x2="110" y2="128"/>
+  <line class="ee-stroke" x1="12" y1="128" x2="208" y2="128"/>
+  <text class="ee-text" x="84" y="70">C<tspan dy="3" font-size="8">f</tspan></text>
+  <text class="ee-text" x="84" y="102">R<tspan dy="3" font-size="8">d</tspan></text>
+  <circle class="ee-node" cx="110" cy="40" r="2.5"/>
+  <circle class="ee-node" cx="110" cy="128" r="2.5"/>
+  <circle class="ee-pin" cx="12" cy="40" r="2.2"/>
+  <circle class="ee-pin" cx="12" cy="128" r="2.2"/>
+  <circle class="ee-pin" cx="208" cy="40" r="2.2"/>
+  <circle class="ee-pin" cx="208" cy="128" r="2.2"/>
+  </symbol>
+  <symbol id="topology_3ph_diode_rectifier" viewBox="0 0 240 170">
+    <line class="ee-stroke" x1="60" y1="20" x2="220" y2="20"/>
+  <line class="ee-stroke" x1="60" y1="150" x2="220" y2="150"/>
+  <!-- 3 Diode Legs at x=75, 130, 185 -->
+  <!-- Leg 1 -->
+  <line class="ee-stroke" x1="75" y1="20" x2="75" y2="150"/>
+  <polygon class="ee-body" points="67,60 83,60 75,44"/><line class="ee-stroke" x1="67" y1="44" x2="83" y2="44"/>
+  <polygon class="ee-body" points="67,126 83,126 75,110"/><line class="ee-stroke" x1="67" y1="110" x2="83" y2="110"/>
+  <!-- Leg 2 -->
+  <line class="ee-stroke" x1="130" y1="20" x2="130" y2="150"/>
+  <polygon class="ee-body" points="122,60 138,60 130,44"/><line class="ee-stroke" x1="122" y1="44" x2="138" y2="44"/>
+  <polygon class="ee-body" points="122,126 138,126 130,110"/><line class="ee-stroke" x1="122" y1="110" x2="138" y2="110"/>
+  <!-- Leg 3 -->
+  <line class="ee-stroke" x1="185" y1="20" x2="185" y2="150"/>
+  <polygon class="ee-body" points="177,60 193,60 185,44"/><line class="ee-stroke" x1="177" y1="44" x2="193" y2="44"/>
+  <polygon class="ee-body" points="177,126 193,126 185,110"/><line class="ee-stroke" x1="177" y1="110" x2="193" y2="110"/>
+  <!-- 3-Phase AC Inputs -->
+  <line class="ee-wire-a" x1="15" y1="74" x2="75" y2="74"/>
+  <line class="ee-wire-b" x1="15" y1="85" x2="130" y2="85"/>
+  <line class="ee-wire-c" x1="15" y1="96" x2="185" y2="96"/>
+  <circle class="ee-node" cx="75" cy="74" r="2.5"/>
+  <circle class="ee-node" cx="130" cy="85" r="2.5"/>
+  <circle class="ee-node" cx="185" cy="96" r="2.5"/>
+  <circle class="ee-node" cx="75" cy="20" r="2.5"/>
+  <circle class="ee-node" cx="130" cy="20" r="2.5"/>
+  <circle class="ee-node" cx="75" cy="150" r="2.5"/>
+  <circle class="ee-node" cx="130" cy="150" r="2.5"/>
+  <circle class="ee-pin" cx="15" cy="74" r="2.2"/>
+  <circle class="ee-pin" cx="15" cy="85" r="2.2"/>
+  <circle class="ee-pin" cx="15" cy="96" r="2.2"/>
+  <circle class="ee-pin" cx="220" cy="20" r="2.2"/>
+  <circle class="ee-pin" cx="220" cy="150" r="2.2"/>
+  </symbol>
+  <symbol id="topology_vienna_rectifier_leg" viewBox="0 0 230 180">
+    <!-- Input Boost Inductor -->
+  <path class="ee-wire-a" d="M 15 90 L 35 90 A 6 7 0 0 1 47 90 A 6 7 0 0 1 59 90 A 6 7 0 0 1 71 90 L 115 90"/>
+  <text class="ee-text" x="53" y="72">L<tspan dy="3" font-size="8">a</tspan></text>
+  <!-- Main Diode Leg -->
+  <line class="ee-stroke" x1="115" y1="20" x2="185" y2="20"/>
+  <line class="ee-stroke" x1="115" y1="160" x2="185" y2="160"/>
+  <line class="ee-stroke" x1="115" y1="20" x2="115" y2="160"/>
+  <polygon class="ee-body" points="107,62 123,62 115,44"/><line class="ee-stroke" x1="107" y1="44" x2="123" y2="44"/>
+  <polygon class="ee-body" points="107,136 123,136 115,118"/><line class="ee-stroke" x1="107" y1="118" x2="123" y2="118"/>
+  <!-- Bidirectional Switch to Neutral O -->
+  <rect class="ee-tint-blue" x="135" y="76" width="36" height="28" rx="3"/>
+  <text class="ee-label" x="153" y="90">S<tspan dy="2" font-size="7">a</tspan></text>
+  <line class="ee-stroke" x1="115" y1="90" x2="135" y2="90"/>
+  <line class="ee-stroke" x1="171" y1="90" x2="215" y2="90"/>
+  <text class="ee-label" x="205" y="78">O</text>
+  <circle class="ee-node" cx="115" cy="90" r="2.5"/>
+  <circle class="ee-pin" cx="15" cy="90" r="2.2"/>
+  <circle class="ee-pin" cx="185" cy="20" r="2.2"/>
+  <circle class="ee-pin" cx="215" cy="90" r="2.2"/>
+  <circle class="ee-pin" cx="185" cy="160" r="2.2"/>
+  </symbol>
+  <symbol id="scope_4ch_power_electronics" viewBox="0 0 380 260">
+    <!-- Outer frame -->
+  <rect class="ee-body" x="10" y="10" width="360" height="240" rx="4"/>
+  <!-- Plot area -->
+  <rect x="45" y="25" width="295" height="205" fill="#ffffff" stroke="#111827" stroke-width="1.5"/>
+  <!-- Graticule grid -->
+  <line class="ee-grid" x1="104" y1="25" x2="104" y2="230"/>
+  <line class="ee-grid" x1="163" y1="25" x2="163" y2="230"/>
+  <line class="ee-grid" x1="222" y1="25" x2="222" y2="230"/>
+  <line class="ee-grid" x1="281" y1="25" x2="281" y2="230"/>
+  <line class="ee-grid" x1="45" y1="75" x2="340" y2="75"/>
+  <line class="ee-grid" x1="45" y1="125" x2="340" y2="125"/>
+  <line class="ee-grid" x1="45" y1="175" x2="340" y2="175"/>
+  <!-- CH1: Gate Pulse v_gs (Blue) -->
+  <path d="M 45 66 L 75 66 L 75 38 L 130 38 L 130 66 L 165 66 L 165 38 L 220 38 L 220 66 L 255 66 L 255 38 L 310 38 L 310 66 L 340 66" fill="none" stroke="#2563eb" stroke-width="1.8"/>
+  <text class="ee-text" x="26" y="52" font-size="11">v<tspan dy="2" font-size="8">gs</tspan></text>
+  <!-- CH2: Drain-Source Voltage v_ds with switching ringing (Red) -->
+  <path d="M 45 86 L 75 86 L 75 116 L 77 110 L 79 118 L 81 115 L 130 115 L 130 82 L 132 90 L 134 85 L 136 86 L 165 86 L 165 116 L 167 110 L 169 115 L 220 115 L 220 82 L 222 89 L 224 86 L 255 86 L 255 115 L 310 115 L 310 86 L 340 86" fill="none" stroke="#dc2626" stroke-width="1.8"/>
+  <text class="ee-text" x="26" y="102" font-size="11">v<tspan dy="2" font-size="8">ds</tspan></text>
+  <!-- CH3: Triangular Inductor Current Ripple i_L (Green) -->
+  <path d="M 45 162 L 75 168 L 130 140 L 165 168 L 220 140 L 255 168 L 310 140 L 340 158" fill="none" stroke="#16a34a" stroke-width="1.8"/>
+  <text class="ee-text" x="26" y="155" font-size="11">i<tspan dy="2" font-size="8">L</tspan></text>
+  <!-- CH4: Sinusoidal Phase Current i_a (Amber/Dark) -->
+  <polyline points="45.0,215.0 49.0,211.8 53.0,208.7 57.0,205.8 61.0,203.2 65.0,200.9 69.0,199.1 73.0,197.9 77.0,197.2 81.0,197.0 85.0,197.5 89.0,198.4 93.0,200.0 97.0,202.0 101.0,204.4 105.0,207.2 109.0,210.2 113.0,213.4 117.0,216.6 121.0,219.8 125.0,222.8 129.0,225.6 133.0,228.0 137.0,230.0 141.0,231.6 145.0,232.5 149.0,233.0 153.0,232.8 157.0,232.1 161.0,230.9 165.0,229.1 169.0,226.8 173.0,224.2 177.0,221.3 181.0,218.2 185.0,215.0 189.0,211.8 193.0,208.7 197.0,205.8 201.0,203.2 205.0,200.9 209.0,199.1 213.0,197.9 217.0,197.2 221.0,197.0 225.0,197.5 229.0,198.4 233.0,200.0 237.0,202.0 241.0,204.4 245.0,207.2 249.0,210.2 253.0,213.4 257.0,216.6 261.0,219.8 265.0,222.8 269.0,225.6 273.0,228.0 277.0,230.0 281.0,231.6 285.0,232.5 289.0,233.0 293.0,232.8 297.0,232.1 301.0,230.9 305.0,229.1 309.0,226.8 313.0,224.2 317.0,221.3 321.0,218.2 325.0,215.0 329.0,211.8 333.0,208.7 337.0,205.8" fill="none" stroke="#d97706" stroke-width="2"/>
+  <text class="ee-text" x="26" y="210" font-size="11">i<tspan dy="2" font-size="8">a</tspan></text>
+  <!-- Scale bar annotation -->
+  <text class="ee-label" x="192" y="242">Time (10 μs/div)</text>
+  </symbol>
+  <symbol id="waveform_spwm_carrier" viewBox="0 0 340 210">
+    <rect class="ee-body" x="10" y="10" width="320" height="190" rx="4"/>
+  <!-- Upper subplot: Carrier vs Reference -->
+  <line class="ee-thin" x1="40" y1="22" x2="40" y2="110"/>
+  <line class="ee-grid" x1="40" y1="65" x2="305" y2="65"/>
+  <!-- High-frequency Triangle Carrier -->
+  <path class="ee-thin" d="M 40 95 L 62 35 L 84 95 L 106 35 L 128 95 L 150 35 L 172 95 L 194 35 L 216 95 L 238 35 L 260 95 L 282 35 L 304 95" stroke="#6b7280"/>
+  <!-- Sinusoidal Modulation Reference v_ref -->
+  <polyline points="40.0,65.0 44.0,62.5 48.0,60.0 52.0,57.6 56.0,55.2 60.0,52.9 64.0,50.8 68.0,48.7 72.0,46.8 76.0,45.1 80.0,43.6 84.0,42.3 88.0,41.2 92.0,40.3 96.0,39.6 100.0,39.2 104.0,39.0 108.0,39.1 112.0,39.4 116.0,39.9 120.0,40.7 124.0,41.7 128.0,42.9 132.0,44.3 136.0,46.0 140.0,47.8 144.0,49.7 148.0,51.8 152.0,54.0 156.0,56.4 160.0,58.8 164.0,61.2 168.0,63.7 172.0,66.3 176.0,68.8 180.0,71.2 184.0,73.6 188.0,76.0 192.0,78.2 196.0,80.3 200.0,82.2 204.0,84.0 208.0,85.7 212.0,87.1 216.0,88.3 220.0,89.3 224.0,90.1 228.0,90.6 232.0,90.9 236.0,91.0 240.0,90.8 244.0,90.4 248.0,89.7 252.0,88.8 256.0,87.7 260.0,86.4 264.0,84.9 268.0,83.2 272.0,81.3 276.0,79.2 280.0,77.1 284.0,74.8 288.0,72.4 292.0,70.0 296.0,67.5 300.0,65.0" fill="none" stroke="#dc2626" stroke-width="2.2"/>
+  <!-- Lower subplot: PWM Gate Output -->
+  <line class="ee-thin" x1="40" y1="125" x2="40" y2="180"/>
+  <line class="ee-thin" x1="40" y1="175" x2="305" y2="175"/>
+  <path d="M 40 175 L 48 175 L 48 135 L 78 135 L 78 175 L 88 175 L 88 135 L 124 135 L 124 175 L 136 175 L 136 135 L 164 135 L 164 175 L 184 175 L 184 135 L 204 135 L 204 175 L 232 175 L 232 135 L 244 135 L 244 175 L 276 175 L 276 135 L 288 135 L 288 175 L 304 175" fill="none" stroke="#2563eb" stroke-width="2"/>
+  <text class="ee-text" x="23" y="55" font-size="11">v<tspan dy="2" font-size="8">c</tspan>,v*</text>
+  <text class="ee-text" x="23" y="155" font-size="11">S<tspan dy="2" font-size="8">a</tspan></text>
+  </symbol>
+  <symbol id="diagram_svpwm_hexagon" viewBox="0 0 260 240">
+    <rect class="ee-body" x="10" y="10" width="240" height="220" rx="4"/>
+  <!-- Alpha-Beta Axes -->
+  <line class="ee-grid" x1="25" y1="120" x2="235" y2="120"/>
+  <line class="ee-grid" x1="130" y1="20" x2="130" y2="215"/>
+  <!-- Inscribed Circle (Linear Modulation Limit) -->
+  <circle class="ee-dashed" cx="130" cy="120" r="69"/>
+  <!-- Hexagon Vertices (R=80 around (130,120)) -->
+  <polygon class="ee-stroke" points="210,120 170,51 90,51 50,120 90,189 170,189"/>
+  <!-- Active Vectors V1..V6 -->
+  <line class="ee-thin" x1="130" y1="120" x2="210" y2="120"/>
+  <line class="ee-thin" x1="130" y1="120" x2="170" y2="51"/>
+  <line class="ee-thin" x1="130" y1="120" x2="90" y2="51"/>
+  <line class="ee-thin" x1="130" y1="120" x2="50" y2="120"/>
+  <line class="ee-thin" x1="130" y1="120" x2="90" y2="189"/>
+  <line class="ee-thin" x1="130" y1="120" x2="170" y2="189"/>
+  <!-- Synthesized Reference Vector V_ref in Sector I -->
+  <line class="ee-wire-a" x1="130" y1="120" x2="182" y2="82" marker-end="url(#arrow-red)"/>
+  <line class="ee-dashed" x1="168" y1="120" x2="182" y2="82"/>
+  <line class="ee-dashed" x1="152" y1="82" x2="182" y2="82"/>
+  <text class="ee-text" x="195" y="76" font-size="11">V<tspan dy="2" font-size="8">ref</tspan></text>
+  <!-- Vector Labels -->
+  <text class="ee-label" x="224" y="112">V1(100)</text>
+  <text class="ee-label" x="182" y="40">V2(110)</text>
+  <text class="ee-label" x="78" y="40">V3(010)</text>
+  <text class="ee-label" x="32" y="112">V4(011)</text>
+  <text class="ee-label" x="78" y="200">V5(001)</text>
+  <text class="ee-label" x="182" y="200">V6(101)</text>
+  <text class="ee-label" x="130" y="132">V0,7</text>
+  </symbol>
+  <symbol id="diagram_dq_phasor_frame" viewBox="0 0 250 230">
+    <rect class="ee-body" x="10" y="10" width="230" height="210" rx="4"/>
+  <!-- Stationary alpha-beta axes -->
+  <line class="ee-stroke" x1="35" y1="145" x2="215" y2="145" marker-end="url(#arrow)"/>
+  <line class="ee-stroke" x1="95" y1="195" x2="95" y2="25" marker-end="url(#arrow)"/>
+  <text class="ee-text" x="218" y="158">α (a)</text>
+  <text class="ee-text" x="80" y="28">β</text>
+  <!-- Rotating d-q axes (rotated by theta_e = 30 deg) -->
+  <line class="ee-wire-c" x1="95" y1="145" x2="195" y2="87" marker-end="url(#arrow-blue)"/>
+  <line class="ee-wire-c" x1="95" y1="145" x2="37" y2="45" marker-end="url(#arrow-blue)"/>
+  <text class="ee-text" x="206" y="82">d</text>
+  <text class="ee-text" x="28" y="42">q</text>
+  <!-- Stator Current Vector i_s -->
+  <line class="ee-wire-a" x1="95" y1="145" x2="135" y2="45" marker-end="url(#arrow-red)"/>
+  <text class="ee-text" x="150" y="42">i<tspan dy="2" font-size="8">s</tspan></text>
+  <!-- Rotor Flux Linkage psi_f along d-axis -->
+  <line class="ee-thick" x1="95" y1="145" x2="155" y2="110" marker-end="url(#arrow)"/>
+  <text class="ee-text" x="165" y="120">ψ<tspan dy="2" font-size="8">f</tspan></text>
+  <!-- Angle arc theta_e -->
+  <path class="ee-thin" d="M 140 145 A 45 45 0 0 0 134 122"/>
+  <text class="ee-text" x="152" y="134" font-size="11">θ<tspan dy="2" font-size="8">e</tspan></text>
+  </symbol>
+  <symbol id="waveform_zvs_commutation" viewBox="0 0 320 210">
+    <rect class="ee-body" x="10" y="10" width="300" height="190" rx="4"/>
+  <!-- Shaded Dead-Time region td -->
+  <rect x="95" y="25" width="45" height="145" fill="#fef3c7" stroke="none"/>
+  <line class="ee-dashed" x1="95" y1="25" x2="95" y2="170"/>
+  <line class="ee-dashed" x1="140" y1="25" x2="140" y2="170"/>
+  <text class="ee-label" x="117" y="34">t<tspan dy="2" font-size="7">dead</tspan></text>
+  <!-- High-side gate v_gs1 -->
+  <path d="M 40 50 L 95 50 L 95 75 L 280 75" fill="none" stroke="#111827" stroke-width="1.8"/>
+  <text class="ee-text" x="25" y="62" font-size="10">v<tspan dy="2" font-size="7">gs1</tspan></text>
+  <!-- Low-side gate v_gs2 -->
+  <path d="M 40 115 L 140 115 L 140 90 L 280 90" fill="none" stroke="#2563eb" stroke-width="1.8"/>
+  <text class="ee-text" x="25" y="104" font-size="10">v<tspan dy="2" font-size="7">gs2</tspan></text>
+  <!-- v_ds2 falling to zero BEFORE v_gs2 turns on, i_ds2 rising -->
+  <path d="M 40 132 L 95 132 L 122 168 L 280 168" fill="none" stroke="#dc2626" stroke-width="2"/>
+  <path d="M 40 168 L 122 168 L 140 155 L 180 132 L 280 132" fill="none" stroke="#16a34a" stroke-width="2"/>
+  <circle cx="140" cy="168" r="4" fill="none" stroke="#dc2626" stroke-width="1.5"/>
+  <text class="ee-label" x="172" y="178">ZVS Turn-On</text>
+  <text class="ee-text" x="25" y="150" font-size="10">v<tspan dy="2" font-size="7">ds</tspan>,i<tspan dy="2" font-size="7">d</tspan></text>
+  </symbol>
+  <symbol id="waveform_bode_plot" viewBox="0 0 320 220">
+    <rect class="ee-body" x="10" y="10" width="300" height="200" rx="4"/>
+  <!-- Axes -->
+  <line class="ee-stroke" x1="45" y1="25" x2="45" y2="185"/>
+  <line class="ee-grid" x1="45" y1="75" x2="290" y2="75"/>
+  <line class="ee-grid" x1="45" y1="165" x2="290" y2="165"/>
+  <!-- Gain curve T(s) crossing 0 dB at x=185 -->
+  <path d="M 45 35 L 110 50 L 185 75 L 235 90 L 285 118" fill="none" stroke="#2563eb" stroke-width="2"/>
+  <circle class="ee-node" cx="185" cy="75" r="3"/>
+  <line class="ee-dashed" x1="185" y1="75" x2="185" y2="165"/>
+  <!-- Phase curve crossing with Phase Margin PM -->
+  <path d="M 45 125 C 100 125, 130 150, 185 142 C 225 135, 250 165, 285 178" fill="none" stroke="#dc2626" stroke-width="2"/>
+  <line class="ee-thin" x1="185" y1="165" x2="185" y2="144" marker-end="url(#arrow-red)"/>
+  <text class="ee-label" x="210" y="154">PM = 58°</text>
+  <text class="ee-label" x="28" y="75">0dB</text>
+  <text class="ee-label" x="26" y="165">-180°</text>
+  <text class="ee-label" x="185" y="196">f (Hz, log scale)</text>
+  </symbol>
+  <symbol id="waveform_fft_thd_spectrum" viewBox="0 0 320 195">
+    <rect class="ee-body" x="10" y="10" width="300" height="180" rx="4"/>
+  <line class="ee-stroke" x1="45" y1="25" x2="45" y2="155"/>
+  <line class="ee-stroke" x1="45" y1="155" x2="290" y2="155"/>
+  <!-- Fundamental h=1 (100%) + Odd Harmonics 5, 7, 11, 13, 17, 19 -->
+  <rect x="62" y="38" width="14" height="117" fill="#2563eb"/>
+  <rect x="98" y="128" width="12" height="27" fill="#dc2626"/>
+  <rect x="122" y="136" width="12" height="19" fill="#dc2626"/>
+  <rect x="158" y="142" width="12" height="13" fill="#dc2626"/>
+  <rect x="182" y="145" width="12" height="10" fill="#dc2626"/>
+  <rect x="218" y="148" width="12" height="7" fill="#dc2626"/>
+  <rect x="242" y="150" width="12" height="5" fill="#dc2626"/>
+  <text class="ee-label" x="69" y="166">1</text>
+  <text class="ee-label" x="104" y="166">5</text>
+  <text class="ee-label" x="128" y="166">7</text>
+  <text class="ee-label" x="164" y="166">11</text>
+  <text class="ee-label" x="188" y="166">13</text>
+  <text class="ee-label" x="224" y="166">17</text>
+  <text class="ee-label" x="248" y="166">19</text>
+  <text class="ee-label" x="215" y="45">THD = 2.14%</text>
+  <text class="ee-label" x="170" y="180">Harmonic Order (h)</text>
+  </symbol>
+  <symbol id="transformer_planar_pcb" viewBox="0 0 100 100">
+    <!-- Outer ferrite E-core frame -->
+  <rect class="ee-body" x="14" y="14" width="72" height="72" rx="4"/>
+  <rect class="ee-tint-amber" x="22" y="22" width="56" height="56" rx="2"/>
+  <!-- Spiral PCB copper trace -->
+  <path class="ee-wire-a" d="M 50 50 L 56 50 L 56 42 L 42 42 L 42 58 L 64 58 L 64 34 L 34 34 L 34 66 L 72 66"/>
+  <circle class="ee-node" cx="50" cy="50" r="2.5"/>
+  <line class="ee-stroke" x1="72" y1="66" x2="94" y2="66"/>
+  <line class="ee-stroke" x1="50" y1="50" x2="94" y2="34"/>
+  <circle class="ee-pin" cx="94" cy="34" r="2.2"/>
+  <circle class="ee-pin" cx="94" cy="66" r="2.2"/>
+  </symbol>
+  <symbol id="winding_star_of_slots" viewBox="0 0 100 100">
+    <circle class="ee-dashed" cx="50" cy="50" r="36"/>
+  <!-- 12 Slot Phasors -->
+  <line class="ee-wire-a" x1="50" y1="50" x2="50" y2="14" marker-end="url(#arrow-red)"/>
+  <line class="ee-wire-a" x1="50" y1="50" x2="68" y2="19" marker-end="url(#arrow-red)"/>
+  <line class="ee-wire-c" x1="50" y1="50" x2="81" y2="32" marker-end="url(#arrow-blue)"/>
+  <line class="ee-wire-c" x1="50" y1="50" x2="86" y2="50" marker-end="url(#arrow-blue)"/>
+  <line class="ee-wire-b" x1="50" y1="50" x2="81" y2="68" marker-end="url(#arrow)"/>
+  <line class="ee-wire-b" x1="50" y1="50" x2="68" y2="81" marker-end="url(#arrow)"/>
+  <line class="ee-wire-a" x1="50" y1="50" x2="50" y2="86"/>
+  <line class="ee-wire-a" x1="50" y1="50" x2="32" y2="81"/>
+  <line class="ee-wire-c" x1="50" y1="50" x2="19" y2="68"/>
+  <line class="ee-wire-c" x1="50" y1="50" x2="14" y2="50"/>
+  <line class="ee-wire-b" x1="50" y1="50" x2="19" y2="32"/>
+  <line class="ee-wire-b" x1="50" y1="50" x2="32" y2="19"/>
+  <circle class="ee-node" cx="50" cy="50" r="3"/>
+  </symbol>
+  <symbol id="winding_5ph_star" viewBox="0 0 100 100">
+    <!-- 5 axes separated by 72 deg around (50,52) -->
+  <line class="ee-wire-a" x1="50" y1="52" x2="50" y2="12"/>
+  <line class="ee-wire-b" x1="50" y1="52" x2="88" y2="40"/>
+  <line class="ee-wire-c" x1="50" y1="52" x2="74" y2="84"/>
+  <line class="ee-stroke" x1="50" y1="52" x2="26" y2="84"/>
+  <line class="ee-stroke" x1="50" y1="52" x2="12" y2="40"/>
+  <circle class="ee-body" cx="50" cy="52" r="9"/>
+  <text class="ee-label" x="50" y="52">5φ</text>
+  <text class="ee-label" x="60" y="14">A</text>
+  <text class="ee-label" x="90" y="30">B</text>
+  <text class="ee-label" x="84" y="86">C</text>
+  <text class="ee-label" x="16" y="86">D</text>
+  <text class="ee-label" x="10" y="30">E</text>
+  <circle class="ee-pin" cx="50" cy="12" r="2.2"/>
+  <circle class="ee-pin" cx="88" cy="40" r="2.2"/>
+  <circle class="ee-pin" cx="74" cy="84" r="2.2"/>
+  <circle class="ee-pin" cx="26" cy="84" r="2.2"/>
+  <circle class="ee-pin" cx="12" cy="40" r="2.2"/>
+  </symbol>
+  <symbol id="winding_concentrated_tooth" viewBox="0 0 100 100">
+    <!-- 3 Stator Teeth -->
+  <path class="ee-body" d="M 10 20 L 90 20 L 90 34 L 78 34 L 78 72 L 64 72 L 64 34 L 57 34 L 57 72 L 43 72 L 43 34 L 36 34 L 36 72 L 22 72 L 22 34 L 10 34 Z"/>
+  <!-- Tooth 1 Coil (Red) -->
+  <rect class="ee-tint-red" x="17" y="40" width="5" height="26"/>
+  <rect class="ee-tint-red" x="36" y="40" width="4" height="26"/>
+  <path class="ee-wire-a" d="M 19 40 Q 29 28 38 40"/>
+  <!-- Tooth 2 Coil (Green) -->
+  <rect class="ee-tint-green" x="40" y="40" width="3" height="26"/>
+  <rect class="ee-tint-green" x="57" y="40" width="3" height="26"/>
+  <path class="ee-wire-b" d="M 41 40 Q 50 28 59 40"/>
+  <!-- Tooth 3 Coil (Blue) -->
+  <rect class="ee-tint-blue" x="61" y="40" width="3" height="26"/>
+  <rect class="ee-tint-blue" x="78" y="40" width="5" height="26"/>
+  <path class="ee-wire-c" d="M 62 40 Q 71 28 80 40"/>
+  <text class="ee-label" x="50" y="86">FSCW Tooth Coils</text>
+  </symbol>
+  <symbol id="machine_axial_flux_afpm" viewBox="0 0 100 100">
+    <!-- Shaft horizontal -->
+  <line class="ee-thick" x1="8" y1="50" x2="92" y2="50"/>
+  <!-- Left Rotor Disc with PMs -->
+  <rect class="ee-body" x="22" y="16" width="10" height="68"/>
+  <rect class="ee-tint-red" x="32" y="18" width="6" height="24"/>
+  <rect class="ee-tint-blue" x="32" y="58" width="6" height="24"/>
+  <!-- Center StatorSegmented Yokeless Core -->
+  <rect class="ee-tint-amber" x="44" y="18" width="12" height="26"/>
+  <rect class="ee-tint-amber" x="44" y="56" width="12" height="26"/>
+  <!-- Right Rotor Disc with PMs -->
+  <rect class="ee-tint-blue" x="62" y="18" width="6" height="24"/>
+  <rect class="ee-tint-red" x="62" y="58" width="6" height="24"/>
+  <rect class="ee-body" x="68" y="16" width="10" height="68"/>
+  <text class="ee-label" x="50" y="93">AFPM</text>
+  </symbol>
+  <symbol id="machine_linear_motor_lsm" viewBox="0 0 100 100">
+    <!-- Primary Mover with 3-phase coils -->
+  <rect class="ee-body" x="16" y="18" width="68" height="30" rx="2"/>
+  <rect class="ee-tint-red" x="22" y="34" width="14" height="14"/>
+  <rect class="ee-tint-green" x="43" y="34" width="14" height="14"/>
+  <rect class="ee-tint-blue" x="64" y="34" width="14" height="14"/>
+  <!-- Secondary Track with alternating N/S magnets -->
+  <rect class="ee-body" x="8" y="64" width="84" height="14"/>
+  <rect class="ee-tint-red" x="12" y="56" width="16" height="8"/>
+  <rect class="ee-tint-blue" x="32" y="56" width="16" height="8"/>
+  <rect class="ee-tint-red" x="52" y="56" width="16" height="8"/>
+  <rect class="ee-tint-blue" x="72" y="56" width="16" height="8"/>
+  <line class="ee-thin" x1="35" y1="10" x2="65" y2="10" marker-end="url(#arrow)"/>
+  <text class="ee-text" x="50" y="88" font-size="11">v<tspan dy="2" font-size="8">x</tspan></text>
+  </symbol>
+  <symbol id="topology_3level_flying_cap" viewBox="0 0 200 200">
+    <line class="ee-stroke" x1="40" y1="15" x2="130" y2="15"/>
+  <line class="ee-stroke" x1="40" y1="185" x2="130" y2="185"/>
+  <!-- 4 Series Switches at x=130 -->
+  <line class="ee-stroke" x1="130" y1="15" x2="130" y2="185"/>
+  <rect class="ee-tint-blue" x="120" y="26" width="20" height="22" rx="2"/><text class="ee-label" x="130" y="37">S1</text>
+  <rect class="ee-tint-blue" x="120" y="66" width="20" height="22" rx="2"/><text class="ee-label" x="130" y="77">S2</text>
+  <rect class="ee-tint-blue" x="120" y="112" width="20" height="22" rx="2"/><text class="ee-label" x="130" y="123">S3</text>
+  <rect class="ee-tint-blue" x="120" y="152" width="20" height="22" rx="2"/><text class="ee-label" x="130" y="163">S4</text>
+  <!-- Clamping Flying Capacitor Cfc between nodes (130,56) and (130,144) -->
+  <path class="ee-stroke" d="M 130 56 L 75 56 L 75 95"/>
+  <line class="ee-stroke" x1="63" y1="95" x2="87" y2="95"/>
+  <line class="ee-stroke" x1="63" y1="105" x2="87" y2="105"/>
+  <path class="ee-stroke" d="M 75 105 L 75 144 L 130 144"/>
+  <text class="ee-text" x="45" y="100">C<tspan dy="3" font-size="8">fc</tspan></text>
+  <!-- AC Output -->
+  <line class="ee-wire-a" x1="130" y1="100" x2="185" y2="100"/>
+  <circle class="ee-node" cx="130" cy="56" r="2.5"/>
+  <circle class="ee-node" cx="130" cy="100" r="2.5"/>
+  <circle class="ee-node" cx="130" cy="144" r="2.5"/>
+  <circle class="ee-pin" cx="185" cy="100" r="2.2"/>
+  </symbol>
+  <symbol id="topology_z_source_network" viewBox="0 0 200 160">
+    <!-- Top and bottom rails -->
+  <path class="ee-stroke" d="M 15 35 L 45 35 A 6 7 0 0 1 57 35 A 6 7 0 0 1 69 35 A 6 7 0 0 1 81 35 L 185 35"/>
+  <path class="ee-stroke" d="M 15 125 L 45 125 A 6 7 0 0 0 57 125 A 6 7 0 0 0 69 125 A 6 7 0 0 0 81 125 L 185 125"/>
+  <!-- Cross X capacitors C1, C2 -->
+  <line class="ee-stroke" x1="35" y1="35" x2="92" y2="75"/>
+  <line class="ee-stroke" x1="86" y1="81" x2="98" y2="69"/>
+  <line class="ee-stroke" x1="92" y1="87" x2="104" y2="75"/>
+  <line class="ee-stroke" x1="98" y1="81" x2="155" y2="125"/>
+  <line class="ee-stroke" x1="35" y1="125" x2="92" y2="85"/>
+  <line class="ee-stroke" x1="98" y1="79" x2="155" y2="35"/>
+  <text class="ee-text" x="63" y="18">L<tspan dy="3" font-size="8">1</tspan></text>
+  <text class="ee-text" x="63" y="145">L<tspan dy="3" font-size="8">2</tspan></text>
+  <text class="ee-text" x="135" y="55">C<tspan dy="3" font-size="8">1</tspan></text>
+  <text class="ee-text" x="135" y="108">C<tspan dy="3" font-size="8">2</tspan></text>
+  <circle class="ee-node" cx="35" cy="35" r="2.5"/>
+  <circle class="ee-node" cx="155" cy="35" r="2.5"/>
+  <circle class="ee-node" cx="35" cy="125" r="2.5"/>
+  <circle class="ee-node" cx="155" cy="125" r="2.5"/>
+  <circle class="ee-pin" cx="15" cy="35" r="2.2"/>
+  <circle class="ee-pin" cx="15" cy="125" r="2.2"/>
+  <circle class="ee-pin" cx="185" cy="35" r="2.2"/>
+  <circle class="ee-pin" cx="185" cy="125" r="2.2"/>
+  </symbol>
+  <symbol id="diagram_foc_complete_loop" viewBox="0 0 460 240">
+    <rect class="ee-body" x="8" y="8" width="444" height="224" rx="6"/>
+  <!-- Speed Error & PI -->
+  <circle class="ee-body" cx="42" cy="55" r="10"/><text class="ee-label" x="42" y="55">Σ</text>
+  <line class="ee-stroke" x1="16" y1="55" x2="32" y2="55"/><text class="ee-text" x="22" y="42" font-size="10">ω*</text>
+  <line class="ee-stroke" x1="52" y1="55" x2="72" y2="55"/>
+  <rect class="ee-tint-blue" x="72" y="42" width="38" height="26" rx="3"/><text class="ee-label" x="91" y="55">PI<tspan dy="2" font-size="7">ω</tspan></text>
+  <!-- q-axis Current Error & PI -->
+  <line class="ee-stroke" x1="110" y1="55" x2="135" y2="55"/><text class="ee-text" x="122" y="44" font-size="10">i<tspan dy="2" font-size="7">q</tspan>*</text>
+  <circle class="ee-body" cx="145" cy="55" r="10"/><text class="ee-label" x="145" y="55">Σ</text>
+  <line class="ee-stroke" x1="155" y1="55" x2="175" y2="55"/>
+  <rect class="ee-tint-blue" x="175" y="42" width="38" height="26" rx="3"/><text class="ee-label" x="194" y="55">PI<tspan dy="2" font-size="7">q</tspan></text>
+  <!-- d-axis Current Error (id* = 0) & PI -->
+  <line class="ee-stroke" x1="110" y1="105" x2="135" y2="105"/><text class="ee-text" x="118" y="94" font-size="10">i<tspan dy="2" font-size="7">d</tspan>*=0</text>
+  <circle class="ee-body" cx="145" cy="105" r="10"/><text class="ee-label" x="145" y="105">Σ</text>
+  <line class="ee-stroke" x1="155" y1="105" x2="175" y2="105"/>
+  <rect class="ee-tint-blue" x="175" y="92" width="38" height="26" rx="3"/><text class="ee-label" x="194" y="105">PI<tspan dy="2" font-size="7">d</tspan></text>
+  <!-- Inverse Park dq -> alpha/beta -->
+  <line class="ee-stroke" x1="213" y1="55" x2="235" y2="55"/>
+  <line class="ee-stroke" x1="213" y1="105" x2="235" y2="105"/>
+  <rect class="ee-body" x="235" y="42" width="44" height="76" rx="3"/>
+  <text class="ee-label" x="257" y="66">dq</text>
+  <text class="ee-label" x="257" y="94">αβ</text>
+  <line class="ee-thin" x1="235" y1="118" x2="279" y2="42"/>
+  <!-- SVPWM + VSI -->
+  <line class="ee-stroke" x1="279" y1="65" x2="298" y2="65"/>
+  <line class="ee-stroke" x1="279" y1="95" x2="298" y2="95"/>
+  <rect class="ee-tint-amber" x="298" y="42" width="54" height="76" rx="3"/>
+  <text class="ee-label" x="325" y="72">SVPWM</text>
+  <text class="ee-label" x="325" y="90">+ VSI</text>
+  <!-- 3-Phase Wires to PMSM -->
+  <line class="ee-wire-a" x1="352" y1="60" x2="392" y2="60"/>
+  <line class="ee-wire-b" x1="352" y1="80" x2="388" y2="80"/>
+  <line class="ee-wire-c" x1="352" y1="100" x2="392" y2="100"/>
+  <circle class="ee-body" cx="414" cy="80" r="24"/>
+  <text class="ee-text" x="414" y="76" font-size="11">PMSM</text>
+  <text class="ee-label" x="414" y="90">3~</text>
+  <!-- Feedback Park Transform abc -> dq -->
+  <rect class="ee-body" x="235" y="145" width="54" height="52" rx="3"/>
+  <text class="ee-label" x="262" y="162">abc → dq</text>
+  <text class="ee-label" x="262" y="180">(Park)</text>
+  <path class="ee-thin" d="M 372 60 L 372 158 L 289 158"/>
+  <path class="ee-thin" d="M 380 100 L 380 182 L 289 182"/>
+  <path class="ee-thin" d="M 235 158 L 145 158 L 145 65" marker-end="url(#arrow)"/>
+  <path class="ee-thin" d="M 235 182 L 160 182 L 160 128 L 145 128 L 145 115" marker-end="url(#arrow)"/>
+  <!-- Rotor Speed/Position Feedback -->
+  <path class="ee-dashed" d="M 414 104 L 414 212 L 42 212 L 42 65" marker-end="url(#arrow)"/>
+  <text class="ee-text" x="340" y="204" font-size="10">θ<tspan dy="2" font-size="7">e</tspan>, ω<tspan dy="2" font-size="7">r</tspan></text>
+  </symbol>
+  <symbol id="meter_wattmeter" viewBox="0 0 100 100">
+    <!-- Current Coil (Horizontal series path) -->
+  <line class="ee-stroke" x1="6" y1="36" x2="94" y2="36"/>
+  <!-- Voltage Coil (Vertical shunt path) -->
+  <line class="ee-thin" x1="26" y1="36" x2="26" y2="54"/>
+  <path class="ee-thin" d="M 26 54 L 50 54 L 50 92"/>
+  <circle class="ee-body" cx="50" cy="50" r="24"/>
+  <!-- Internal coils & W label -->
+  <path class="ee-stroke" d="M 32 36 L 68 36"/>
+  <text class="ee-text" x="50" y="54" font-size="16">W</text>
+  <circle class="ee-node" cx="35" cy="31" r="2"/>
+  <circle class="ee-node" cx="42" cy="64" r="2"/>
+  <circle class="ee-node" cx="26" cy="36" r="2.5"/>
+  <circle class="ee-pin" cx="6" cy="36" r="2.2"/>
+  <circle class="ee-pin" cx="94" cy="36" r="2.2"/>
+  <circle class="ee-pin" cx="50" cy="92" r="2.2"/>
+  </symbol>
+  <symbol id="meter_varmeter" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="10" y1="50" x2="26" y2="50"/>
+  <circle class="ee-body" cx="50" cy="50" r="24"/>
+  <text class="ee-text" x="50" y="50" font-size="14">var</text>
+  <line class="ee-stroke" x1="74" y1="50" x2="90" y2="50"/>
+  <line class="ee-thin" x1="50" y1="74" x2="50" y2="92"/>
+  <circle class="ee-pin" cx="10" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="50" cy="92" r="2.2"/>
+  </symbol>
+  <symbol id="meter_power_factor" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="10" y1="50" x2="26" y2="50"/>
+  <circle class="ee-body" cx="50" cy="50" r="24"/>
+  <text class="ee-text" x="50" y="50" font-size="13">cos φ</text>
+  <line class="ee-stroke" x1="74" y1="50" x2="90" y2="50"/>
+  <circle class="ee-pin" cx="10" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="50" r="2.2"/>
+  </symbol>
+  <symbol id="meter_frequency_hz" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="50" y1="10" x2="50" y2="26"/>
+  <circle class="ee-body" cx="50" cy="50" r="24"/>
+  <text class="ee-text" x="50" y="50" font-size="15">Hz</text>
+  <line class="ee-stroke" x1="50" y1="74" x2="50" y2="90"/>
+  <circle class="ee-pin" cx="50" cy="10" r="2.2"/>
+  <circle class="ee-pin" cx="50" cy="90" r="2.2"/>
+  </symbol>
+  <symbol id="meter_energy_kwh" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="10" y1="50" x2="24" y2="50"/>
+  <rect class="ee-body" x="24" y="24" width="52" height="52" rx="4"/>
+  <rect class="ee-tint-blue" x="30" y="30" width="40" height="18" rx="2"/>
+  <text class="ee-label" x="50" y="39">kWh</text>
+  <circle class="ee-thin" cx="50" cy="62" r="8"/>
+  <line class="ee-thin" x1="44" y1="62" x2="56" y2="62" marker-end="url(#arrow)"/>
+  <line class="ee-stroke" x1="76" y1="50" x2="90" y2="50"/>
+  <circle class="ee-pin" cx="10" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="50" r="2.2"/>
+  </symbol>
+  <symbol id="meter_galvanometer" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="50" y1="10" x2="50" y2="26"/>
+  <circle class="ee-body" cx="50" cy="50" r="24"/>
+  <line class="ee-stroke" x1="50" y1="64" x2="50" y2="34" marker-end="url(#arrow)"/>
+  <text class="ee-text" x="38" y="52" font-size="12">G</text>
+  <line class="ee-stroke" x1="50" y1="74" x2="50" y2="90"/>
+  <circle class="ee-pin" cx="50" cy="10" r="2.2"/>
+  <circle class="ee-pin" cx="50" cy="90" r="2.2"/>
+  </symbol>
+  <symbol id="meter_ohmmeter" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="10" y1="50" x2="26" y2="50"/>
+  <circle class="ee-body" cx="50" cy="50" r="24"/>
+  <text class="ee-text" x="50" y="50" font-size="16">Ω</text>
+  <line class="ee-stroke" x1="74" y1="50" x2="90" y2="50"/>
+  <circle class="ee-pin" cx="10" cy="50" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="50" r="2.2"/>
+  </symbol>
+  <symbol id="instrument_analog_dial_gauge" viewBox="0 0 100 100">
+    <rect class="ee-body" x="16" y="16" width="68" height="68" rx="6"/>
+  <!-- Graduated Scale Arc -->
+  <path class="ee-thin" d="M 26 58 A 28 28 0 0 1 74 58"/>
+  <!-- Tick marks -->
+  <line class="ee-thin" x1="26" y1="58" x2="30" y2="55"/>
+  <line class="ee-thin" x1="36" y1="36" x2="39" y2="40"/>
+  <line class="ee-thin" x1="50" y1="30" x2="50" y2="35"/>
+  <line class="ee-thin" x1="64" y1="36" x2="61" y2="40"/>
+  <line class="ee-thin" x1="74" y1="58" x2="70" y2="55"/>
+  <!-- Needle pointer -->
+  <line class="ee-wire-a" x1="50" y1="68" x2="62" y2="38" marker-end="url(#arrow-red)"/>
+  <circle class="ee-node" cx="50" cy="68" r="3"/>
+  <line class="ee-stroke" x1="36" y1="84" x2="36" y2="94"/>
+  <line class="ee-stroke" x1="64" y1="84" x2="64" y2="94"/>
+  <circle class="ee-pin" cx="36" cy="94" r="2.2"/>
+  <circle class="ee-pin" cx="64" cy="94" r="2.2"/>
+  </symbol>
+  <symbol id="instrument_potential_transformer_vt" viewBox="0 0 100 100">
+    <line class="ee-stroke" x1="10" y1="22" x2="90" y2="22"/>
+  <line class="ee-thin" x1="38" y1="22" x2="38" y2="38"/>
+  <circle class="ee-body" cx="50" cy="48" r="14"/>
+  <circle class="ee-body" cx="50" cy="66" r="14"/>
+  <circle class="ee-body" cx="50" cy="86" r="10"/>
+  <text class="ee-text" x="50" y="86" font-size="11">V</text>
+  <circle class="ee-node" cx="38" cy="22" r="2.5"/>
+  <circle class="ee-pin" cx="10" cy="22" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="22" r="2.2"/>
+  </symbol>
+  <symbol id="probe_current_clamp_rogowski" viewBox="0 0 100 100">
+    <!-- Primary busbar conductor -->
+  <line class="ee-thick" x1="10" y1="45" x2="90" y2="45"/>
+  <!-- Rogowski / Split-core jaws around conductor -->
+  <path class="ee-tint-red" d="M 38 45 C 38 22, 62 22, 62 45 C 62 68, 38 68, 38 45 Z" fill="none"/>
+  <ellipse class="ee-wire-a" cx="50" cy="45" rx="11" ry="20"/>
+  <!-- Probe handle & BNC coaxial lead -->
+  <rect class="ee-body" x="45" y="65" width="10" height="14" rx="2"/>
+  <line class="ee-thin" x1="50" y1="79" x2="50" y2="92" marker-end="url(#arrow)"/>
+  <text class="ee-text" x="68" y="84" font-size="11">i<tspan dy="2" font-size="8">probe</tspan></text>
+  <circle class="ee-pin" cx="10" cy="45" r="2.2"/>
+  <circle class="ee-pin" cx="90" cy="45" r="2.2"/>
+  <circle class="ee-pin" cx="50" cy="92" r="2.2"/>
+  </symbol>
+  <symbol id="probe_hv_differential" viewBox="0 0 100 100">
+    <!-- + and - HV test leads with grabber hooks -->
+  <path class="ee-wire-a" d="M 10 32 L 32 32"/>
+  <path class="ee-wire-c" d="M 10 68 L 32 68"/>
+  <rect class="ee-tint-amber" x="32" y="24" width="42" height="52" rx="4"/>
+  <!-- Internal diff amp triangle -->
+  <polygon class="ee-body" points="40,34 40,66 64,50"/>
+  <text class="ee-label" x="45" y="42">+</text>
+  <text class="ee-label" x="45" y="58">−</text>
+  <text class="ee-label" x="53" y="16">÷100 / ÷1000</text>
+  <!-- BNC Output to Scope -->
+  <line class="ee-stroke" x1="74" y1="50" x2="92" y2="50" marker-end="url(#arrow)"/>
+  <circle class="ee-pin" cx="10" cy="32" r="2.2"/>
+  <circle class="ee-pin" cx="10" cy="68" r="2.2"/>
+  <circle class="ee-pin" cx="92" cy="50" r="2.2"/>
+  </symbol>
+  <symbol id="instrument_bench_oscilloscope" viewBox="0 0 160 110">
+    <rect class="ee-body" x="10" y="14" width="140" height="86" rx="5"/>
+  <!-- Screen bezel -->
+  <rect x="18" y="22" width="84" height="56" rx="2" fill="#0f172a" stroke="#111827" stroke-width="1.5"/>
+  <!-- Grid on screen -->
+  <line x1="18" y1="50" x2="102" y2="50" stroke="#334155" stroke-width="0.8" stroke-dasharray="2 2"/>
+  <line x1="60" y1="22" x2="60" y2="78" stroke="#334155" stroke-width="0.8" stroke-dasharray="2 2"/>
+  <!-- CH1 Sine & CH2 PWM traces -->
+  <path d="M 20 40 C 33 22, 46 22, 60 40 C 74 58, 87 58, 100 40" fill="none" stroke="#38bdf8" stroke-width="1.6"/>
+  <path d="M 20 68 L 32 68 L 32 56 L 48 56 L 48 68 L 64 68 L 64 56 L 80 56 L 80 68 L 100 68" fill="none" stroke="#facc15" stroke-width="1.4"/>
+  <!-- Control knobs on right panel -->
+  <circle class="ee-body" cx="118" cy="32" r="6"/>
+  <circle class="ee-body" cx="136" cy="32" r="6"/>
+  <circle class="ee-body" cx="118" cy="52" r="5"/>
+  <circle class="ee-body" cx="136" cy="52" r="5"/>
+  <!-- 4 BNC Input Channels at bottom -->
+  <circle class="ee-tint-blue" cx="30" cy="89" r="4"/>
+  <circle class="ee-tint-red" cx="52" cy="89" r="4"/>
+  <circle class="ee-tint-green" cx="74" cy="89" r="4"/>
+  <circle class="ee-tint-amber" cx="96" cy="89" r="4"/>
+  <text class="ee-label" x="127" y="88">DSO</text>
+  <circle class="ee-pin" cx="30" cy="100" r="2.2"/>
+  <circle class="ee-pin" cx="52" cy="100" r="2.2"/>
+  <circle class="ee-pin" cx="74" cy="100" r="2.2"/>
+  <circle class="ee-pin" cx="96" cy="100" r="2.2"/>
+  </symbol>
+  <symbol id="instrument_power_analyzer" viewBox="0 0 180 120">
+    <rect class="ee-body" x="10" y="12" width="160" height="96" rx="5"/>
+  <!-- Multi-readout display -->
+  <rect class="ee-tint-blue" x="18" y="20" width="106" height="58" rx="2"/>
+  <text class="ee-label" x="45" y="32">Urms: 400.2V</text>
+  <text class="ee-label" x="45" y="46">Irms:  28.45A</text>
+  <text class="ee-label" x="45" y="60">P:    19.62kW</text>
+  <text class="ee-label" x="98" y="32">η: 98.6%</text>
+  <text class="ee-label" x="98" y="46">PF: 0.998</text>
+  <text class="ee-label" x="98" y="60">THD: 1.4%</text>
+  <!-- Function keys -->
+  <rect class="ee-body" x="132" y="22" width="28" height="10" rx="1"/>
+  <rect class="ee-body" x="132" y="38" width="28" height="10" rx="1"/>
+  <rect class="ee-body" x="132" y="54" width="28" height="22" rx="2"/>
+  <!-- 3-Phase Wattmeter Element Terminals -->
+  <text class="ee-label" x="90" y="92">Power Analyzer (CH1 / CH2 / CH3 / CH4)</text>
+  <circle class="ee-pin" cx="35" cy="108" r="2.2"/>
+  <circle class="ee-pin" cx="70" cy="108" r="2.2"/>
+  <circle class="ee-pin" cx="105" cy="108" r="2.2"/>
+  <circle class="ee-pin" cx="140" cy="108" r="2.2"/>
+  </symbol>
+  <symbol id="instrument_digital_multimeter" viewBox="0 0 140 105">
+    <rect class="ee-body" x="12" y="18" width="116" height="74" rx="5"/>
+  <rect class="ee-tint-green" x="20" y="26" width="68" height="28" rx="2"/>
+  <text class="ee-label" x="54" y="40" font-size="13">+800.04 Vdc</text>
+  <text class="ee-label" x="48" y="72">DMM 6½ Digit</text>
+  <!-- HI / LO / AI Banana Jacks -->
+  <circle class="ee-tint-red" cx="102" cy="34" r="5"/>
+  <circle class="ee-body" cx="102" cy="52" r="5"/>
+  <circle class="ee-tint-amber" cx="102" cy="70" r="5"/>
+  <text class="ee-label" x="116" y="34">HI</text>
+  <text class="ee-label" x="116" y="52">LO</text>
+  <text class="ee-label" x="116" y="70">I</text>
+  <circle class="ee-pin" cx="128" cy="34" r="2.2"/>
+  <circle class="ee-pin" cx="128" cy="52" r="2.2"/>
+  <circle class="ee-pin" cx="128" cy="70" r="2.2"/>
+  </symbol>
+  <symbol id="instrument_spectrum_impedance_analyzer" viewBox="0 0 160 110">
+    <rect class="ee-body" x="10" y="14" width="140" height="86" rx="5"/>
+  <rect x="18" y="22" width="88" height="56" rx="2" fill="#f8fafc" stroke="#111827" stroke-width="1.5"/>
+  <!-- Resonance impedance curve |Z(f)| -->
+  <path class="ee-wire-a" d="M 22 32 L 45 48 L 58 70 L 72 28 L 88 45 L 102 56"/>
+  <text class="ee-label" x="62" y="88">|Z(f)| / EMI Analyzer</text>
+  <circle class="ee-body" cx="124" cy="36" r="8"/>
+  <circle class="ee-pin" cx="118" cy="68" r="4"/>
+  <circle class="ee-pin" cx="134" cy="68" r="4"/>
+  <circle class="ee-pin" cx="118" cy="100" r="2.2"/>
+  <circle class="ee-pin" cx="134" cy="100" r="2.2"/>
+  </symbol>
+  <symbol id="instrument_programmable_dc_supply_load" viewBox="0 0 160 105">
+    <rect class="ee-body" x="10" y="20" width="140" height="70" rx="4"/>
+  <rect class="ee-tint-amber" x="18" y="28" width="68" height="32" rx="2"/>
+  <text class="ee-label" x="52" y="38">800.0V / 50.0A</text>
+  <text class="ee-label" x="52" y="51">CV / CC Bidir</text>
+  <text class="ee-label" x="62" y="76">Prog. DC Source / Load</text>
+  <!-- + and - Output Bus Terminals -->
+  <circle class="ee-tint-red" cx="112" cy="38" r="5"/>
+  <circle class="ee-tint-blue" cx="112" cy="58" r="5"/>
+  <line class="ee-wire-a" x1="117" y1="38" x2="150" y2="38"/>
+  <line class="ee-wire-c" x1="117" y1="58" x2="150" y2="58"/>
+  <text class="ee-label" x="100" y="38">+</text>
+  <text class="ee-label" x="100" y="58">−</text>
+  <circle class="ee-pin" cx="150" cy="38" r="2.2"/>
+  <circle class="ee-pin" cx="150" cy="58" r="2.2"/>
+  </symbol>
+  <symbol id="instrument_dsp_fpga_hil_box" viewBox="0 0 180 115">
+    <rect class="ee-tint-blue" x="14" y="14" width="152" height="82" rx="5"/>
+  <text class="ee-label" x="90" y="32" font-size="11">DSP + FPGA Real-Time Target</text>
+  <text class="ee-label" x="90" y="48">(C2000 / dSPACE / OPAL-RT)</text>
+  <!-- Left Side: ADC Analog Inputs -->
+  <rect class="ee-body" x="22" y="62" width="54" height="22" rx="2"/>
+  <text class="ee-label" x="49" y="73">16-bit ADC</text>
+  <!-- Right Side: PWM Fiber/Digital Outputs -->
+  <rect class="ee-body" x="104" y="62" width="54" height="22" rx="2"/>
+  <text class="ee-label" x="131" y="73">PWM / Gate</text>
+  <line class="ee-stroke" x1="35" y1="84" x2="35" y2="104"/>
+  <line class="ee-stroke" x1="60" y1="84" x2="60" y2="104"/>
+  <line class="ee-stroke" x1="118" y1="84" x2="118" y2="104"/>
+  <line class="ee-stroke" x1="144" y1="84" x2="144" y2="104"/>
+  <circle class="ee-pin" cx="35" cy="104" r="2.2"/>
+  <circle class="ee-pin" cx="60" cy="104" r="2.2"/>
+  <circle class="ee-pin" cx="118" cy="104" r="2.2"/>
+  <circle class="ee-pin" cx="144" cy="104" r="2.2"/>
+  </symbol>
+  <symbol id="instrument_torque_transducer_dyno" viewBox="0 0 190 105">
+    <!-- Left Shaft from Test Motor (MUT) -->
+  <line class="ee-thick" x1="8" y1="50" x2="48" y2="50"/>
+  <rect class="ee-body" x="28" y="38" width="8" height="24"/>
+  <!-- Torque & Speed Sensor Block -->
+  <rect class="ee-tint-amber" x="48" y="26" width="54" height="48" rx="4"/>
+  <text class="ee-text" x="75" y="43" font-size="12">T<tspan dy="2" font-size="8">em</tspan>, ω<tspan dy="2" font-size="8">m</tspan></text>
+  <text class="ee-label" x="75" y="60">Torque Sensor</text>
+  <!-- Right Shaft to Load Dynamometer -->
+  <line class="ee-thick" x1="102" y1="50" x2="132" y2="50"/>
+  <rect class="ee-body" x="112" y="38" width="8" height="24"/>
+  <circle class="ee-body" cx="156" cy="50" r="24"/>
+  <text class="ee-label" x="156" y="45">Load</text>
+  <text class="ee-label" x="156" y="57">Dyno</text>
+  <!-- BNC Measurement Output -->
+  <line class="ee-thin" x1="75" y1="74" x2="75" y2="94" marker-end="url(#arrow)"/>
+  <circle class="ee-pin" cx="75" cy="94" r="2.2"/>
+  </symbol>
+</svg>

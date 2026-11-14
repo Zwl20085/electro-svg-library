@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 180" width="340" height="180">
+  <title>Synchronous Buck Converter (Step-Down DC-DC)</title>
+  <desc>Synchronous Buck Converter (Step-Down DC-DC)</desc>
+  <defs>
+    <style>
+      .ee-stroke { stroke: #111827; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ee-thin { stroke: #111827; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ee-thick { stroke: #111827; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ee-dashed { stroke: #4b5563; stroke-width: 1.5; stroke-dasharray: 4 3; stroke-linecap: round; fill: none; }
+      .ee-fill { fill: #111827; stroke: #111827; stroke-width: 1.5; stroke-linejoin: round; }
+      .ee-body { fill: #f8fafc; stroke: #111827; stroke-width: 2; stroke-linejoin: round; }
+      .ee-tint-blue { fill: #eff6ff; stroke: #1d4ed8; stroke-width: 1.8; stroke-linejoin: round; }
+      .ee-tint-red { fill: #fef2f2; stroke: #b91c1c; stroke-width: 1.8; stroke-linejoin: round; }
+      .ee-tint-green { fill: #f0fdf4; stroke: #15803d; stroke-width: 1.8; stroke-linejoin: round; }
+      .ee-tint-amber { fill: #fffbeb; stroke: #b45309; stroke-width: 1.8; stroke-linejoin: round; }
+      .ee-wire-a { stroke: #dc2626; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ee-wire-b { stroke: #16a34a; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ee-wire-c { stroke: #2563eb; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ee-text { font-family: 'Times New Roman', 'STIX Two Text', Georgia, serif; font-size: 13px; font-style: italic; fill: #111827; text-anchor: middle; dominant-baseline: central; }
+      .ee-label { font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 10px; font-weight: 600; fill: #374151; text-anchor: middle; dominant-baseline: central; }
+      .ee-pin { fill: #ffffff; stroke: #111827; stroke-width: 1.6; }
+      .ee-node { fill: #111827; stroke: none; }
+      .ee-grid { stroke: #e5e7eb; stroke-width: 0.8; stroke-dasharray: 2 2; fill: none; }
+    </style>
+    <marker id="arrow-topology_sync_buck" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1 L 7 4 L 0 7 z" fill="#111827"/>
+    </marker>
+    <marker id="arrow-red-topology_sync_buck" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1 L 7 4 L 0 7 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arrow-blue-topology_sync_buck" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1 L 7 4 L 0 7 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <!-- Input DC source -->
+  <line class="ee-stroke" x1="35" y1="30" x2="35" y2="150"/>
+  <circle class="ee-body" cx="35" cy="90" r="18"/>
+  <text class="ee-label" x="35" y="82">+</text>
+  <text class="ee-label" x="35" y="98">−</text>
+  <text class="ee-text" x="14" y="90">V<tspan dy="3" font-size="9">in</tspan></text>
+  <!-- Top rail to High-Side Switch Q1 -->
+  <line class="ee-stroke" x1="35" y1="30" x2="110" y2="30"/>
+  <line class="ee-stroke" x1="110" y1="30" x2="110" y2="46"/>
+  <text class="ee-text" x="92" y="60" font-size="11">Q1</text>
+  <rect class="ee-tint-blue" x="100" y="46" width="20" height="28" rx="2"/>
+  <line class="ee-thin" x1="105" y1="52" x2="105" y2="68"/>
+  <path class="ee-thin" d="M 105 56 L 114 50 L 114 46"/>
+  <path class="ee-thin" d="M 105 64 L 114 70 L 114 74"/>
+  <polygon class="ee-fill" points="115,63 119,63 117,57"/>
+  <line class="ee-stroke" x1="110" y1="74" x2="110" y2="106"/>
+  <text class="ee-text" x="92" y="120" font-size="11">Q2</text>
+  <rect class="ee-tint-blue" x="100" y="106" width="20" height="28" rx="2"/>
+  <line class="ee-thin" x1="105" y1="112" x2="105" y2="128"/>
+  <path class="ee-thin" d="M 105 116 L 114 110 L 114 106"/>
+  <path class="ee-thin" d="M 105 124 L 114 130 L 114 134"/>
+  <polygon class="ee-fill" points="115,123 119,123 117,117"/>
+  <line class="ee-stroke" x1="110" y1="134" x2="110" y2="150"/>
+  <!-- Switch node & Inductor L -->
+  <path class="ee-stroke" d="M 110 90 L 145 90 A 8 9 0 0 1 161 90 A 8 9 0 0 1 177 90 A 8 9 0 0 1 193 90 A 8 9 0 0 1 209 90 L 295 90"/>
+  <text class="ee-text" x="177" y="70">L</text>
+  <!-- Output Capacitor C -->
+  <line class="ee-stroke" x1="240" y1="90" x2="240" y2="114"/>
+  <line class="ee-stroke" x1="228" y1="114" x2="252" y2="114"/>
+  <line class="ee-stroke" x1="228" y1="122" x2="252" y2="122"/>
+  <line class="ee-stroke" x1="240" y1="122" x2="240" y2="150"/>
+  <text class="ee-text" x="216" y="120">C<tspan dy="3" font-size="8">o</tspan></text>
+  <!-- Load Resistor R -->
+  <line class="ee-stroke" x1="295" y1="90" x2="295" y2="104"/>
+  <rect class="ee-body" x="287" y="104" width="16" height="32"/>
+  <line class="ee-stroke" x1="295" y1="136" x2="295" y2="150"/>
+  <text class="ee-text" x="320" y="120">R<tspan dy="3" font-size="8">L</tspan></text>
+  <!-- Bottom ground rail -->
+  <line class="ee-stroke" x1="35" y1="150" x2="295" y2="150"/>
+  <circle class="ee-node" cx="110" cy="90" r="2.5"/>
+  <circle class="ee-node" cx="240" cy="90" r="2.5"/>
+  <circle class="ee-node" cx="240" cy="150" r="2.5"/>
+  <circle class="ee-node" cx="110" cy="150" r="2.5"/>
+</svg>

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 240" width="260" height="240">
+  <title>Space Vector PWM (SVPWM) Voltage Hexagon Diagram</title>
+  <desc>Space Vector PWM (SVPWM) Voltage Hexagon Diagram</desc>
+  <defs>
+    <style>
+      .ee-stroke { stroke: #111827; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ee-thin { stroke: #111827; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ee-thick { stroke: #111827; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ee-dashed { stroke: #4b5563; stroke-width: 1.5; stroke-dasharray: 4 3; stroke-linecap: round; fill: none; }
+      .ee-fill { fill: #111827; stroke: #111827; stroke-width: 1.5; stroke-linejoin: round; }
+      .ee-body { fill: #f8fafc; stroke: #111827; stroke-width: 2; stroke-linejoin: round; }
+      .ee-tint-blue { fill: #eff6ff; stroke: #1d4ed8; stroke-width: 1.8; stroke-linejoin: round; }
+      .ee-tint-red { fill: #fef2f2; stroke: #b91c1c; stroke-width: 1.8; stroke-linejoin: round; }
+      .ee-tint-green { fill: #f0fdf4; stroke: #15803d; stroke-width: 1.8; stroke-linejoin: round; }
+      .ee-tint-amber { fill: #fffbeb; stroke: #b45309; stroke-width: 1.8; stroke-linejoin: round; }
+      .ee-wire-a { stroke: #dc2626; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ee-wire-b { stroke: #16a34a; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ee-wire-c { stroke: #2563eb; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ee-text { font-family: 'Times New Roman', 'STIX Two Text', Georgia, serif; font-size: 13px; font-style: italic; fill: #111827; text-anchor: middle; dominant-baseline: central; }
+      .ee-label { font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 10px; font-weight: 600; fill: #374151; text-anchor: middle; dominant-baseline: central; }
+      .ee-pin { fill: #ffffff; stroke: #111827; stroke-width: 1.6; }
+      .ee-node { fill: #111827; stroke: none; }
+      .ee-grid { stroke: #e5e7eb; stroke-width: 0.8; stroke-dasharray: 2 2; fill: none; }
+    </style>
+    <marker id="arrow-diagram_svpwm_hexagon" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1 L 7 4 L 0 7 z" fill="#111827"/>
+    </marker>
+    <marker id="arrow-red-diagram_svpwm_hexagon" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1 L 7 4 L 0 7 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arrow-blue-diagram_svpwm_hexagon" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1 L 7 4 L 0 7 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect class="ee-body" x="10" y="10" width="240" height="220" rx="4"/>
+  <!-- Alpha-Beta Axes -->
+  <line class="ee-grid" x1="25" y1="120" x2="235" y2="120"/>
+  <line class="ee-grid" x1="130" y1="20" x2="130" y2="215"/>
+  <!-- Inscribed Circle (Linear Modulation Limit) -->
+  <circle class="ee-dashed" cx="130" cy="120" r="69"/>
+  <!-- Hexagon Vertices (R=80 around (130,120)) -->
+  <polygon class="ee-stroke" points="210,120 170,51 90,51 50,120 90,189 170,189"/>
+  <!-- Active Vectors V1..V6 -->
+  <line class="ee-thin" x1="130" y1="120" x2="210" y2="120"/>
+  <line class="ee-thin" x1="130" y1="120" x2="170" y2="51"/>
+  <line class="ee-thin" x1="130" y1="120" x2="90" y2="51"/>
+  <line class="ee-thin" x1="130" y1="120" x2="50" y2="120"/>
+  <line class="ee-thin" x1="130" y1="120" x2="90" y2="189"/>
+  <line class="ee-thin" x1="130" y1="120" x2="170" y2="189"/>
+  <!-- Synthesized Reference Vector V_ref in Sector I -->
+  <line class="ee-wire-a" x1="130" y1="120" x2="182" y2="82" marker-end="url(#arrow-red-diagram_svpwm_hexagon)"/>
+  <line class="ee-dashed" x1="168" y1="120" x2="182" y2="82"/>
+  <line class="ee-dashed" x1="152" y1="82" x2="182" y2="82"/>
+  <text class="ee-text" x="195" y="76" font-size="11">V<tspan dy="2" font-size="8">ref</tspan></text>
+  <!-- Vector Labels -->
+  <text class="ee-label" x="224" y="112">V1(100)</text>
+  <text class="ee-label" x="182" y="40">V2(110)</text>
+  <text class="ee-label" x="78" y="40">V3(010)</text>
+  <text class="ee-label" x="32" y="112">V4(011)</text>
+  <text class="ee-label" x="78" y="200">V5(001)</text>
+  <text class="ee-label" x="182" y="200">V6(101)</text>
+  <text class="ee-label" x="130" y="132">V0,7</text>
+</svg>

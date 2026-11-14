@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 110" width="160" height="110">
+  <title>Digital Storage Oscilloscope (DSO Bench Instrument)</title>
+  <desc>Digital Storage Oscilloscope (DSO Bench Instrument)</desc>
+  <defs>
+    <style>
+      .ee-stroke { stroke: #111827; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ee-thin { stroke: #111827; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ee-thick { stroke: #111827; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ee-dashed { stroke: #4b5563; stroke-width: 1.5; stroke-dasharray: 4 3; stroke-linecap: round; fill: none; }
+      .ee-fill { fill: #111827; stroke: #111827; stroke-width: 1.5; stroke-linejoin: round; }
+      .ee-body { fill: #f8fafc; stroke: #111827; stroke-width: 2; stroke-linejoin: round; }
+      .ee-tint-blue { fill: #eff6ff; stroke: #1d4ed8; stroke-width: 1.8; stroke-linejoin: round; }
+      .ee-tint-red { fill: #fef2f2; stroke: #b91c1c; stroke-width: 1.8; stroke-linejoin: round; }
+      .ee-tint-green { fill: #f0fdf4; stroke: #15803d; stroke-width: 1.8; stroke-linejoin: round; }
+      .ee-tint-amber { fill: #fffbeb; stroke: #b45309; stroke-width: 1.8; stroke-linejoin: round; }
+      .ee-wire-a { stroke: #dc2626; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ee-wire-b { stroke: #16a34a; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ee-wire-c { stroke: #2563eb; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .ee-text { font-family: 'Times New Roman', 'STIX Two Text', Georgia, serif; font-size: 13px; font-style: italic; fill: #111827; text-anchor: middle; dominant-baseline: central; }
+      .ee-label { font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 10px; font-weight: 600; fill: #374151; text-anchor: middle; dominant-baseline: central; }
+      .ee-pin { fill: #ffffff; stroke: #111827; stroke-width: 1.6; }
+      .ee-node { fill: #111827; stroke: none; }
+      .ee-grid { stroke: #e5e7eb; stroke-width: 0.8; stroke-dasharray: 2 2; fill: none; }
+    </style>
+    <marker id="arrow-instrument_bench_oscilloscope" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1 L 7 4 L 0 7 z" fill="#111827"/>
+    </marker>
+    <marker id="arrow-red-instrument_bench_oscilloscope" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1 L 7 4 L 0 7 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arrow-blue-instrument_bench_oscilloscope" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1 L 7 4 L 0 7 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect class="ee-body" x="10" y="14" width="140" height="86" rx="5"/>
+  <!-- Screen bezel -->
+  <rect x="18" y="22" width="84" height="56" rx="2" fill="#0f172a" stroke="#111827" stroke-width="1.5"/>
+  <!-- Grid on screen -->
+  <line x1="18" y1="50" x2="102" y2="50" stroke="#334155" stroke-width="0.8" stroke-dasharray="2 2"/>
+  <line x1="60" y1="22" x2="60" y2="78" stroke="#334155" stroke-width="0.8" stroke-dasharray="2 2"/>
+  <!-- CH1 Sine & CH2 PWM traces -->
+  <path d="M 20 40 C 33 22, 46 22, 60 40 C 74 58, 87 58, 100 40" fill="none" stroke="#38bdf8" stroke-width="1.6"/>
+  <path d="M 20 68 L 32 68 L 32 56 L 48 56 L 48 68 L 64 68 L 64 56 L 80 56 L 80 68 L 100 68" fill="none" stroke="#facc15" stroke-width="1.4"/>
+  <!-- Control knobs on right panel -->
+  <circle class="ee-body" cx="118" cy="32" r="6"/>
+  <circle class="ee-body" cx="136" cy="32" r="6"/>
+  <circle class="ee-body" cx="118" cy="52" r="5"/>
+  <circle class="ee-body" cx="136" cy="52" r="5"/>
+  <!-- 4 BNC Input Channels at bottom -->
+  <circle class="ee-tint-blue" cx="30" cy="89" r="4"/>
+  <circle class="ee-tint-red" cx="52" cy="89" r="4"/>
+  <circle class="ee-tint-green" cx="74" cy="89" r="4"/>
+  <circle class="ee-tint-amber" cx="96" cy="89" r="4"/>
+  <text class="ee-label" x="127" y="88">DSO</text>
+  <circle class="ee-pin" cx="30" cy="100" r="2.2"/>
+  <circle class="ee-pin" cx="52" cy="100" r="2.2"/>
+  <circle class="ee-pin" cx="74" cy="100" r="2.2"/>
+  <circle class="ee-pin" cx="96" cy="100" r="2.2"/>
+</svg>
